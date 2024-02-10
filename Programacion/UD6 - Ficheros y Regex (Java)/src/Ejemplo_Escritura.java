@@ -4,8 +4,7 @@ public class Ejemplo_Escritura {
         File fichero = null;
         FileWriter writer = null;
         PrintWriter pw = null;
-        try
-        {
+        try {
             fichero = new File("data/archivo.txt");
             writer = new FileWriter(fichero);
             pw = new PrintWriter(writer);
