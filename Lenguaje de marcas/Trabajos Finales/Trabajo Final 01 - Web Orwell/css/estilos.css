@@ -1,0 +1,128 @@
+/* general */
+
+body {
+    font-family: "arial";
+    text-align: center;
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+img {
+    width: 350; 
+    height: 290;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: blue;
+    background-color: limegreen;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* esto es la cabecera */
+
+.cabecera {
+    text-align: center;
+}
+
+#titulocabecera {
+    font-size: 2.5em;
+}
+
+nav a {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+}
+
+.enlacescabecera{
+    font-size: 11px;
+}
+
+/* esto es el pie de pagina */
+
+.piepagina {
+    font-size: 11px;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* index.html */
+/* esto es la biografia de George Orwell */
+
+#georgeorwell {
+    font-family: "italic";
+    font-size: 2.30em;
+    text-align: center;
+}
+
+#textoGeorge {
+    text-align: justify;
+    font-size: 17px;
+}
+
+/* listas */
+
+.obras {
+    text-align: left;
+    font-family: "italic";
+}
+
+ul li {
+    font-style: italic;
+    font-family: serif;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* obras.html */
+
+#tituloreseñas {
+    font-family: "italic";
+    font-size: 2.30em;
+    text-align: center;
+}
+
+.tituloobra {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 27px;
+    font-family: serif;
+}
+
+.descripcionobra {
+    text-align: justify;
+    margin-left: 25px;
+    font-family: "arial";
+}
+
+#trailervideo {
+    font-size: 12px;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* orwel */ 
+
+#rastroemociones {
+    border-left: 4px black solid;
+    padding-left: 10px;
+    margin-left: 70px;
+    text-align: left;
+}
+
+.textoorwel {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.h2orwel {
+    text-align: left;
+}
+
+.explicacionimg {
+    font-size: 12px;
+    margin-bottom: 40px;
+}

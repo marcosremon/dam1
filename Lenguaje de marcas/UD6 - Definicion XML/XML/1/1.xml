@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv>
+    <nombre>Manuel Julve Doñate</nombre>
+    <anio_nacimiento>2005</anio_nacimiento>
+    <residencia>
+        <ciudad>Teruel</ciudad>
+        <pais>España</pais>
+    </residencia>
+    <contacto>
+        <telefono>666666666</telefono>
+        <email>arodrigezg@iesch.org</email>
+        <linkedin>http://www.tumadre.es</linkedin>
+    </contacto>
+    <descripcion>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dignissimos ex, ea autem modi corporis sit assumenda saepe vitae necessitatibus vero cum laboriosam dolor eligendi!</descripcion>
+    <competencias>
+        <competencia nombre="Diseño" nivel="alto"/>
+        <competencia nombre="Youmama" nivel="alto"/>
+        <competencia nombre="Música" nivel="alto"/>
+    </competencias>
+    <formacion>
+        <titulacion nombre="SMR" centro="CHOMONES" anio="2022"/>
+        <titulacion nombre="DAM" centro="CHOMONES" anio="2025"/>
+    </formacion>
+    <experiencia-profesional>
+        <experiencia>
+            <puesto>Diseñador</puesto>
+            <empresa>SEGAAA</empresa>
+            <inicio>2023</inicio>
+            <final>2029</final>
+        </experiencia>
+    </experiencia-profesional>
+</cv>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE clientes [
+    <!ELEMENT clientes (cliente+)>
+    <!ELEMENT cliente (nombre, direccion, orden)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT direccion (#PCDATA)>
+    <!ELEMENT orden (producto, cantidad)>
+    <!ELEMENT producto (#PCDATA)>
+    <!ELEMENT cantidad (#PCDATA)>
+]>
+<clientes>
+  <cliente>
+    <nombre>Maria</nombre>
+    <direccion>Calle A, Ciudad B</direccion>
+    <orden>
+      <producto>Producto 1</producto>
+      <cantidad>2</cantidad>
+    </orden>
+  </cliente>
+</clientes>

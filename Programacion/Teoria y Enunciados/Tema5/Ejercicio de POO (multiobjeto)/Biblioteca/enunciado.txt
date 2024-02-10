@@ -1,0 +1,31 @@
+Han sido proporcionadas una serie de estructuras que representan diferentes tipos de materiales y una biblioteca para gestionarlos. Su tarea consiste en completar la implementación de estas estructuras siguiendo las especificaciones dadas y realizar operaciones en una biblioteca.
+
+Ficha:
+Implemente la estructura base Ficha con los atributos numero (número de identificación) y titulo (título del material).
+Cree un método llamado mostrar_informacion() que retorne una cadena con el número y título del material.
+
+DVD:
+Añada los atributos adicionales director (director del DVD), anno (año de producción), tipo (tipo de contenido).
+Sobrescriba el método mostrar_informacion() para mostrar la información completa del DVD.
+
+Libro:
+Añada los atributos adicionales autor (autor del libro), editorial (editorial del libro).
+Sobrescriba el método mostrar_informacion() para mostrar la información completa del libro.
+
+Revistas:
+Añada los atributos adicionales numero_revista (número de la revista), anno (año de publicación).
+Sobrescriba el método mostrar_informacion() para mostrar la información completa de la revista.
+
+Biblioteca:
+Implemente la estructura Biblioteca con el atributo lista (una lista para almacenar los elementos).
+Cree los métodos:
+anadir_item(item): Agrega un elemento a la biblioteca.
+buscar_item(item): Busca un elemento en la biblioteca y muestra su información si existe.
+eliminar_item(item): Elimina un elemento de la biblioteca.
+mostrar_lista(): Muestra la información de todos los elementos en la biblioteca.
+Programa Principal:
+
+En un programa principal, cree instancias de las estructuras proporcionadas y realice operaciones en la biblioteca para demostrar el correcto funcionamiento.
+Nota:
+
+Asegúrese de que las estructuras hereden correctamente de Ficha y que los métodos mostrar_informacion() estén implementados adecuadamente en cada una.
