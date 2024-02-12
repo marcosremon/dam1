@@ -726,18 +726,6 @@ public class Ejercicios_UD2_01 {
         if (esPrimo(numero)) {
             System.out.println("es primo");
         } System.out.println("no es primo");
-
-    }
-    public static boolean esPrimo(int numero) {
-        if (numero <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -746,8 +734,14 @@ public class Ejercicios_UD2_01 {
     //Reutiliza el ejercicio anterior para mostrar los números primos que hay del 1 al 100.
 
     private static void ej32() {
+        List<Integer> listaDePrimos = new ArrayList<>();
 
-
+        for (int i = 0; i < 101; i++) {
+            if (esPrimo(i)) {
+                listaDePrimos.add(i);
+            }
+        }
+        System.out.println("la lista de numeros primos del 0 al 100 es: " + listaDePrimos);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -757,8 +751,14 @@ public class Ejercicios_UD2_01 {
     //son 6, comprendidos del 1 al 49. En esta versión no importa si se repite algún número.
 
     private static void ej33() {
+        Random random = new Random();
+        StringBuilder stringbuilder = new StringBuilder();
 
-
+        for (int i = 0; i < 6; i++) {
+            int numeroAleatorio = random.nextInt(49) + 1;
+            stringbuilder.append(numeroAleatorio + " ");
+        }
+        System.out.println(stringbuilder);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -793,8 +793,30 @@ public class Ejercicios_UD2_01 {
     //decida terminar.
 
     private static void ej36() {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("dime el primer numero");
+        Double numero1 = scanner.nextDouble();
+        System.out.println("dime el segundo numero");
+        Double numero2 = scanner.nextDouble();
+        Double resultado;
 
+        System.out.println("que quieres hacer: \n\t suma --> s \n\t resta --> r \n\t division --> d \n\t " +
+                "multiplicacion --> m");
+        String operacion = scanner.next();
+        if (operacion.toLowerCase() == "s") {
+            resultado = numero1 + numero2;
+            System.out.println("el resultado de la suma es: " + resultado);
+        } else if (operacion.toLowerCase() == "r") {
+            resultado = numero1 - numero2;
+            System.out.println("el resultado de la resta es: " + resultado);
+        } else if (operacion.toLowerCase() == "d") {
+            resultado = numero1 / numero2;
+            System.out.println("el resultado de la division es: " + resultado);
+        } else if (operacion.toLowerCase() == "m") {
+            resultado = numero1 * numero2;
+            System.out.println("el resultado de la multiplicacion es: " + resultado);
+        } else System.out.println("lo que introdujiste no esta contemplado");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -805,8 +827,25 @@ public class Ejercicios_UD2_01 {
     //final, pase lo que pase (gane o pierda), se le preguntará al usuario si quiere continuar.
 
     private static void ej37() {
+        Random random = new Random();
 
-
+        int numeroAleatorio = random.nextInt(100) + 1;
+        while (true) {
+            for (int i = 1; i < 5; i++) {
+                System.out.println("intento numero: " + i + "/5 para adivinar el numero");
+                int adivinarNumero = scanner.nextInt();
+                if (adivinarNumero == numeroAleatorio) {
+                    System.out.println("felicidades has adivinado el numero");
+                    numeroAleatorio = random.nextInt(100) + 1;
+                    break;
+                }
+            }
+            System.out.println("quieres continuar? [yes/no]");
+            String continuar = scanner.next();
+            if (continuar.toLowerCase().equals("no")) {
+                break;
+            }
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -817,8 +856,34 @@ public class Ejercicios_UD2_01 {
     //que quiere salir
 
     private static void ej38() {
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.print("Ejercicio: ");
+            int ej = scanner.nextInt();
+            scanner.nextLine();
 
+            switch (ej) {
+                case 1 -> ej1();
+                case 2 -> ej2();
+                case 3 -> ej3();
+                default -> System.out.println("Ejercicio no válido");
+            }
 
+            System.out.print("\n¿Continuar? [y/n] ");
+        } while (scanner.nextLine().equalsIgnoreCase("y"));
+        scanner.close();
     }
 
+//----------------------------------------------------------------------------------------------------------------------
+    public static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
