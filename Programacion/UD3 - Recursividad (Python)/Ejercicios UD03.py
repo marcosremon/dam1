@@ -499,7 +499,8 @@ def ej20():
     
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Ejercicio 21: Crea una función que calcule el factorial de un número de manera recursiva.
+#Ejercicio 21: 
+#Crea una función que calcule el factorial de un número de manera recursiva.
 
 def ej21():
     
