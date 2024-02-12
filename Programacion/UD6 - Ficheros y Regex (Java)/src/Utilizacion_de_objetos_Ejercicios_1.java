@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Utilizacion_de_objetos_Ejercicios_1 {
-    public static Scanner scanner;
+    public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         do {
@@ -30,19 +30,17 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
 //----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio1:
-    //Realiza un programa que pida al usuario introducir los lados de un rectángulo y calcule
-    //su área.
+    //Realiza un programa que pida al usuario introducir los lados de un rectángulo y calcule su área.
 
     private static void ej1() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Introduce la longitud del rectángulo: ");
-        double longitud = scanner.nextDouble();
+        System.out.println("introduce la base del rectanugulo");
+        int base = scanner.nextInt();
+        System.out.println("introduce la altura del rectangulo");
+        int altura = scanner.nextInt();
 
-        System.out.print("Introduce el ancho del rectángulo: ");
-        double ancho = scanner.nextDouble();
-        double area = longitud * ancho;
-        System.out.println("El área del rectángulo es: " + area);
+        System.out.println("el area del rectangulo es: " + base * altura);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -54,9 +52,9 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
     private static void ej2() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Introduce tu nombre: ");
-        String nombreUsuario = scanner.nextLine();
-        System.out.println("Hola, " + nombreUsuario);
+        System.out.println("introduce tu nombre");
+        String nombre = scanner.next();
+        System.out.println("holaaa " + nombre);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -68,10 +66,9 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
     private static void ej3() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Introduce un número: ");
-        double numeroUsuario = scanner.nextDouble();
-        double raizCuadrada = Math.sqrt(numeroUsuario);
-        System.out.printf("La raíz cuadrada de %.2f es %.2f\n", numeroUsuario, raizCuadrada);
+        System.out.println("introduce un numero para calcular su raiz cuadrada");
+        Double numero = scanner.nextDouble();
+        System.out.println("la raiz cuadrada de el numero " + numero + " es " + Math.sqrt(numero));
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -88,26 +85,39 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
     //     elegidos por el usuario.
 
     private static void ej4() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
 
-        // a)
-        double numeroaleatorioA = 0;
-        while (numeroaleatorioA != 100) {
-            numeroaleatorioA = (int) (Math.random() * 101);
-            System.out.println(numeroaleatorioA);
-        }
+        //a)
+        System.out.println("a)");
+        int numeroAleatorio1 = random.nextInt(101);
+        System.out.println(numeroAleatorio1);
 
-        // b)
-        System.out.println("Introduce el primer número entero positivo:");
-        int numeroM = scanner.nextInt();
+        //b)
+        System.out.println("b) \nintroduce un numero positivo");
+        int numeroPositivo = scanner.nextInt();
+        if (numeroPositivo > 0 ) {
+            StringBuilder stringBuilder1 = new StringBuilder();
+            for (int i = 0; i < 3; i++) {
+                int numeroAleatorio3 = random.nextInt(numeroPositivo+1);
+                stringBuilder1.append(numeroAleatorio3).append(" ");
+            }
+            System.out.println(stringBuilder1);
+        } else System.out.println("el numero que introdujiste no es positivo");
 
-        System.out.println("Introduce el segundo número entero positivo:");
-        int numeroN = scanner.nextInt();
-
-        // c)
-        for (int i = 0; i < 3; i++) {
-            int numeroaleatorioC = (int) (Math.random() * (numeroN - numeroM + 1) + numeroM);
-            System.out.printf("El número aleatorio %d es: %dª\n", i, numeroaleatorioC);
-        }
+        //c)
+        System.out.println("c) \nintroduce el primer numero inicial");
+        int numeroInicial = scanner.nextInt();
+        System.out.println("introduce el numero final");
+        int numeroFinal = scanner.nextInt();
+        if (numeroInicial > 0 && numeroFinal > 0 && numeroInicial < numeroFinal) {
+            StringBuilder stringBuilder2 = new StringBuilder();
+            for (int i = 0; i < 3; i++) {
+                int numeroAleatorio3 = random.nextInt(numeroInicial,numeroFinal+1);
+                stringBuilder2.append(numeroAleatorio3 + " ");
+            }
+            System.out.println(stringBuilder2);
+        } else System.out.println("algun parametro introducido es erroneo");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -117,11 +127,19 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
     //asegurarte de que el resultado no hace overflow? Haz un programa que lo pruebe.
 
     private static void ej5() {
-        System.out.println(Integer.MAX_VALUE);
-        int numero1 = Integer.MAX_VALUE;
-        int numero2 = 99;
-        int resultado = Math.multiplyExact(numero1, numero2);
-        System.out.println(resultado);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("introduce el numero numero 1");
+        int numero1 = scanner.nextInt();
+        System.out.println("introduce el numero numero 2");
+        int numero2 = scanner.nextInt();
+
+        try {
+            System.out.println("el producto entre los dos numeros es " + Math.multiplyExact(numero1, numero2));
+        } catch (ArithmeticException e) {
+            System.out.println("La multiplicación causó un desbordamiento.");
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -131,10 +149,14 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
     //de elevar el primero al segundo.
 
     private static void ej6() {
-        int numero1 = 36;
-        int numero2 = 3;
-        double potencia = Math.pow(numero1, numero2);
-        System.out.println(potencia);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("introduce el numero numero 1");
+        int numero1 = scanner.nextInt();
+        System.out.println("introduce el numero numero 2");
+        int numero2 = scanner.nextInt();
+
+        System.out.println("el producto entre los dos numeros es " + Math.pow(numero1, numero2));
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -143,17 +165,14 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
     //Realiza un programa que genere letras mayúsculas aleatoriamente y determine si son
     //vocales o consonantes.
     private static void ej7() {
-        new Random();
-        int codigoascii_A = 65;
-        int codigoascii_Z = 90;
-        int numeroaleatorioC = (int)(Math.random() * (double)(codigoascii_Z - codigoascii_A + 1) + (double)codigoascii_A);
-        System.out.println(numeroaleatorioC);
-        char letra = (char)numeroaleatorioC;
-        System.out.println(letra);
-        if (letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U') {
-            System.out.println(letra + " es una vocal");
-        }
+        Random random = new Random();
 
+        char letra = (char) (random.nextInt(26) + 'A');
+        if (esVocal(letra)) {
+            System.out.println(letra + " es una vocal.");
+        } else {
+            System.out.println(letra + " es una consonante.");
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -172,17 +191,27 @@ public class Utilizacion_de_objetos_Ejercicios_1 {
     private static void ej8() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Introduce el precio de la vivienda en euros: ");
+        System.out.println("introduce el precio");
         int precio = scanner.nextInt();
-
-        System.out.print("Introduce la superficie de la vivienda en metros cuadrados: ");
+        System.out.println("introduce la superficie");
         int superficie = scanner.nextInt();
+        System.out.println("introduce si tiene garaje [si/no]");
+        String tieneGaraje = scanner.next();
+        Boolean meInteresa;
+        tieneGaraje.toLowerCase();
 
-        System.out.print("¿La vivienda tiene garaje? (true/false): ");
-        boolean garaje = scanner.nextBoolean();
+        if (precio < 150000 && superficie > 80 && tieneGaraje.equals("si")) {
+            meInteresa = true;
+        } else meInteresa = false;
+        System.out.println("el interes sobre la vivienda es " + meInteresa);
+    }
 
-        boolean meinteresa = (precio < 150000) && (superficie > 80) && garaje;
+//----------------------------------------------------------------------------------------------------------------------
 
-        System.out.println("¿Me interesa la vivienda? " + meinteresa);
+    public static boolean esVocal(char c) {
+        // Crear una expresión regular que coincida con las vocales en mayúsculas y minúsculas
+        String regex = "[AEIOUaeiou]";
+        // Verificar si el carácter coincide con la expresión regular
+        return String.valueOf(c).matches(regex);
     }
 }
