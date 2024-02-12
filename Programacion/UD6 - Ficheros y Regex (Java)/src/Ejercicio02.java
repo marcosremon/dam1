@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.BitSet;
 import java.util.Scanner;
 
 public class Ejercicio02 {
@@ -32,17 +33,28 @@ public class Ejercicio02 {
 
     private static void ej1() {
 
-        String rutaArchivo = "./data/archivo.txt";
+        File fichero = new File("./data/archivo.txt");
+        comprobarSiElFicheroExiste(fichero);
 
+        BufferedReader bufferedReader = null;
+        String linea;
+        int contador = 0;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo));
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                System.out.println(linea);
+            bufferedReader = new BufferedReader(new FileReader(fichero));
+            while ((linea = bufferedReader.readLine()) != null) {
+                contador += 1;
+                System.out.println("linea " + contador + ": " + linea );
             }
-            reader.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -50,85 +62,135 @@ public class Ejercicio02 {
 
     //Ejercicio 2:
     //Desarrolla un programa que lea un archivo de texto y guarde un nuevo
-    //archivo con el mismo texto, pero con todas las palabras en mayúsculas.
+    //archivo con el mismo textopero con todas las palabras en mayúsculas.
 
     private static void ej2() {
-        String rutaArchivoOriginal = "./data/archivo.txt";
-        String rutaArchivoModificado = "./data/archivoEnMayusculas.txt";
+        File ficheroOriginal = new File("./data/archivo.txt");
+        File ficheroModificado = new File("./data/archivoEnMayusculas.txt");
+        comprobarSiElFicheroExiste(ficheroOriginal);
+        comprobarSiElFicheroExiste(ficheroModificado);
 
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
+        String linea;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(rutaArchivoOriginal));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivoModificado));
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                writer.write(linea.toUpperCase());
-                writer.newLine();
+            bufferedReader = new BufferedReader(new FileReader(ficheroOriginal));
+            bufferedWriter = new BufferedWriter(new FileWriter(ficheroModificado));
+            while ((linea = bufferedReader.readLine()) != null) {
+                linea = linea.toUpperCase();
+                bufferedWriter.write(linea + "\n");
             }
-            reader.close();
-            writer.close();
-
-            System.out.println("Archivo modificado creado con éxito.");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                bufferedReader.close();
+                bufferedWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 3:
-    //Desarrolla un programa que lea un archivo un archivo de texto y muestre
+    //Desarrolla un programa que lea un archivo de texto y muestre
     //el número de veces que aparece la letra ‘a’.
 
     private static void ej3() {
-        String rutaArchivo = "./data/archivo.txt";
 
+        File fichero = new File("./data/archivo.txt");
+        comprobarSiElFicheroExiste(fichero);
+
+        BufferedReader bufferedReader = null;
+        String linea;
+        int contador = 0;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo));
-            int contadorA = 0;
-            int caracter;
-            while ((caracter = reader.read()) != -1) {
-                char caracterMinuscula = Character.toLowerCase((char) caracter);
-                if (caracterMinuscula == 'a') {
-                    contadorA++;
+            bufferedReader = new BufferedReader(new FileReader(fichero));
+            while ((linea = bufferedReader.readLine()) != null) {
+                for (int i = 0; i < linea.length(); i++) {
+                    char caracter = linea.toLowerCase().charAt(i);
+                    String letra = String.valueOf(caracter);
+                    if (letra.equals("a")) {
+                        contador += 1;
+                    }
                 }
             }
-            reader.close();
-
-            System.out.println("El número de veces que aparece la letra 'a' es: " + contadorA);
+            System.out.println(contador);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 4:
-    //Desarrolla un programa que lea un archivo un archivo de texto y muestre el número de veces
+    //Desarrolla un programa que lea un archivo de texto y muestre el número de veces
     //que aparece cada letra del abecedario (independientemente de mayúsculas y minúsculas).
 
     private static void ej4() {
-        String rutaArchivo = "./data/archivo.txt";
+        File fichero = new File("./data/archivo.txt");
+        comprobarSiElFicheroExiste(fichero);
 
+        BufferedReader bufferedReader = null;
+        String linea;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo));
-            int[] contadorLetras = new int[26];
-            int caracter;
-
-            while ((caracter = reader.read()) != -1) {
-                char caracterMinuscula = Character.toLowerCase((char) caracter);
-                if (Character.isLetter(caracterMinuscula)) {
-                    int indice = caracterMinuscula - 'a';
-                    contadorLetras[indice]++;
-                }
+            bufferedReader = new BufferedReader(new FileReader(fichero));
+            StringBuilder textoCompleto = new StringBuilder();
+            while ((linea = bufferedReader.readLine()) != null) {
+                textoCompleto.append(linea.toLowerCase());
             }
-            reader.close();
-
-            for (char letra = 'a'; letra <= 'z'; letra++) {
-                int indice = letra - 'a';
-                System.out.println("Letra " + letra + ": " + contadorLetras[indice] + " veces");
+            String texto = textoCompleto.toString();
+            String abecedario = "abcdefghijklmnñopqrstuvwxyz";
+            for (int i = 0; i < abecedario.length(); i++) {
+                char letra = abecedario.charAt(i);
+                int contador = contarLetra(texto, letra);
+                System.out.println("La letra " + letra + " aparece " + contador + " veces");
             }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (bufferedReader != null)
+                    bufferedReader.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
+    }
+
+//----------------------------------------------------------------------------------------------------------------------
+    private static int contarLetra(String texto, char letra) {
+        int contador = 0;
+        for (int i = 0; i < texto.length(); i++) {
+            if (texto.charAt(i) == letra) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+    private static void comprobarSiElFicheroExiste(File fichero) {
+        if (!fichero.exists()) {
+            try {
+                fichero.createNewFile();
+                System.out.println("El fichero ha sido creado");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else
+            System.out.println("El fichero ya existe");
     }
 }

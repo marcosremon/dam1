@@ -31,18 +31,26 @@ public class Ejercicios_Repaso_Java {
     private static void ej1() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("dime un numero: ");
-        double numero1 = scanner.nextDouble();
-        System.out.println("dime otro numero: ");
-        double numero2 = scanner.nextDouble();
-        System.out.println("dime otro numero: ");
-        double numero3 = scanner.nextDouble();
+        System.out.println("dime el numero numero 1:");
+        int numero1 = scanner.nextInt();
+        System.out.println("dime el numero numero 2:");
+        int numero2 = scanner.nextInt();
+        System.out.println("dime el numero numero 3:");
+        int numero3 = scanner.nextInt();
 
-        if (numero1 != numero2 && numero1 != numero3 && numero2 != numero3) {
-            double mayor = Math.max(numero1, numero2);
-            double themayor = Math.max(mayor, numero3);
-            System.out.println("el mayor de los tres es: " + themayor);
-        } else System.out.println("hay empate");
+        int elMayorDeLosTres = Math.max(Math.max(numero1, numero2), numero3);
+
+        if (elMayorDeLosTres == numero1 && elMayorDeLosTres == numero2 && elMayorDeLosTres == numero3) {
+            System.out.println("Los tres números son iguales y son el mayor: " + elMayorDeLosTres);
+        } else if (elMayorDeLosTres == numero1 && elMayorDeLosTres == numero2) {
+            System.out.println("El primer y segundo número son iguales y son el mayor: " + elMayorDeLosTres);
+        } else if (elMayorDeLosTres == numero1 && elMayorDeLosTres == numero3) {
+            System.out.println("El primer y tercer número son iguales y son el mayor: " + elMayorDeLosTres);
+        } else if (elMayorDeLosTres == numero2 && elMayorDeLosTres == numero3) {
+            System.out.println("El segundo y tercer número son iguales y son el mayor: " + elMayorDeLosTres);
+        } else {
+            System.out.println("El número mayor es: " + elMayorDeLosTres);
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -74,25 +82,27 @@ public class Ejercicios_Repaso_Java {
     private static void ej3() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("cuantos numeros quieres añadir");
-        int anyadirnumeros = scanner.nextInt();
-        ArrayList<Integer> lista = new ArrayList<>();
+        List<Integer> listaConDuplicados = new ArrayList<>();
+        List<Integer> listaSinDuplicados = new ArrayList<>();
+        int contador = 1;
 
-        for (int i = 0; i < anyadirnumeros; i++) {
-            System.out.println("dime un numero:");
+        while (true) {
+            System.out.println("dime el numero numero: " + contador);
             int numero = scanner.nextInt();
-            while (true) {
-                if (lista.contains(numero)) {
-                    System.out.println("ese numero ya esta en la lista añada otro");
-                    numero = scanner.nextInt();
-                } else {
-                    lista.add(numero);
-                    break;
-                }
+            if (numero != -1) {
+                listaConDuplicados.add(numero);
+                contador += 1;
+            } else break;
+        }
+        for (int i : listaConDuplicados) {
+            if (!listaSinDuplicados.contains(i)) {
+                listaSinDuplicados.add(i);
             }
         }
-        lista.add(-1);
-        System.out.println("la lista contiene los siguientes numeros: \n" + lista);
+        System.out.println("la lista original con duplicados es:");
+        System.out.println(listaConDuplicados);
+        System.out.println("la lista sin duplicados es:");
+        System.out.println(listaSinDuplicados);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -106,23 +116,24 @@ public class Ejercicios_Repaso_Java {
 
     private static void ej4() {
         Scanner scanner = new Scanner(System.in);
+        ArrayList<String> listaDePalaras = new ArrayList<>();
 
-        System.out.println("dime cuantas palabras quieres añadir a la lista");
-        int anyadirnumeros = scanner.nextInt();
-        scanner.nextLine();
-        ArrayList<String> lista = new ArrayList<>();
+        System.out.println("cuantas palabra quieres poner?");
+        int numeroDePalabras = scanner.nextInt();
 
-        for (int i = 0; i < anyadirnumeros; ++i) {
-            System.out.println("dime una palabra");
-            String palabra = scanner.nextLine();
-            lista.add(palabra);
+        for (int i = 1; i < numeroDePalabras + 1; i++) {
+            System.out.println("Dime la palabra número " + i + ":");
+            String palabra = scanner.next();
+            listaDePalaras.add(palabra);
         }
-        Collections.sort(lista);
-        System.out.println("la lista contiene estas palabras: " + lista + " dime una palabra");
-        String buscarPosicionPalabra = scanner.nextLine();
-
-        if (lista.contains(buscarPosicionPalabra)) {
-            System.out.println("la palabra " + buscarPosicionPalabra + " esta dentro de la lista");
-        } else System.out.println("la palabra " + buscarPosicionPalabra + " no esta en la lista");
+        Collections.sort(listaDePalaras);
+        System.out.println("dime una palabra de la lista");
+        String buscarPalabra = scanner.next();
+        System.out.println("la lista queda asi tras ordenarla: " + listaDePalaras);
+        if (listaDePalaras.contains(buscarPalabra)) {
+            int posicion = listaDePalaras.indexOf(buscarPalabra);
+            System.out.println("la posicion de la palabra: " + buscarPalabra + " la cual has seleccionado tu es " +
+                    "la posicion numero: " + posicion);
+        } else System.out.println("la palabra que indicaste no esta introducida en la lista");
     }
 }

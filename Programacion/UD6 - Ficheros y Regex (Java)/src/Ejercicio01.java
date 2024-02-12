@@ -162,7 +162,6 @@ public class Ejercicio01 {
         Path rutaDestino3 = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/samples/programacion.txt");
         Path rutaDestino4 = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/exercises/programacion.txt");
 
-
         try {
             Files.copy(rutaOrigen, rutaDestino1, StandardCopyOption.REPLACE_EXISTING);
             Files.copy(rutaOrigen, rutaDestino2, StandardCopyOption.REPLACE_EXISTING);

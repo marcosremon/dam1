@@ -18,6 +18,7 @@ public class Regex {
                 case 1 -> ej1();
                 case 2 -> ej2();
                 case 3 -> ej3();
+                case 4 -> ej4();
                 default -> System.out.println("Ejercicio no válido");
             }
             System.out.print("\n¿Continuar? [y/n] ");
@@ -25,7 +26,7 @@ public class Regex {
         scanner.close();
     }
 
-//-------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 1:
     //Desarrolla un programa que lea un archivo de texto y muestre el número
@@ -60,7 +61,7 @@ public class Regex {
         }
     }
 
-//-------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 2:
     //Desarrolla un programa que busque en el texto de abajo con información del instituto:
@@ -117,16 +118,31 @@ public class Regex {
         }
     }
 
-//-------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 3:
+    // Utiliza como fuente de datos el fichero DATA.csv disponible en classroom para
+    //llevar a cabo este ejercicio. Deberás desarrollar un programa que lea el
+    //fichero y muestre:
+    //a) Los registros con país España o Portugal
+    //b) Los registros con email de dominios .edu
+    //c) Los registros con email de yahoo
+    //d) Los registros con el último login entre mayo de 2015 y febrero de 2017
+
+    private static void ej3() {
+
+    }
+
+//----------------------------------------------------------------------------------------------------------------------
+
+    //Ejercicio 4:
     //Crea un método estático llamado CleanSpaces que reciba una cadena y
     //devuelva la cadena una vez eliminados los espacios sobrantes; todos los
     //espacios hasta el primer carácter, todos los espacios hasta el último carácter,
     //si entre palabras hay más de un espacio seguido sólo deberá quedar uno.
     //“ Hola mundo ”  “Hola mundo”.
 
-    private static void ej3() {
+    private static void ej4() {
         String ruta = "data/DATA.csv";
         BufferedReader reader = null;
 
@@ -146,7 +162,7 @@ public class Regex {
 
         try {
             reader = new BufferedReader(new FileReader(ruta));
-            reader.readLine(); // Leer la primera línea que parece ser la cabecera
+            reader.readLine();
 
             while ((linea = reader.readLine()) != null) {
                 if (patternEspanyaPortugal.matcher(linea).matches()) {
@@ -172,7 +188,7 @@ public class Regex {
                     reader.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace(); // Manejar la excepción si ocurre un error al cerrar el BufferedReader
+                e.printStackTrace();
             }
         }
     }
