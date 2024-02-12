@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effb5002-ae28-4eaf-8ba9-9b212bbb506e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ejercicios_recursividad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD3 - Recursividad (Python)/Ejercicios UD03.py" beforeDir="false" afterPath="$PROJECT_DIR$/../UD3 - Recursividad (Python)/Ejercicios UD03.py" afterDir="false" />
-    </list>
+    <list default="true" id="effb5002-ae28-4eaf-8ba9-9b212bbb506e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
