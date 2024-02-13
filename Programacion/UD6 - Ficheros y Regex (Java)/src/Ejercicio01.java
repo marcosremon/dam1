@@ -52,7 +52,7 @@ public class Ejercicio01 {
         String extensionArchivo = obtenerExtension(nombreArchivo);
         System.out.println("la extension del archivo es: " + extensionArchivo);
         //e)
-        comprobarSiElFicheroExiste(fichero);
+        comprobarSiExiste(fichero);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -114,16 +114,15 @@ public class Ejercicio01 {
     //    /PRO_UD08_Ej03.
 
     private static void ej3() {
-        File documentos = new File("./data/documentos");
-        File subcarpeta = new File("./data/documentos/PRO_UD08_Ej03");
-        File samples = new File("./data/documentos/PRO_UD08_Ej03/docs/samples");
-        File exercises = new File("./data/documentos/PRO_UD08_Ej03/docs/exercises");
-        File programacionTxt =  new File("./data/documentos/PRO_UD08_Ej03/programacion.txt");
-        comprobarSiElDirectorioExiste(documentos);
-        comprobarSiElDirectorioExiste(subcarpeta);
-        comprobarSiElDirectorioExiste(samples);
-        comprobarSiElDirectorioExiste(exercises);
-        comprobarSiElFicheroExiste(programacionTxt);
+        String ruta = "./data/documentos/PRO_UD08_Ej03";
+        File directorio = new File(ruta);
+        File samples = new File(ruta + "/docs/samples");
+        File exercises = new File(ruta + "/docs/exercises");
+        File programacionTxt =  new File(ruta + "/programacion.txt");
+        comprobarSiExiste(directorio);
+        comprobarSiExiste(samples);
+        comprobarSiExiste(exercises);
+        comprobarSiExiste(programacionTxt);
 
         BufferedWriter bufferedWriter = null;
         try {
@@ -144,17 +143,17 @@ public class Ejercicio01 {
             }
         }
 
-        Path programacion = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion.txt");
-        Path programacion1 = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion(+1).txt");
-        Path programacion2 = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion(+2).txt");
-        Path copiarProgramacion = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/samples/programacion.txt");
-        Path moverProgramacion = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/exercises/programacion.txt");
+        Path programacion = Paths.get(ruta + "/programacion.txt");
+        Path programacion1 = Paths.get(ruta + "/programacion(+1).txt");
+        Path programacion2 = Paths.get(ruta + "/programacion(+2).txt");
+        Path copiarProgramacionASamples = Paths.get(ruta + "/docs/samples/programacion.txt");
+        Path moverProgramacionAExercises = Paths.get(ruta + "/docs/exercises/programacion.txt");
 
         try {
             Files.copy(programacion, programacion1, StandardCopyOption.REPLACE_EXISTING);
             Files.copy(programacion, programacion2, StandardCopyOption.REPLACE_EXISTING);
-            Files.copy(programacion, copiarProgramacion, StandardCopyOption.REPLACE_EXISTING);
-            Files.move(programacion, moverProgramacion, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(programacion, copiarProgramacionASamples, StandardCopyOption.REPLACE_EXISTING);
+            Files.move(programacion, moverProgramacionAExercises, StandardCopyOption.REPLACE_EXISTING);
             Files.move(programacion1, programacion, StandardCopyOption.REPLACE_EXISTING);
             Files.delete(programacion2);
         } catch (IOException e) {
@@ -172,20 +171,21 @@ public class Ejercicio01 {
             return "No se encontró extensión";
         }
     }
-    private static void comprobarSiElDirectorioExiste(File directorio) {
-        if (!directorio.exists()) {
-            directorio.mkdirs();
-            System.out.println("el directorio " + directorio.getName() + " ha sido creado");
-        } else System.out.println("el directorio " + directorio.getName() + " ya existe");
-    }
-    private static void comprobarSiElFicheroExiste(File fichero) {
-        if (!fichero.exists()) {
-            try {
-                fichero.createNewFile();
-                System.out.println("el fichero " + fichero.getName() + " ha sido creado");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        } else System.out.println("el fichero " + fichero.getName() + " ya existe");
+    private static void comprobarSiExiste(File archivo) {
+        if (archivo.isDirectory()) {
+            if (!archivo.exists()) {
+                archivo.mkdirs();
+                System.out.println("el directorio " + archivo.getName() + " ha sido creado");
+            } else System.out.println("el directorio " + archivo.getName() + " ya existe");
+        } else {
+            if (!archivo.exists()) {
+                try {
+                    archivo.createNewFile();
+                    System.out.println("el fichero " + archivo.getName() + " ha sido creado");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else System.out.println("el fichero " + archivo.getName() + " ya existe");
+        }
     }
 }

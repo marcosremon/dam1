@@ -35,7 +35,7 @@ public class Ejercicio02 {
 
     private static void ej1() {
         File archivoTxt = new File("./data/archivo.txt");
-        comprobarSiElFicheroExiste(archivoTxt);
+        comprobarSiExiste(archivoTxt);
 
         BufferedReader bufferedReader = null;
         String linea;
@@ -66,7 +66,7 @@ public class Ejercicio02 {
     private static void ej2() {
         File archivoTxt = new File("./data/archivo.txt");
         File archivoEnMayusculas = new File("./data/archivoEnMayusculas.txt");
-        comprobarSiElFicheroExiste(archivoTxt);
+        comprobarSiExiste(archivoTxt);
 
         BufferedReader bufferedReader = null;
         BufferedReader bufferedReader2 = null;
@@ -185,14 +185,21 @@ public class Ejercicio02 {
         }
         return contador;
     }
-    private static void comprobarSiElFicheroExiste(File fichero) {
-        if (!fichero.exists()) {
-            try {
-                fichero.createNewFile();
-                System.out.println("el fichero " + fichero.getName() + " ha sido creado");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        } else System.out.println("el fichero " + fichero.getName() + " ya existe");
+    private static void comprobarSiExiste(File archivo) {
+        if (archivo.isDirectory()) {
+            if (!archivo.exists()) {
+                archivo.mkdirs();
+                System.out.println("el directorio " + archivo.getName() + " ha sido creado");
+            } else System.out.println("el directorio " + archivo.getName() + " ya existe");
+        } else {
+            if (!archivo.exists()) {
+                try {
+                    archivo.createNewFile();
+                    System.out.println("el fichero " + archivo.getName() + " ha sido creado");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else System.out.println("el fichero " + archivo.getName() + " ya existe");
+        }
     }
 }
