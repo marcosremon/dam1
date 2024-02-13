@@ -1,5 +1,7 @@
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.BitSet;
 import java.util.Scanner;
@@ -32,18 +34,15 @@ public class Ejercicio02 {
     //Desarrolla un programa que lea un archivo de texto y muestre su contenido.
 
     private static void ej1() {
-
-        File fichero = new File("./data/archivo.txt");
-        comprobarSiElFicheroExiste(fichero);
+        File archivoTxt = new File("./data/archivo.txt");
+        comprobarSiElFicheroExiste(archivoTxt);
 
         BufferedReader bufferedReader = null;
         String linea;
-        int contador = 0;
         try {
-            bufferedReader = new BufferedReader(new FileReader(fichero));
+            bufferedReader = new BufferedReader(new FileReader(archivoTxt));
             while ((linea = bufferedReader.readLine()) != null) {
-                contador += 1;
-                System.out.println("linea " + contador + ": " + linea );
+                System.out.println(linea);
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -65,20 +64,32 @@ public class Ejercicio02 {
     //archivo con el mismo textopero con todas las palabras en mayúsculas.
 
     private static void ej2() {
-        File ficheroOriginal = new File("./data/archivo.txt");
-        File ficheroModificado = new File("./data/archivoEnMayusculas.txt");
-        comprobarSiElFicheroExiste(ficheroOriginal);
-        comprobarSiElFicheroExiste(ficheroModificado);
+        File archivoTxt = new File("./data/archivo.txt");
+        File archivoEnMayusculas = new File("./data/archivoEnMayusculas.txt");
+        comprobarSiElFicheroExiste(archivoTxt);
 
         BufferedReader bufferedReader = null;
+        BufferedReader bufferedReader2 = null;
         BufferedWriter bufferedWriter = null;
-        String linea;
         try {
-            bufferedReader = new BufferedReader(new FileReader(ficheroOriginal));
-            bufferedWriter = new BufferedWriter(new FileWriter(ficheroModificado));
+            bufferedReader = new BufferedReader(new FileReader(archivoTxt));
+            bufferedWriter = new BufferedWriter(new FileWriter(archivoEnMayusculas));
+            String linea;
+            System.out.println("el archivo " + archivoTxt.getName() + " tiene este contenido:");
             while ((linea = bufferedReader.readLine()) != null) {
-                linea = linea.toUpperCase();
-                bufferedWriter.write(linea + "\n");
+                System.out.println(linea);
+                String lineaEnMayus = linea.toUpperCase();
+                bufferedWriter.write(lineaEnMayus + "\n");
+            }
+
+            System.out.println("------------------------------------------------------------------------------------");
+
+            bufferedWriter.flush();
+            String linea2;
+            bufferedReader2 = new BufferedReader(new FileReader(archivoEnMayusculas));
+            System.out.println("el archivo " + archivoEnMayusculas.getName() + " tiene este contenido:");
+            while ((linea2 = bufferedReader2.readLine()) != null) {
+                System.out.println(linea2);
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -87,6 +98,7 @@ public class Ejercicio02 {
         } finally {
             try {
                 bufferedReader.close();
+                bufferedReader2.close();
                 bufferedWriter.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -101,35 +113,29 @@ public class Ejercicio02 {
     //el número de veces que aparece la letra ‘a’.
 
     private static void ej3() {
-
-        File fichero = new File("./data/archivo.txt");
-        comprobarSiElFicheroExiste(fichero);
+        File archivoTxt = new File("./data/archivo.txt");
+        StringBuilder stringBuilder = new StringBuilder();
 
         BufferedReader bufferedReader = null;
-        String linea;
-        int contador = 0;
         try {
-            bufferedReader = new BufferedReader(new FileReader(fichero));
+            bufferedReader = new BufferedReader(new FileReader(archivoTxt));
+            String linea;
             while ((linea = bufferedReader.readLine()) != null) {
-                for (int i = 0; i < linea.length(); i++) {
-                    char caracter = linea.toLowerCase().charAt(i);
-                    String letra = String.valueOf(caracter);
-                    if (letra.equals("a")) {
-                        contador += 1;
-                    }
+                stringBuilder.append(linea);
+            }
+            int contador = 0;
+            for (int i = 0; i < stringBuilder.length(); i++) {
+                char builderChar = stringBuilder.charAt(i);
+                String builderCharString = String.valueOf(builderChar);
+                if (builderCharString.equals("a")) {
+                    contador++;
                 }
             }
-            System.out.println(contador);
+            System.out.println("la letra a aparece un total de " + contador + " veces");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                bufferedReader.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
@@ -140,35 +146,32 @@ public class Ejercicio02 {
     //que aparece cada letra del abecedario (independientemente de mayúsculas y minúsculas).
 
     private static void ej4() {
-        File fichero = new File("./data/archivo.txt");
-        comprobarSiElFicheroExiste(fichero);
+        File archivoTxt = new File("./data/archivo.txt");
+        StringBuilder stringBuilder = new StringBuilder();
 
         BufferedReader bufferedReader = null;
-        String linea;
         try {
-            bufferedReader = new BufferedReader(new FileReader(fichero));
-            StringBuilder textoCompleto = new StringBuilder();
+            bufferedReader = new BufferedReader(new FileReader(archivoTxt));
+            String linea;
             while ((linea = bufferedReader.readLine()) != null) {
-                textoCompleto.append(linea.toLowerCase());
+                stringBuilder.append(linea);
             }
-            String texto = textoCompleto.toString();
             String abecedario = "abcdefghijklmnñopqrstuvwxyz";
             for (int i = 0; i < abecedario.length(); i++) {
                 char letra = abecedario.charAt(i);
-                int contador = contarLetra(texto, letra);
-                System.out.println("La letra " + letra + " aparece " + contador + " veces");
+                int contador = 0;
+                for (int j = 0; j < stringBuilder.length(); j++) {
+                    char caracter = stringBuilder.charAt(j);
+                    if (caracter == letra) {
+                        contador++;
+                    }
+                }
+                System.out.println("la letra " + letra + " aparece un total de " + contador + " veces");
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                if (bufferedReader != null)
-                    bufferedReader.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
@@ -186,11 +189,10 @@ public class Ejercicio02 {
         if (!fichero.exists()) {
             try {
                 fichero.createNewFile();
-                System.out.println("El fichero ha sido creado");
+                System.out.println("el fichero " + fichero.getName() + " ha sido creado");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        } else
-            System.out.println("El fichero ya existe");
+        } else System.out.println("el fichero " + fichero.getName() + " ya existe");
     }
 }

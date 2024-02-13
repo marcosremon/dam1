@@ -1,3 +1,4 @@
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -37,31 +38,21 @@ public class Ejercicio01 {
     //    e) Si el fichero existe o no en el sistema de ficheros del ordenador.
 
     private static void ej1() {
-        File ruta = new File("./data/archivo.txt");
+        File fichero = new File("./data/archivo.txt");
         //a)
-        File rootDirectory = File.listRoots()[0];
-        System.out.println("Directorio Raíz: " + rootDirectory.toString());
+        File rutaRoot = File.listRoots()[0];
+        System.out.println("el directorio raiz es: " + rutaRoot);
         //b)
-        String rutaArchivo = ruta.getParent();
-        System.out.println("la ruta del archivo.txt es: " + rutaArchivo);
+        String rutaAbsolutaArchivo = fichero.getParent();
+        System.out.println("el directorio donde esta el archivo es: " + rutaAbsolutaArchivo);
         //c)
-        String nombreArchivo = ruta.getName();
+        String nombreArchivo = fichero.getName();
         System.out.println("el nombre del archivo es: " + nombreArchivo);
         //d)
-        String extension = obtenerExtension(nombreArchivo);
-        System.out.println("la extension del archivo es: " + extension);
+        String extensionArchivo = obtenerExtension(nombreArchivo);
+        System.out.println("la extension del archivo es: " + extensionArchivo);
         //e)
-        if (ruta.exists()) {
-            System.out.println("el archivo existe");
-        } else System.out.println("el archivo no existe");
-    }
-    private static String obtenerExtension(String nombreArchivo) {
-        int indicePunto = nombreArchivo.lastIndexOf('.');
-        if (indicePunto > 0 && indicePunto < nombreArchivo.length() - 1) {
-            return nombreArchivo.substring(indicePunto + 1);
-        } else {
-            return "No se encontró extensión";
-        }
+        comprobarSiElFicheroExiste(fichero);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -76,21 +67,18 @@ public class Ejercicio01 {
 
     private static void ej2() {
         File ruta = new File("./data");
-
+        StringBuilder stringBuilder = new StringBuilder();
+        System.out.println("la ruta absoluta de la ruta que pasaste es: " + ruta.getAbsolutePath());
         if (ruta.exists()) {
-            if (ruta.isFile()) {
-                System.out.println("es un fichero");
-            } else if (ruta.isDirectory()) {
-                System.out.println("es un directorio, la ruta es: " + ruta.getAbsolutePath());
-                File[] archivos = ruta.listFiles();
-                if (archivos != null) {
-                   System.out.println("el contenido del directorio es:");
-                   for (File archivo : archivos) {
-                       System.out.println(archivo.getName());
-                   }
-                } else System.out.println("no se pudo acceder al contenido del directorio");
-            }
-        } else System.out.println("no existe la ruta introducida");
+            if (ruta.isDirectory()) {
+                System.out.println("la ruta existe y es un directorio");
+                File[] contenido = ruta.listFiles();
+                for (File i : contenido) {
+                    stringBuilder.append(i.getName()).append(", ");
+                }
+                System.out.println(stringBuilder);
+            } else System.out.println("la ruta existe y es un fichero");
+        } else System.out.println("la ruta no existe");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -126,26 +114,26 @@ public class Ejercicio01 {
     //    /PRO_UD08_Ej03.
 
     private static void ej3() {
-
-        File directorios = new File("./data/documentos/PRO_UD08_Ej03");
-        File fichero = new File("./data/documentos/PRO_UD08_Ej03/programacion.txt");
-        comprobarSiExiste(directorios, fichero);
-        directorios = new File("./data/documentos/PRO_UD08_Ej03/docs/samples");
-        comprobarSiExiste(directorios, fichero);
-        directorios = new File("./data/documentos/PRO_UD08_Ej03/docs/exercises");
-        comprobarSiExiste(directorios, fichero);
+        File documentos = new File("./data/documentos");
+        File subcarpeta = new File("./data/documentos/PRO_UD08_Ej03");
+        File samples = new File("./data/documentos/PRO_UD08_Ej03/docs/samples");
+        File exercises = new File("./data/documentos/PRO_UD08_Ej03/docs/exercises");
+        File programacionTxt =  new File("./data/documentos/PRO_UD08_Ej03/programacion.txt");
+        comprobarSiElDirectorioExiste(documentos);
+        comprobarSiElDirectorioExiste(subcarpeta);
+        comprobarSiElDirectorioExiste(samples);
+        comprobarSiElDirectorioExiste(exercises);
+        comprobarSiElFicheroExiste(programacionTxt);
 
         BufferedWriter bufferedWriter = null;
-        BufferedReader bufferedReader = null;
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(fichero));
-            bufferedWriter.write("Una clase es un modelo a partir del cual se crean los objetos individuales.\n" +
-                    "Las tres características de un objeto son estado, comportamiento e identidad.\n" +
-                    "De manera general, una interfaz es un grupo de métodos relacionados que definen un\n" +
-                    "comportamiento y que permiten la interacción de ese comportamiento del objeto que los implementa\n" +
-                    "con el mundo exterior.\n" +
-                    "En OOP, una interfaz viene definida por un nombre y por un conjunto de métodos con el cuerpo de\n" +
-                    "código vacío.");
+            bufferedWriter = new BufferedWriter(new FileWriter(programacionTxt));
+            bufferedWriter.write("Una clase es un modelo a partir del cual se crean los objetos individuales.\n " +
+                    "Las tres características de un objeto son estado, comportamiento e identidad.\n De manera " +
+                    "general, una interfaz es un grupo de métodos relacionados que definen un\n comportamiento y " +
+                    "que permiten la interacción de ese comportamiento del objeto que los implementa\n con el " +
+                    "mundo exterior.\n En OOP, una interfaz viene definida por un nombre y por un conjunto de " +
+                    "métodos con el cuerpo de\n código vacío.");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
@@ -156,35 +144,48 @@ public class Ejercicio01 {
             }
         }
 
-        Path rutaOrigen = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion.txt");
-        Path rutaDestino1 = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion(+1).txt");
-        Path rutaDestino2 = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion(+2).txt");
-        Path rutaDestino3 = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/samples/programacion.txt");
-        Path rutaDestino4 = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/exercises/programacion.txt");
+        Path programacion = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion.txt");
+        Path programacion1 = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion(+1).txt");
+        Path programacion2 = Paths.get("./data/documentos/PRO_UD08_Ej03/programacion(+2).txt");
+        Path copiarProgramacion = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/samples/programacion.txt");
+        Path moverProgramacion = Paths.get("./data/documentos/PRO_UD08_Ej03/docs/exercises/programacion.txt");
 
         try {
-            Files.copy(rutaOrigen, rutaDestino1, StandardCopyOption.REPLACE_EXISTING);
-            Files.copy(rutaOrigen, rutaDestino2, StandardCopyOption.REPLACE_EXISTING);
-            Files.copy(rutaOrigen, rutaDestino3, StandardCopyOption.REPLACE_EXISTING);
-            Files.move(rutaOrigen, rutaDestino4, StandardCopyOption.REPLACE_EXISTING);
-            Files.move(rutaDestino1, rutaOrigen, StandardCopyOption.REPLACE_EXISTING);
-            Files.delete(rutaDestino2);
-            System.out.println("El archivo se ha copiado exitosamente.");
+            Files.copy(programacion, programacion1, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(programacion, programacion2, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(programacion, copiarProgramacion, StandardCopyOption.REPLACE_EXISTING);
+            Files.move(programacion, moverProgramacion, StandardCopyOption.REPLACE_EXISTING);
+            Files.move(programacion1, programacion, StandardCopyOption.REPLACE_EXISTING);
+            Files.delete(programacion2);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    private static void comprobarSiExiste(File directorios, File fichero) {
-        if (!directorios.exists()) {
-            directorios.mkdirs();
-            System.out.println("ruta creada");
-        } else System.out.println("ya existe la ruta");
+
+//----------------------------------------------------------------------------------------------------------------------
+
+    private static String obtenerExtension(String nombreArchivo) {
+        int indicePunto = nombreArchivo.lastIndexOf('.');
+        if (indicePunto > 0 && indicePunto < nombreArchivo.length() - 1) {
+            return nombreArchivo.substring(indicePunto + 1);
+        } else {
+            return "No se encontró extensión";
+        }
+    }
+    private static void comprobarSiElDirectorioExiste(File directorio) {
+        if (!directorio.exists()) {
+            directorio.mkdirs();
+            System.out.println("el directorio " + directorio.getName() + " ha sido creado");
+        } else System.out.println("el directorio " + directorio.getName() + " ya existe");
+    }
+    private static void comprobarSiElFicheroExiste(File fichero) {
         if (!fichero.exists()) {
             try {
                 fichero.createNewFile();
+                System.out.println("el fichero " + fichero.getName() + " ha sido creado");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        } else System.out.println("ya existe el fichero");
+        } else System.out.println("el fichero " + fichero.getName() + " ya existe");
     }
 }
