@@ -1,6 +1,7 @@
 import java.io.*;
 import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.SimpleTimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,12 +34,14 @@ public class Regex {
     //palabras que contiene.
 
     private static void ej1() {
-        String ruta = "data/archivo.txt";
+        String ruta = "./data";
+        File archivo = new File(ruta + "/archivo.txt");
+        comporbarSiExiste(archivo);
+
         BufferedReader bufferedReader = null;
         int contadorPalabras = 0;
-
         try {
-            bufferedReader = new BufferedReader(new FileReader(ruta));
+            bufferedReader = new BufferedReader(new FileReader(archivo));
             String linea = bufferedReader.readLine();
 
             while (linea != null) {
@@ -51,12 +54,10 @@ public class Regex {
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
-            if (bufferedReader != null) {
-                try {
-                    bufferedReader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
@@ -189,6 +190,43 @@ public class Regex {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+        }
+    }
+
+
+    private static void comporbarSiExiste(File archivo) {
+        if (archivo.isDirectory()) {
+            if (!archivo.exists()) {
+                archivo.mkdirs();
+                System.out.println("el archivo " + archivo.getName() + " ha sido creado correctamente");
+            } else System.out.println("el archivo " + archivo.getName() + " ya existe");
+        } else {
+            if (!archivo.exists()) {
+                try {
+                    archivo.createNewFile();
+                    System.out.println("el archivo " + archivo.getName() + " ha sido creado correctamente");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else System.out.println("el archivo " + archivo.getName() + " ya existe");
+        }
+    }
+    private static void escribirEnElFichero(File archivo) {
+        BufferedWriter bufferedWriter = null;
+        try {
+            bufferedWriter = new BufferedWriter(new FileWriter(archivo));
+            bufferedWriter.write("ahahhahahahhah\n" +
+                    "ahahhahahahhah\n" +
+                    "ahahhahahahhah\n" +
+                    "ahahhahahahhah\n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
