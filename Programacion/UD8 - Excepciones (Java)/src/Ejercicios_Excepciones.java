@@ -1,7 +1,5 @@
 import java.io.*;
-import java.rmi.StubNotFoundException;
 import java.util.*;
-import java.util.TreeMap;
 
 public class Ejercicios_Excepciones {
 
@@ -35,13 +33,7 @@ public class Ejercicios_Excepciones {
         int numero1 = 10;
         int numero2 = 0;
 
-        try {
-            int resultado = dividir(numero1, numero2);
-            System.out.println("El resultado de la división es: " + resultado);
-        } catch (ArithmeticException e) {
-            System.err.println("Error: División por cero.");
-            e.printStackTrace();
-        }
+        dividir(numero1, numero2);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -57,18 +49,11 @@ public class Ejercicios_Excepciones {
         comprobarSiExiste(data);
         comprobarSiExiste(archivo);
 
-        BufferedWriter bufferedWriter = null;
-        try {
-            bufferedWriter = new BufferedWriter(new FileWriter(archivo));
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(archivo))) {
             bufferedWriter.write("haaaa\nhaaaa\nhaaaa\nhaaaa\n");
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            try {
-                bufferedWriter.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            System.out.println("no se ha podido escribir en el fichero");
+            e.printStackTrace();
         }
     }
 
@@ -79,11 +64,17 @@ public class Ejercicios_Excepciones {
     //escribe un método que lance tus excepciones y otro método que las maneje.
 
     private static void ej3() {
-       try {
-           throw new falloArrayList("La lista no contiene tantos elementos");
-       } catch (falloArrayList e) {
-           System.out.println(e.getMessage());
-       }
+
+        try {
+            lanzarExcepciones();
+        } catch (MiExcepcionVerificada e) {
+            System.out.println("Capturamos la excepcion verificada:");
+            e.printStackTrace();
+        } catch (MiExcepcionNoVerificada e) {
+            System.out.println("Capturamos la excepcion no verificada:");
+            e.printStackTrace();
+            manejarExcepcion();
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -99,12 +90,6 @@ public class Ejercicios_Excepciones {
 
 //----------------------------------------------------------------------------------------------------------------------
 
-    public static int dividir(int dividendo, int divisor) {
-        if (divisor == 0) {
-            throw new ArithmeticException("División por cero.");
-        }
-        return dividendo / divisor;
-    }
     private static void comprobarSiExiste(File archivo) {
         if (archivo.isDirectory()) {
             if (!archivo.exists()) {
@@ -122,9 +107,36 @@ public class Ejercicios_Excepciones {
             } else System.out.println("el fichero " + archivo.getName() + " ya existe");
         }
     }
-    public static class falloArrayList extends Exception {
-        public falloArrayList(String error) {
-            super(error);
+    private static void dividir(int dividendo, int divisor) {
+        try {
+            int resultado = dividendo/divisor;
+            System.out.println("el resutado es: " + resultado);
+        } catch (ArithmeticException e) {
+            System.out.println("ha habido un error");
+            e.printStackTrace();
+        }
+    }
+    private static void manejarExcepcion() {
+        System.out.println("Excepción no verificada manejada.");
+    }
+    static class MiExcepcionVerificada extends Exception {
+        public MiExcepcionVerificada(String mensaje) {
+            super("Problema: " + mensaje);
+        }
+    }
+    static class MiExcepcionNoVerificada extends RuntimeException {
+        public MiExcepcionNoVerificada(String mensaje) {
+            super("Problema: " + mensaje);
+        }
+    }
+    private static void lanzarExcepciones() throws MiExcepcionVerificada, MiExcepcionNoVerificada {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce un número que no sea el 5 o el 6:");
+        int opcion = scanner.nextInt();
+        if (opcion == 5) {
+            throw new MiExcepcionVerificada("Esto es una excepción verificada");
+        } else if (opcion == 6) {
+            throw new MiExcepcionNoVerificada("Esto es una excepción no verificada");
         }
     }
 }
