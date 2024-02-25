@@ -1,0 +1,2 @@
+cree un archivo JavaScript para poder cambiar el color y las medidas del fieldset de soci.html ya que no he encontrado forma
+de cambairlo con css o bootstrap.

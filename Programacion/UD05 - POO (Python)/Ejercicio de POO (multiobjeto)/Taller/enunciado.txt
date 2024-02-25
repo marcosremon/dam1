@@ -1,0 +1,18 @@
+Vehículo:
+Implementa la estructura base "Vehículo" con los atributos "marca" y "modelo". Crea un método llamado "mostrar_info()" que retorne una cadena con la marca y modelo del vehículo.
+
+Coche:
+Extiende la estructura para representar un "Coche" con atributos adicionales como "color", "año de fabricación" y "kilometraje". Sobrescribe el método "mostrar_info()" para incluir toda la información relevante del coche.
+
+Motocicleta:
+Crea una estructura llamada "Motocicleta" que herede de "Vehículo" y añade atributos como "tipo de motor" y "cilindrada". Sobrescribe el método "mostrar_info()" para proporcionar la información completa de la motocicleta.
+
+Concesionario:
+Implementa la estructura "Concesionario" con el atributo "inventario" (una lista para almacenar los vehículos). Crea los métodos:
+
+agregar_vehiculo(vehiculo): Agrega un vehículo al inventario del concesionario.
+buscar_vehiculo(modelo): Busca un vehículo por modelo en el inventario y muestra su información si existe.
+eliminar_vehiculo(modelo): Elimina un vehículo del inventario por modelo.
+mostrar_inventario(): Muestra la información de todos los vehículos en el inventario.
+Programa Principal:
+En un programa principal, crea instancias de las estructuras mencionadas y realiza operaciones en el concesionario para demostrar su correcto funcionamiento.

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d33a1691-8d1b-41da-9c3d-8e280546a16e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Utilizacion_de_objetos_Ejercicios_1/Ejercicio3/Operaciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utilizacion_de_objetos_Ejercicios_1/Ejercicio3/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utilizacion_de_objetos_Ejercicios_1/Ejercicio4/Operaciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utilizacion_de_objetos_Ejercicios_1/Ejercicio4/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/archivo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/archivoEnMayusculas.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/documentos/PRO_UD08_Ej03/docs/exercises/programacion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/documentos/PRO_UD08_Ej03/docs/samples/programacion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/documentos/PRO_UD08_Ej03/programacion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejemplo_Directorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejemplo_Directorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejemplo_Escritura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejemplo_Escritura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejemplo_Fichero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejemplo_Fichero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicio01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicio02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicios_Repaso_Java.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicios_Repaso_Java.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicios_Repaso_Objetos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicios_Repaso_Objetos/Ejercicio1/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicios_Repaso_Objetos/Ejercicio1/Libro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicios_Repaso_Objetos/Ejercicio1/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicios_Repaso_Objetos/Ejercicio1/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilizacion_de_objetos_Ejercicios_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilizacion_de_objetos_Ejercicios_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejemplo_Directorio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejemplo_Escritura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejemplo_Fichero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicio01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicio02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Java.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos$1Libro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos$2Libro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio1/Libro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio1/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio2/Libro.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio2/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio3/indices.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio3/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Regex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD6 - Ficheros y Regex (Java)/out/production/tema6/Utilizacion_de_objetos_Ejercicios_1.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2cmp8gj9FbLfB1cjgHQiXrQebWE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Ejemplo_Escritura.executor": "Run",
+    "Application.Ejercicio01.executor": "Run",
+    "Application.Ejercicio01copia.executor": "Run",
+    "Application.Ejercicio02.executor": "Run",
+    "Application.Ejercicio02copia.executor": "Run",
+    "Application.Ejercicios_Repaso_Java.executor": "Run",
+    "Application.Ejercicios_Repaso_Javacopia.executor": "Run",
+    "Application.Ejercicios_Repaso_Objetoscopia.executor": "Run",
+    "Application.Regex.executor": "Run",
+    "Application.Regexcopia.executor": "Run",
+    "Application.Utilizacion_de_objetos_Ejercicios_1.executor": "Run",
+    "Application.Utilizacion_de_objetos_Ejercicios_1copia.executor": "Run",
+    "Application.amin.executor": "Run",
+    "Application.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Damr2 (2023-2025)/Programacion/UD07 - Estructuras de datos (Java)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="repaaso" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d33a1691-8d1b-41da-9c3d-8e280546a16e" name="Changes" comment="" />
+      <created>1708726451275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708726451275</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

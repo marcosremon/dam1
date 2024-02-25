@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE agenda_telefonica [
+<!ELEMENT agenda_telefonica (contacto+)>
+<!ELEMENT contacto (nombre,apellidos,direccion,telefonos)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT telefonos (casa?,movil?,trabajo?)>
+<!ELEMENT casa (#PCDATA)>
+<!ELEMENT movil (#PCDATA)>
+<!ELEMENT trabajo (#PCDATA)>
+
+]>
+
+<agenda_telefonica>
+    <contacto>
+        <nombre>Manuel</nombre>
+        <apellidos>Julve Doñate</apellidos>
+        <direccion>Calle juancarlos sue</direccion>
+        <telefonos>
+            <casa>978653223</casa>
+            <movil>654698563</movil>
+            <trabajo>786458321</trabajo>
+        </telefonos>
+    </contacto>
+
+    <contacto>
+        <nombre>Alberto</nombre>
+        <apellidos>Julian</apellidos>
+        <direccion>Calle manuelas</direccion>
+        <telefonos>
+            <movil>654698563</movil>
+        </telefonos>
+    </contacto>
+</agenda_telefonica>
