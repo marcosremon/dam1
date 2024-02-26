@@ -1,157 +1,148 @@
 import java.io.*;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 //Lo primero que debes hacer es recorrer todos los archivos del directorio e ir tratando cada
 //fichero que te encuentras. Una vez hecho esto debes, realizar un programa que nos diga:
-    // ¿Cuál es el equipo que más corredores tiene?
-    // ¿Cuál es el equipo que menos corredores tiene?
-    // Busca e indica en qué equipo se encuentra “Jonas Vingegaard”
-    // Indica cual el equipo con menor media de edad entre sus corredores.
-    // Indica cual es el equipo con mayor media de edad entre sus corredores.
-    // Cuál es el país que más corredores tiene e indica el número de corredores.
+// ¿Cuál es el equipo que más corredores tiene?
+// ¿Cuál es el equipo que menos corredores tiene?
+// Busca e indica en qué equipo se encuentra “Jonas Vingegaard”
+// Indica cual el equipo con menor media de edad entre sus corredores.
+// Indica cual es el equipo con mayor media de edad entre sus corredores.
+// Cuál es el país que más corredores tiene e indica el número de corredores.
 
 public class Ciclismo {
     public static void main(String[] args) {
         File movistar = new File("data/Movistar.txt");
         File jumbo = new File("data/JumboVisma.txt");
         File emirates = new File("data/UAE Team Emirates.txt");
-        crearArchivo(movistar);
-        crearArchivo(jumbo);
-        crearArchivo(emirates);
 
-        BufferedReader bufferedReader1 = null;
-        BufferedReader bufferedReader2 = null;
-        BufferedReader bufferedReader3 = null;
-        BufferedReader bufferedReader4 = null;
-        BufferedReader bufferedReader5 = null;
-        BufferedReader bufferedReader6 = null;
+        BufferedReader bufferedReaderMovistar = null;
+        BufferedReader bufferedReaderJumbo = null;
+        BufferedReader bufferedReaderEmirates = null;
+        BufferedReader bufferedReaderMovistarDatosParticipantes = null;
+        BufferedReader bufferedReaderJumboDatosParticipantes = null;
+        BufferedReader bufferedReaderEmiratesDatosParticipantes = null;
         try {
-            bufferedReader1 = new BufferedReader(new FileReader(movistar));
-            bufferedReader2 = new BufferedReader(new FileReader(jumbo));
-            bufferedReader3 = new BufferedReader(new FileReader(emirates));
-            bufferedReader4 = new BufferedReader(new FileReader(movistar));
-            bufferedReader5 = new BufferedReader(new FileReader(jumbo));
-            bufferedReader6 = new BufferedReader(new FileReader(emirates));
+            bufferedReaderMovistar = new BufferedReader(new FileReader(movistar));
+            bufferedReaderJumbo = new BufferedReader(new FileReader(jumbo));
+            bufferedReaderEmirates = new BufferedReader(new FileReader(emirates));
+            bufferedReaderMovistarDatosParticipantes = new BufferedReader(new FileReader(movistar));
+            bufferedReaderJumboDatosParticipantes = new BufferedReader(new FileReader(jumbo));
+            bufferedReaderEmiratesDatosParticipantes = new BufferedReader(new FileReader(emirates));
 
-            System.out.println("---------------------------------------------------");
+            System.out.println("-------------------------------------------------------------------------------------");
 
-            int movistarCorredores = contadorDeParticipantes(bufferedReader1);
-            System.out.println("Movistar tiene " + movistarCorredores + " corredores");
-            int jumboCorredores = contadorDeParticipantes(bufferedReader2);
-            System.out.println("JumboVisma tiene " + jumboCorredores + " corredores");
-            int emiratesCorredores = contadorDeParticipantes(bufferedReader3);
-            System.out.println("UAE Team Emirates tiene " + emiratesCorredores + " corredores");
+            int corredoresMovistar = contadorDeCorredores(bufferedReaderMovistar);
+            int corredoresJumbo = contadorDeCorredores(bufferedReaderJumbo);
+            int corredoresEmirates = contadorDeCorredores(bufferedReaderEmirates);
+            System.out.println("El equipo de Movistar tiene " + corredoresMovistar + " corredores");
+            System.out.println("El equipo de Jumbo tiene " + corredoresJumbo + " corredores");
+            System.out.println("El equipo de Emirates tiene " + corredoresEmirates + " corredores");
 
-            System.out.println("---------------------------------------------------");
+            System.out.println("-------------------------------------------------------------------------------------");
 
-            if (movistarCorredores > jumboCorredores && movistarCorredores > emiratesCorredores){
-                System.out.println("movistar es el equipo con mas corredores: " + movistarCorredores + " corredores");
-            } else if (jumboCorredores > movistarCorredores && jumboCorredores > emiratesCorredores) {
-                System.out.println("JumboVisma es el equipo con mas corredores: " + jumboCorredores + " corredores");
-            } else if (emiratesCorredores > jumboCorredores && emiratesCorredores > movistarCorredores) {
-                System.out.println("UAE Team Emirates es el equipo con mas corredores: " + emiratesCorredores +
-                        " corredores");
+            if (corredoresMovistar > corredoresJumbo && corredoresMovistar > corredoresEmirates) {
+                System.out.println("movistar es el equipo con mas corrredores con un total de " + corredoresMovistar);
+            } else if (corredoresJumbo > corredoresMovistar && corredoresJumbo > corredoresEmirates) {
+                System.out.println("Jumbo es el equipo con mas corrredores con un total de " + corredoresJumbo);
+            } else if (corredoresEmirates > corredoresMovistar && corredoresEmirates > corredoresJumbo) {
+                System.out.println("Emirates es el equipo con mas corrredores con un total de " + corredoresEmirates);
             }
 
-            System.out.println("---------------------------------------------------");
-
-            if (movistarCorredores < jumboCorredores && movistarCorredores < emiratesCorredores){
-                System.out.println("movistar es el equipo con menos corredores: " + movistarCorredores + " corredores");
-            } else if (jumboCorredores < movistarCorredores && jumboCorredores < emiratesCorredores) {
-                System.out.println("JumboVisma es el equipo con menos corredores: " + jumboCorredores + " corredores");
-            } else if (emiratesCorredores < jumboCorredores && emiratesCorredores < movistarCorredores) {
-                System.out.println("UAE Team Emirates es el equipo con menos corredores: " + emiratesCorredores +
-                        " corredores");
+            if (corredoresMovistar < corredoresJumbo && corredoresMovistar < corredoresEmirates) {
+                System.out.println("movistar es el equipo con menos corrredores con un total de " + corredoresMovistar);
+            } else if (corredoresJumbo < corredoresMovistar && corredoresJumbo < corredoresEmirates) {
+                System.out.println("Jumbo es el equipo con menos corrredores con un total de " + corredoresJumbo);
+            } else if (corredoresEmirates < corredoresMovistar && corredoresEmirates < corredoresJumbo) {
+                System.out.println("Emirates es el equipo con menos corrredores con un total de " + corredoresEmirates);
             }
 
-            System.out.println("---------------------------------------------------");
+            System.out.println("------------------------------------------------------------------------------------");
 
-            List<String> listaMovistarNombre = new ArrayList<>();
-            List<Integer> listaMovistarEdad = new ArrayList<>();
-            List<String> listaMovistarPais = new ArrayList<>();
-            List<String> listaJumboNombre = new ArrayList<>();
-            List<Integer> listaJumboEdad = new ArrayList<>();
-            List<String> listaJumboPais = new ArrayList<>();
-            List<String> listaEmiratesNombre = new ArrayList<>();
-            List<Integer> listaEmiratesEdad = new ArrayList<>();
-            List<String> listaEmiratesPais = new ArrayList<>();
+            List<String> movistarNombre = new ArrayList<>();
+            List<Integer> movistarEdad = new ArrayList<>();
+            List<String> movistarPais = new ArrayList<>();
+            List<String> jumboNombre = new ArrayList<>();
+            List<Integer> jumboEdad = new ArrayList<>();
+            List<String> jumboPais = new ArrayList<>();
+            List<String> emiratesNombre = new ArrayList<>();
+            List<Integer> emiratesEdad = new ArrayList<>();
+            List<String> emiratesPais = new ArrayList<>();
 
-            datosParticipante(bufferedReader4, listaMovistarNombre, listaMovistarEdad, listaMovistarPais);
-            datosParticipante(bufferedReader5, listaJumboNombre, listaJumboEdad, listaJumboPais);
-            datosParticipante(bufferedReader6, listaEmiratesNombre, listaEmiratesEdad, listaEmiratesPais);
-
-            if (listaMovistarNombre.contains("Jonas Vingegaard")) {
-                System.out.println("Jonas Vingegaard esta en el equipo de Movistar");
-            } else if (listaJumboNombre.contains("Jonas Vingegaard")) {
-                System.out.println("Jonas Vingegaard esta en el equipo de JumboVisma");
-            } else if (listaEmiratesNombre.contains("Jonas Vingegaard")) {
-                System.out.println("Jonas Vingegaard esta en el equipo de UAE Team Emirates");
+            datosParticipantes(bufferedReaderMovistarDatosParticipantes, movistarNombre, movistarEdad, movistarPais);
+            datosParticipantes(bufferedReaderJumboDatosParticipantes, jumboNombre, jumboEdad, jumboPais);
+            datosParticipantes(bufferedReaderEmiratesDatosParticipantes, emiratesNombre, emiratesEdad, emiratesPais);
+            if (movistarNombre.contains("Jonas Vingegaard")) {
+                System.out.println("Jonas Vingegaard pertenece a el equipo de Movistar");
+            } else if (jumboNombre.contains("Jonas Vingegaard")) {
+                System.out.println("Jonas Vingegaard pertenece a el equipo de Jumbo");
+            } else if (emiratesNombre.contains("Jonas Vingegaard")) {
+                System.out.println("Jonas Vingegaard pertenece a el equipo de Emirates");
             }
 
-            System.out.println("---------------------------------------------------");
+            System.out.println("------------------------------------------------------------------------------------");
 
-            double mediaEdadMovistar = mediaEdad(listaMovistarEdad);
-            double mediaEdadJumbo = mediaEdad(listaJumboEdad);
-            double mediaEdadEmirates = mediaEdad(listaEmiratesEdad);
+            int movistarMediaEdad = mediaDeEdad(movistarEdad);
+            int jumboMediaEdad = mediaDeEdad(jumboEdad);
+            int emiratesMediaEdad = mediaDeEdad(emiratesEdad);
+            System.out.println("la media de edad de el equipo Movistar es " + movistarMediaEdad);
+            System.out.println("la media de edad de el equipo Jumbo es " + jumboMediaEdad);
+            System.out.println("la media de edad de el equipo Emirates es " + emiratesMediaEdad);
 
-            if (mediaEdadMovistar > mediaEdadJumbo && mediaEdadMovistar > mediaEdadEmirates){
-                System.out.println("movistar es el equipo con la media de edad mas alta");
-            } else if (mediaEdadJumbo > mediaEdadMovistar && mediaEdadJumbo > mediaEdadEmirates) {
-                System.out.println("JumboVisma es el equipo con la media de edad mas alta");
-            } else if (mediaEdadEmirates > mediaEdadJumbo && mediaEdadEmirates > mediaEdadMovistar) {
-                System.out.println("UAE Team Emirates es el equipo con la media de edad mas alta");
+            System.out.println("------------------------------------------------------------------------------------");
+
+            if (movistarMediaEdad > jumboMediaEdad && movistarMediaEdad > emiratesMediaEdad) {
+                System.out.println("movistar es el equipo la media de edad mas alta " + movistarMediaEdad);
+            } else if (jumboMediaEdad > movistarMediaEdad && jumboMediaEdad > emiratesMediaEdad) {
+                System.out.println("Jumbo es el equipo la media de edad mas alta " + jumboMediaEdad);
+            } else if (emiratesMediaEdad > movistarMediaEdad && emiratesMediaEdad > jumboMediaEdad) {
+                System.out.println("Emirates es el equipo la media de edad mas alta " + emiratesMediaEdad);
             }
 
-            System.out.println("---------------------------------------------------");
-
-            if (mediaEdadMovistar < mediaEdadJumbo && mediaEdadMovistar < mediaEdadEmirates){
-                System.out.println("movistar es el equipo con la media de edad mas baja");
-            } else if (mediaEdadJumbo < mediaEdadMovistar && mediaEdadJumbo < mediaEdadEmirates) {
-                System.out.println("JumboVisma es el equipo con la media de edad mas baja");
-            } else if (mediaEdadEmirates < mediaEdadJumbo && mediaEdadEmirates < mediaEdadMovistar) {
-                System.out.println("UAE Team Emirates es el equipo con la media de edad mas baja");
+            if (movistarMediaEdad < jumboMediaEdad && movistarMediaEdad < emiratesMediaEdad) {
+                System.out.println("movistar es el equipo la media de edad mas baja " + movistarMediaEdad);
+            } else if (jumboMediaEdad < movistarMediaEdad && jumboMediaEdad < emiratesMediaEdad) {
+                System.out.println("Jumbo es el equipo la media de edad mas baja " + jumboMediaEdad);
+            } else if (emiratesMediaEdad < movistarMediaEdad && emiratesMediaEdad < jumboMediaEdad) {
+                System.out.println("Emirates es el equipo la media de edad mas baja " + emiratesMediaEdad);
             }
-
-            System.out.println("---------------------------------------------------");
 
             List<String> corredoresTotales = new ArrayList<>();
-            corredoresTotales.addAll(listaMovistarPais);
-            corredoresTotales.addAll(listaJumboPais);
-            corredoresTotales.addAll(listaEmiratesPais);
+            corredoresTotales.addAll(movistarPais);
+            corredoresTotales.addAll(jumboPais);
+            corredoresTotales.addAll(emiratesPais);
+            Set<String> paisesSinDuplicados = new LinkedHashSet<>(corredoresTotales);
 
-            Set<String> corredoresTotalesSinDupes = new LinkedHashSet<>(corredoresTotales);
+            int corredoresMax = 0;
             String paisConMasCorredores = "";
-            int contadorMaximo = 0;
-
-            for (String pais : corredoresTotalesSinDupes) {
+            for (String i : paisesSinDuplicados) {
                 int contador = 0;
                 for (String j : corredoresTotales) {
-                    if (j.equals(pais)) {
+                    if (j.equals(i)) {
                         contador++;
                     }
                 }
-                if (contador > contadorMaximo) {
-                    paisConMasCorredores = pais;
-                    contadorMaximo = contador;
+                if (contador > corredoresMax) {
+                    corredoresMax = contador;
+                    paisConMasCorredores = i;
                 }
             }
-            System.out.println("el pais con mas corredores es " + paisConMasCorredores + " con un total de " +
-                    contadorMaximo + " corredores");
+
+            System.out.println("------------------------------------------------------------------------------------");
+
+            System.out.println("el pais con mas corredores es " + paisConMasCorredores + " con " + corredoresMax +
+                    " corredores");
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         } finally {
             try {
-                bufferedReader1.close();
-                bufferedReader2.close();
-                bufferedReader3.close();
-                bufferedReader4.close();
-                bufferedReader5.close();
-                bufferedReader6.close();
+                bufferedReaderMovistar.close();
+                bufferedReaderJumbo.close();
+                bufferedReaderEmirates.close();
+                bufferedReaderMovistarDatosParticipantes.close();
+                bufferedReaderJumboDatosParticipantes.close();
+                bufferedReaderEmiratesDatosParticipantes.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -160,49 +151,45 @@ public class Ciclismo {
 
 //----------------------------------------------------------------------------------------------------------------------
 
-    private static int contadorDeParticipantes(BufferedReader bufferedReader1) throws IOException {
-        String linea;
+    private static int contadorDeCorredores(BufferedReader bufferedReader) {
         int contador = 0;
-        while ((linea = bufferedReader1.readLine()) != null) {
-            contador++;
-            String[] partes = linea.split("\\|");
-        }
-        return contador;
-    }
-    private static void datosParticipante(BufferedReader bufferedReader, List<String> listaNombre,
-                                          List<Integer> listaEdad,
-                                          List<String> listaPais) throws IOException {
         String linea;
-        while ((linea = bufferedReader.readLine()) != null) {
-            String[] partes = linea.split("\\|");
-            String nombre = partes[0].trim();
-            String pais = partes[1].trim();
-            Integer edad = Integer.valueOf(partes[2].replace("años", "").replace(".", "").trim());
-            listaNombre.add(nombre);
-            listaEdad.add(edad);
-            listaPais.add(pais);
-        }
-    }
-    private static double mediaEdad(List<Integer> listaEdad) {
-        int media = 0;
-        for (int i : listaEdad) {
-            media += i;
-        }
-        media = media/listaEdad.size();
-        return media;
-    }
-    public static void crearArchivo(File archivo) {
-        if (!archivo.exists()) {
-            String regexPunto = "\\.\\w+";
-            Pattern patternPunto = Pattern.compile(regexPunto);
-            Matcher matcherPunto = patternPunto.matcher(archivo.getName());
-            if (matcherPunto.find()) {
-                try {
-                    archivo.createNewFile();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+        while (true) {
+            try {
+                while (((linea = bufferedReader.readLine()) != null)) {
+                    contador++;
                 }
-            } else archivo.mkdirs();
-        } else System.out.println("el archivo " + archivo.getName() + " ya existe");
+                return contador;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+    private static void datosParticipantes(BufferedReader bufferedReader,
+                                           List<String> listaNombre,
+                                           List<Integer> listaEdad,
+                                           List<String> listaPais) {
+        String linea;
+        try {
+            while (((linea = bufferedReader.readLine()) != null)) {
+                String[] separacionesDelTexto = linea.split("\\|");
+                String nombre = separacionesDelTexto[0].trim();
+                String pais = separacionesDelTexto[1].trim();
+                Integer edad = Integer.valueOf(separacionesDelTexto[2].
+                        replace("años", "").replace(".", "").trim());
+                listaNombre.add(nombre);
+                listaEdad.add(edad);
+                listaPais.add(pais);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private static int mediaDeEdad(List<Integer> listaEdad) {
+        int suma = 0;
+        for (int i : listaEdad) {
+            suma += i;
+        }
+        return suma/listaEdad.size();
     }
 }

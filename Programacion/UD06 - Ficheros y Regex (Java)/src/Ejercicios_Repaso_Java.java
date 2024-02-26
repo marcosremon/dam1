@@ -1,5 +1,3 @@
-import com.sun.source.tree.BreakTree;
-import javax.xml.validation.SchemaFactoryConfigurationError;
 import java.util.*;
 
 public class Ejercicios_Repaso_Java {
@@ -63,75 +61,62 @@ public class Ejercicios_Repaso_Java {
     //toString para todas las clases y los métodos get y set.
 
     private static void ej2() {
-        abstract class Figura {
-            protected String nombre;
-            public String getNombre() {
-                return nombre;
-            }
-            public void setNombre(String nombre) {
-                this.nombre = nombre;
-            }
+        class Figura {
+            String nombre;
             public Figura(String nombre) {
                 this.nombre = nombre;
             }
-            public float area() {
+            public double area() {
                 return 0;
             }
-            public float perimetro() {
+            public double perimetro() {
                 return 0;
+            }
+            public void mostrarInfo(){
+                System.out.print("el nombre de la figura es " + this.nombre);
             }
         }
+
+        class Circulo extends Figura{
+            double radio;
+            double PI = Math.PI;
+
+            public Circulo(String nombre, int radio) {
+                super(nombre);
+                this.radio = radio;
+            }
+            @Override
+            public double area() {
+                return this.PI*(radio*radio);
+            }
+            @Override
+            public double perimetro() {
+                return 2*PI*radio;
+            }
+
+            @Override
+            public void mostrarInfo() {
+                super.mostrarInfo();
+                System.out.print(" el perimetro del circulo es " + this.perimetro() + " y el area es " + this.area());
+            }
+        }
+
         class Rectangulo extends Figura {
-            private float base;
-            private float altura;
-            public Rectangulo(String nombre, float base, float altura) {
+            int base;
+            int altura;
+
+            public Rectangulo(String nombre, int base, int altura) {
                 super(nombre);
                 this.base = base;
                 this.altura = altura;
             }
-            public float getBase() {
-                return base;
-            }
-            public void setBase(float base) {
-                this.base = base;
-            }
-            public float getAltura() {
-                return altura;
-            }
-            public void setAltura(float altura) {
-                this.altura = altura;
+            @Override
+            public double area() {
+                return this.base*this.altura;
             }
             @Override
-            public float area() {
-                return base*altura;
-            }
-
-            @Override
-            public float perimetro() {
-                return (base*2) + (altura*2);
-            }
-        }
-        class Circulo extends Figura {
-            private final static float PI = (float) Math.PI;
-            private float radio;
-            public Circulo(String nombre, float radio) {
-                super(nombre);
-                this.radio = radio;
-            }
-            public float getRadio() {
-                return radio;
-            }
-            public void setRadio(float radio) {
-                this.radio = radio;
-            }
-            @Override
-            public float area() {
-                return 2 * PI * radio;
-            }
-
-            @Override
-            public float perimetro() {
-                return PI * (radio*radio);
+            public double perimetro() {
+                return (this.base*2)+(this.altura*2);
             }
         }
     }
