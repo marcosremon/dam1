@@ -19,7 +19,7 @@ public class Ejercicio3 {
                     contador++;
                 }
             }
-            System.out.println(contador);
+            System.out.println("hay " + contador + " palabras que acaban en la letra 's'");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
