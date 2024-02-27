@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d33a1691-8d1b-41da-9c3d-8e280546a16e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/a/Circulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/a/Figura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/a/Rectangulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/a/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/1er trimestre/global.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/1er trimestre/global.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java$1Circulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java$1Circulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java$1Figura.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java$1Figura.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java$1Rectangulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java$1Rectangulo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Java.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio1/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio1/Libro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio1/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tema6/Ejercicios_Repaso_Objetos/Ejercicio1/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ejercicios_Repaso_Java.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicios_Repaso_Java.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/data/Miequipo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/out/production/a/Ciclismo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/out/production/a/Ciclismo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/out/production/a/Ciclismoo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/out/production/a/Ciclismoo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/src/Ciclismo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/src/Ciclismo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +50,7 @@
     "Application.Regexcopia.executor": "Run",
     "Application.Utilizacion_de_objetos_Ejercicios_1.executor": "Run",
     "Application.Utilizacion_de_objetos_Ejercicios_1copia.executor": "Run",
+    "Application.a.executor": "Run",
     "Application.amin.executor": "Run",
     "Application.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
