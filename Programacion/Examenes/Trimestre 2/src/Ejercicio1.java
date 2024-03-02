@@ -9,7 +9,6 @@ public class Ejercicio1 {
             int aleatorio = random.nextInt(50);
             almacenDeNumeros.add(aleatorio);
         }
-
         Map<Integer, Integer> contadorDeNumeros = new HashMap<>();
 
         for (int j : almacenDeNumeros) {
