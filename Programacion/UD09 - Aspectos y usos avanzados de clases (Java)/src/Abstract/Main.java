@@ -4,10 +4,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,25 +47,24 @@ public class Main {
         listaDeLadrones.add(diputado3);
         listaDeLadrones.add(senador);
 
-        System.out.println(listaDeLadrones);
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fichero, true));
+        BufferedWriter bufferedWriter = null;
         for (Legislador i : listaDeLadrones) {
             try {
+                bufferedWriter = new BufferedWriter(new FileWriter(fichero, true));
                 bufferedWriter.write(i.toString().replace(",","\n")
-                        .replace("null","").trim());
+                        .replace("null","").replace("=", " = ").trim());
                 bufferedWriter.newLine();
-                bufferedWriter.write("-------------------------------------------------");
                 bufferedWriter.newLine();
             } catch (IOException e) {
                 throw new RuntimeException(e);
+            } finally {
+                bufferedWriter.close();
             }
         }
-        try {
-            bufferedWriter.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
+
+//----------------------------------------------------------------------------------------------------------------------
+
     private static void crearArchivo(File archivo) {
         if (!archivo.exists()) {
             String nombreArchivo = archivo.getName();

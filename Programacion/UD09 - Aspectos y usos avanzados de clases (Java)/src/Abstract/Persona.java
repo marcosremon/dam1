@@ -6,7 +6,6 @@ public class Persona {
 
     public Persona() {
     }
-
     public Persona(String nombre, String dni) {
         this.nombre = nombre;
         this.dni = dni;
@@ -23,7 +22,6 @@ public class Persona {
     public void setDni(String dni) {
         this.dni = dni;
     }
-
     @Override
     public String toString() {
         return "Persona{" +

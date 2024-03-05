@@ -7,7 +7,7 @@ public class Senador extends Legislador {
     }
     @Override
     public String toString() {
-        return "Senador{" +
+        return "Senador" +
                 "provinciaQueRepresenta='" + provinciaQueRepresenta + '\'' +
                 ",partidoPolitico='" + partidoPolitico + '\'' +
                 ",nombre='" + nombre + '\'' +
