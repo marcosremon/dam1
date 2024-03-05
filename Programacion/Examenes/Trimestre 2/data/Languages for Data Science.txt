@@ -1,0 +1,47 @@
+Languages for Data Science
+In theory, every sufficiently powerful programming language is capable of expressing
+any algorithm worth computing. But in practice, certain programming
+languages prove much better than others at specific tasks. Better here might
+denote easier for the programmer or perhaps more computationally efficient,
+depending upon the mission at hand.
+The primary data science programming languages to be aware of are:
+
+* Python: This is today's bread-and-butter programming language for data
+science. Python contains a variety of language features to make basic
+data munging easier, like regular expressions. It is an interpreted language,
+making the development process quicker and enjoyable. Python
+is supported by an enormous variety of libraries, doing everything from
+scraping to visualization to linear algebra and machine learning.
+Perhaps the biggest strike against Python is efficiency: interpreted languages
+cannot compete with compiled ones for speed. But Python compilers
+exist in a fashion, and support linking in efficient C/assembly language
+libraries for computationally-intensive tasks. Bottom line, Python should
+probably be your primary tool in working through the material we present
+in this book.
+
+* Perl: This used to be the go to language for data munging on the web,
+before Python ate it for lunch. In the TIOBE programming language popularity
+index (http://www.tiobe.com/tiobe-index), Python First exceeded
+Perl in popularity in 2008 and hasn't looked back. There are several
+reasons for this, including stronger support for object-oriented programming
+and better available libraries, but the bottom line is that there are
+few good reasons to start projects in Perl at this point. Don't be surprised
+if you encounter it in some legacy project, however.
+
+* R: This is the programming language of statisticians, with the deepest
+libraries available for data analysis and visualization. The data science
+world is split between R and Python camps, with R perhaps more suitable
+for exploration and Python better for production use. The style of
+interaction with R is somewhat of an acquired taste, so I encourage you
+to play with it a bit to see whether it feels natural to you.
+Linkages exist between R and Python, so you can conveniently call R
+library functions in Python code. This provides access to advanced statistical
+methods, which may not be supported by the native Python libraries.
+
+* Matlab: The Mat here stands for matrix, as Matlab is a language designed
+for the fast and efficient manipulation of matrices. As we will see,
+many machine learning algorithms reduce to operations on matrices, making
+Matlab a natural choice for engineers programming at a high-level of
+abstraction.
+Matlab is a proprietary system. However, much of its functionality is
+available in GNU Octave, an open-source alternative.
