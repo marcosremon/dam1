@@ -1,4 +1,4 @@
-package Abstract;
+package Abstract.Ejercicio3;
 
 public class Diputado extends Legislador {
     @Override

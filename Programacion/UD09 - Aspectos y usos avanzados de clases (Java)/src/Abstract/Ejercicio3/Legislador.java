@@ -1,4 +1,4 @@
-package Abstract;
+package Abstract.Ejercicio3;
 
 public abstract class Legislador extends Persona {
     String provinciaQueRepresenta;

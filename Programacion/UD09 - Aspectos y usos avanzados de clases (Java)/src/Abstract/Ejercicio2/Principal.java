@@ -1,4 +1,4 @@
-package Abstract;
+package Abstract.Ejercicio2;
 
 //importar diputado y senador del ejercicio 3
 

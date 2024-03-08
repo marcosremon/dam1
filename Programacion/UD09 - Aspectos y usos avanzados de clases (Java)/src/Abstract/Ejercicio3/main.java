@@ -1,4 +1,4 @@
-package Abstract;
+package Abstract.Ejercicio3;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,7 +13,7 @@ public class main {
     public static void main(String[] args) throws IOException {
         List<Legislador> listaDeLadrones = new ArrayList<>();
         File ruta = new File("data");
-        File fichero = new File("data/ladrones.txt");
+        File fichero = new File("data/ladronesEjercicio3.txt");
         crearArchivo(ruta);
         crearArchivo(fichero);
 
@@ -52,7 +52,6 @@ public class main {
             try {
                 bufferedWriter = new BufferedWriter(new FileWriter(fichero, true));
                 bufferedWriter.write(i.toString());
-                bufferedWriter.newLine();
                 bufferedWriter.newLine();
             } catch (IOException e) {
                 throw new RuntimeException(e);

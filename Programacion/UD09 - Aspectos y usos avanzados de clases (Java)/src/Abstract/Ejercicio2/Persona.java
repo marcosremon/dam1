@@ -1,4 +1,4 @@
-package Abstract;
+package Abstract.Ejercicio2;
 
 public class Persona {
     String nombre;
