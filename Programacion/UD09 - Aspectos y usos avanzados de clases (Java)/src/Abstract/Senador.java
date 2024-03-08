@@ -7,10 +7,10 @@ public class Senador extends Legislador {
     }
     @Override
     public String toString() {
-        return "Senador" +
-                "provinciaQueRepresenta='" + provinciaQueRepresenta + '\'' +
-                ",partidoPolitico='" + partidoPolitico + '\'' +
-                ",nombre='" + nombre + '\'' +
-                ",dni='" + dni + '\'';
+        return "Senador:\n" +
+                super.getNombre() + '\n' +
+                super.getDni() + '\n' +
+                super.getPartidoPolitico() + nombre + '\n' +
+                super.getProvinciaQueRepresenta() + dni + '\n' ;
     }
 }

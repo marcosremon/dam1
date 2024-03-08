@@ -4,49 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac17c8bd-a08c-4d1b-ba5e-da6911cc534d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Programacion/UD09 - Aspectos y usos avanzados de clases (Java)/src/Abstract/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programacion/UD09 - Aspectos y usos avanzados de clases (Java)/src/Abstract/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="effb5002-ae28-4eaf-8ba9-9b212bbb506e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2bhdZXb0IxB8AjKhsU2nDwVIGAR" />
+  <component name="ProjectId" id="2cHHuTLjso6RG1agwyn9v31syXa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Python.global.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/isard/Documents/dam1&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/dam1/Documents/Dam1 y Dam2(2023-2025)/Programacion/Ejercicios de python en java&quot;
   }
 }</component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
-      </set>
-    </attachedChunks>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ac17c8bd-a08c-4d1b-ba5e-da6911cc534d" name="Changes" comment="" />
-      <created>1706671301029</created>
+      <changelist id="effb5002-ae28-4eaf-8ba9-9b212bbb506e" name="Changes" comment="" />
+      <created>1707761806123</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1706671301029</updated>
+      <updated>1707761806123</updated>
     </task>
     <servers />
   </component>

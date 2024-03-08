@@ -7,10 +7,10 @@ public class Diputado extends Legislador {
     }
     @Override
     public String toString() {
-        return "Diputado" +
-                "provinciaQueRepresenta='" + provinciaQueRepresenta + '\'' +
-                ",partidoPolitico='" + partidoPolitico + '\'' +
-                ",nombre='" + nombre + '\'' +
-                ",dni='" + dni + '\'' ;
+        return "Diputado:\n" +
+                super.getNombre() + '\n' +
+                super.getDni() + '\n' +
+                super.getPartidoPolitico() + nombre + '\n' +
+                super.getProvinciaQueRepresenta() + dni + '\n' ;
     }
 }

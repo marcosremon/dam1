@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Main {
+public class main {
     public static void main(String[] args) throws IOException {
         List<Legislador> listaDeLadrones = new ArrayList<>();
         File ruta = new File("data");
@@ -51,8 +51,7 @@ public class Main {
         for (Legislador i : listaDeLadrones) {
             try {
                 bufferedWriter = new BufferedWriter(new FileWriter(fichero, true));
-                bufferedWriter.write(i.toString().replace(",","\n")
-                        .replace("null","").replace("=", " = ").trim());
+                bufferedWriter.write(i.toString());
                 bufferedWriter.newLine();
                 bufferedWriter.newLine();
             } catch (IOException e) {
