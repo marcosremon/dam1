@@ -9,7 +9,7 @@ public class Ejercicios_UD2_01 {
 
     public static void main(String[] args) {
         do {
-            System.out.print("Ejercicio: ");
+            System.out.println("Ejercicio: ");
             int ej = scanner.nextInt();
             scanner.nextLine();
 
@@ -187,11 +187,10 @@ public class Ejercicios_UD2_01 {
         if (anyo % 4 == 0) {
             if (anyo % 100 == 0) {
                 if (anyo % 400 == 0) {
-                    System.out.println("es bisiesto");
-                }
-                System.out.println("no es bisiesto");
-            } else System.out.println("es bisiesto");
-        } else System.out.println("no es bisiesto");
+                    System.out.println("el año " + anyo + " es bisiesto");
+                } else System.out.println("el año " + anyo + " no es bisiesto");
+            } else System.out.println("el año " + anyo + " es bisiesto");
+        } else System.out.println("el año " + anyo + " no es bisiesto");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -220,18 +219,19 @@ public class Ejercicios_UD2_01 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("dime el primer numero");
-        double numero1 = scanner.nextDouble();
+        int numero1 = scanner.nextInt();
         System.out.println("dime el segundo numero");
-        double numero2 = scanner.nextDouble();
+        int numero2 = scanner.nextInt();
 
-        if (numero1 > numero2) {
-            double resta = numero1 - numero2;
-            System.out.println("el primero es mayor y la resta es " + resta);
-        } else {
-            double resta = numero2 - numero1;
-            System.out.println("el segundo es mayor y la resta es " + resta);
-        }
-
+        if (numero1 != numero2) {
+            if (numero1 > numero2) {
+                int resta = numero1 - numero2;
+                System.out.println("el primero es mayor y la resta es " + resta);
+            } else {
+                int resta = numero2 - numero1;
+                System.out.println("el segundo es mayor y la resta es " + resta);
+            }
+        } else System.out.println("el numero: " + numero1 + " y el numero 2: " + numero2 + " son iguales");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -251,7 +251,7 @@ public class Ejercicios_UD2_01 {
         if (medida.equals("f")) {
             double conversion = (grados - 32) / 1.8;
             System.out.println("tenias originalmente " + grados + " grados farenheit ahora tines " + conversion
-                               + " grados celsius");
+                    + " grados celsius");
         } else {
             double conversion = (9/8) * grados + 32;
             System.out.println("tenias originalmente " + grados + " grados celsius ahora tines " + conversion
@@ -312,17 +312,19 @@ public class Ejercicios_UD2_01 {
     //y el resto es el valor de la última resta (2)
 
     private static void ej13() {
-        double dividendo = 18;
-        double divisor = 4;
-        double resta = dividendo - divisor;
-        int contador = 1;
+        int dividendo = 18;
+        int divisor = 4;
+        int resta = divisor + 1;
+        int contador = 0;
 
-        while (resta > divisor) {
-            resta -= divisor;
-            contador += 1;
+        while (true) {
+            if (divisor < resta) {
+                resta = dividendo - divisor;
+                contador++;
+                dividendo -= 4;
+            } else break;
         }
-        System.out.println("se han echo " + contador + " restas por lo tanto el cociente es: " + contador + " y el" +
-                "resto es: " + resta);
+        System.out.println("el cociente de la resta es: " + contador + " y el resto de la division es: " + resta);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -337,14 +339,12 @@ public class Ejercicios_UD2_01 {
         System.out.println("dime un numero entero");
         int numero = scanner.nextInt();
         String numeroStr = String.valueOf(numero);
+        int numeroDeCaracteres;
 
         if (numero >= 0) {
-            int numeroDeCaracteres = numeroStr.length();
-            System.out.println("el numero que indicaste tiene " + numeroDeCaracteres + " numeros");
-        } else {
-            int numeroDeCaracteres = numeroStr.length() - 1;
-            System.out.println("el numero que indicaste tiene " + numeroDeCaracteres + " numeros");
-        }
+            numeroDeCaracteres = numeroStr.length();
+        } else numeroDeCaracteres = numeroStr.length() - 1;
+        System.out.println("el numero que indicaste tiene " + numeroDeCaracteres + " cifras");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -438,9 +438,21 @@ public class Ejercicios_UD2_01 {
     private static void ej17() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("dime un numero y sacamos su raiz cuadrada");
-        double numero = scanner.nextInt();
-        System.out.println("la raiz cuadrada del numero " + numero + " es: " + Math.sqrt(numero));
+        System.out.println("dime el valor de a:");
+        int valorA = scanner.nextInt();
+        System.out.println("dime el valor de b:");
+        int valorB = scanner.nextInt();
+        System.out.println("dime el valor de c:");
+        int valorC = scanner.nextInt();
+
+        double interiorRaiz = Math.pow(valorB,2)-(4 * valorA * valorC);
+        double raiz = Math.sqrt(interiorRaiz);
+        double ecuacionSegundoGradoPositiva = (-valorB + raiz) / (2 * valorA);
+        double ecuacionSegundoGradoNegativa = (-valorB - raiz) / (2 * valorA);
+        if (interiorRaiz >= 0) {
+            System.out.println("los resutados de la raiz cuadrada de segundo grado son: "
+                    + ecuacionSegundoGradoPositiva + " " + ecuacionSegundoGradoNegativa);
+        } else System.out.println("no se puede resolver por que da un numero negativo");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -508,7 +520,42 @@ public class Ejercicios_UD2_01 {
     //deducir el número de días del mes.
 
     private static void ej20() {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> añobisiesto = Arrays.asList(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+        List<Integer> añoNoBisiesto = Arrays.asList(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+        List<String> mesesNombre = Arrays.asList("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+                "agosto", "septiembre", "octubre", "noviembre", "diciembre");
+        List<Integer> mesesNumero = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 
+        System.out.println("introduce un año");
+        int año = scanner.nextInt();
+        System.out.print("dime un mes, ¿como lo vas a introducir? [nombre/numero]: ");
+        String eleccion = scanner.next().toLowerCase();
+        boolean bisiesto;
+
+        if (año % 4 == 0) {
+            if (año % 100 == 0) {
+                if (año % 400 == 0) {
+                    bisiesto = true;
+                } else bisiesto = false;
+            } else bisiesto = true;
+        } else bisiesto = false;
+
+        if (eleccion.equals("nombre")) {
+            System.out.println("dime el nombre del mes");
+            String mes = scanner.next();
+            int valor = mesesNombre.indexOf(mes);
+            if (bisiesto) {
+                System.out.println("el mes: " + mes + " tiene " + añobisiesto.get(valor) + " dias.");
+            } else System.out.println("el mes: " + mes + " tiene " + añoNoBisiesto.get(valor) + " dias.");
+        } else if (eleccion.equals("numero")) {
+            System.out.println("dime el numero del mes");
+            int mes = scanner.nextInt();
+            int valor = mesesNumero.indexOf(mes);
+            if (bisiesto) {
+                System.out.println("el mes: " + mes + " tiene " + añobisiesto.get(valor) + " dias.");
+            } else System.out.println("el mes: " + mes + " tiene " + añoNoBisiesto.get(valor) + " dias.");
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -517,13 +564,11 @@ public class Ejercicios_UD2_01 {
     //Escribe todos los números pares entre 1 y 20.
 
     private static void ej21() {
-        ArrayList<Integer> pares = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 1; i < 20; i++) {
             if (i % 2 == 0) {
-                pares.add(i);
+                System.out.println(i);
             }
         }
-        System.out.println("la lista de pares es: " + pares);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -550,11 +595,12 @@ public class Ejercicios_UD2_01 {
     //número por todos los números menores que él. Ejemplo: 4! = 4*3*2*1 = 24.
 
     private static void ej23() {
-        int numerofactorial = 4;
-        for (int i = numerofactorial - 1; i > 0; i--) {
-               numerofactorial *= i;
+        int numero = 4;
+        int factorial = 1;
+        for (int i = numero; i >= 1; i--) {
+            factorial *= i;
         }
-        System.out.println(numerofactorial);
+        System.out.println(factorial);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -625,8 +671,7 @@ public class Ejercicios_UD2_01 {
 //----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 27:
-    //Diseña un algoritmo que pida números hasta que se le introduzca un número mayor
-    //que 100.
+    //Diseña un algoritmo que pida números hasta que se le introduzca un número mayor que 100.
 
     private static void ej27() {
         Scanner scanner = new Scanner(System.in);
@@ -768,8 +813,13 @@ public class Ejercicios_UD2_01 {
     //resultados: 1, X y 2.
 
     private static void ej34() {
+        Random random = new Random();
 
-
+        for (int i = 0; i < 15; i++) {
+            int numeroAleatorio1 = random.nextInt(1,3);
+            int numeroAleatorio2 = random.nextInt(1,3);
+            System.out.println(numeroAleatorio1 + " x " + numeroAleatorio2);
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -779,8 +829,21 @@ public class Ejercicios_UD2_01 {
     //al azar; después indica cuantos aciertos se han producido.
 
     private static void ej35() {
+        Random random = new Random();
+        int contador = 0;
 
-
+        System.out.println("los reultados de la apuesta son:");
+        for (int i = 0; i < 15; i++) {
+            int apuesta1 = random.nextInt(1,3);
+            int apuesta2 = random.nextInt(1,3);
+            int numeroAleatorio1 = random.nextInt(1,3);
+            int numeroAleatorio2 = random.nextInt(1,3);
+            System.out.println(numeroAleatorio1 + " x " + numeroAleatorio2);
+            if (apuesta1 == numeroAleatorio1 && apuesta2 == numeroAleatorio2) {
+                contador++;
+            }
+        }
+        System.out.println("has tenido " + contador + " aciertos");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -803,17 +866,17 @@ public class Ejercicios_UD2_01 {
 
         System.out.println("que quieres hacer: \n\t suma --> s \n\t resta --> r \n\t division --> d \n\t " +
                 "multiplicacion --> m");
-        String operacion = scanner.next();
-        if (operacion.toLowerCase() == "s") {
+        String operacion = scanner.next().toLowerCase();
+        if (operacion.equals("s")) {
             resultado = numero1 + numero2;
             System.out.println("el resultado de la suma es: " + resultado);
-        } else if (operacion.toLowerCase() == "r") {
+        } else if (operacion.equals("r")) {
             resultado = numero1 - numero2;
             System.out.println("el resultado de la resta es: " + resultado);
-        } else if (operacion.toLowerCase() == "d") {
+        } else if (operacion.equals("d")) {
             resultado = numero1 / numero2;
             System.out.println("el resultado de la division es: " + resultado);
-        } else if (operacion.toLowerCase() == "m") {
+        } else if (operacion.equals("m")) {
             resultado = numero1 * numero2;
             System.out.println("el resultado de la multiplicacion es: " + resultado);
         } else System.out.println("lo que introdujiste no esta contemplado");
@@ -875,6 +938,7 @@ public class Ejercicios_UD2_01 {
     }
 
 //----------------------------------------------------------------------------------------------------------------------
+
     public static boolean esPrimo(int numero) {
         if (numero <= 1) {
             return false;

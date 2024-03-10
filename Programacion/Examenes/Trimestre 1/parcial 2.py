@@ -22,6 +22,9 @@ def main():
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+#Escribe un programa en Python que tome una lista de nombres y elimine aquellos que aparezcan tres o más veces
+#en la lista. Después de aplicar este filtro, imprime la lista resultante.
+
 def ej1():
 
     lista = ["Antonio", "Juan", "Juan", "Pedro", "Lucas", "Ana", "Julian", "Ana", "Juan",
@@ -34,6 +37,22 @@ def ej1():
     print(lista)
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Define una clase base llamada Empleado, que tiene los siguientes atributos: nombre: El nombre del empleado (str).
+#edad: La edad del empleado (int) salario: El salario del empleado (float).
+#Además, la clase Empleado tiene un atributo predeterminado llamado bono, inicializado en 10.0.
+#Luego, crea dos clases derivadas de Empleado: La clase Desarrollador, que tiene un atributo adicional llamado
+#lenguaje (Str). La clase Gerente, que tiene un atributo adicional llamado departamento (str). Cada clase derivada
+#debe tener un método llamado calcular_bono() que actualice el atributo bono de acuerdo con ciertas reglas:
+#Para los desarrolladores, el bono se calcula como el 15% de su salario. Para los gerentes, el bono se calcula
+#como el 20% de su salario. Cada clase derivada también debe tener un método llamado mostrar_info() que imprima
+#la información del empleado, incluyendo su nombre, edad, salario, área de trabajo
+#(ya sea el lenguaje para desarrolladores o el departamento para gerentes) y el bono actual.
+#Finalmente, crea dos instancias de trabajadores:
+#trabajador1: Un desarrollador llamado Juan, de 23 años, con un salario de 2000.0€, trabajando en Python.
+#trabajador2: Un gerente llamado Manuel, de 22 años, con un salario de 1922.0€, trabajando en el departamento de Informática.
+#Llama al método calcular_bono() para cada uno de los trabajadores y luego al método mostrar_info() para mostrar
+#la información completa de cada trabajador, incluyendo su bono actualizado.
 
 def ej2():
     
@@ -92,6 +111,10 @@ def ej2():
 
 def ej3():
 
+    #Escribe un programa en Python que encuentre el primer número primo mayor que un número dado entre los
+    #Entrada: 24
+    #Salida: 29
+
     numero = 24
     primos = []
 
@@ -111,7 +134,28 @@ def ej3():
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+#Define una clase llamada Ficha que tenga los siguientes atributos:
+#id: El identificador único de la ficha (cadena de caracteres).
+#titulo: El título de la ficha (cadena de caracteres).
+#Además, la clase Ficha tiene un método mostrar_info() que devuelve una cadena con la información de la ficha.
+#Crea tres clases derivadas de Ficha:
+#Dvd: Representa un DVD, con atributos adicionales como director, año de producción y tipo.
+#Libro: Representa un libro, con atributos adicionales como autor y editorial.
+#Revista: Representa una revista, con atributos adicionales como número de revistas y año de publicación.
+#Cada una de estas clases debe tener un método mostrar_info() que imprima la información específica de cada tipo de ficha.
+#Define una clase llamada Biblioteca que tenga listas separadas para almacenar DVDs, libros y revistas.
+#Implementa los siguientes métodos en la clase Biblioteca:
+#anyadir_item(item): Agrega un objeto de tipo Ficha (DVD, libro o revista) a la biblioteca.
+#eliminar_item(item): Elimina un objeto de tipo Ficha de la biblioteca.
+#buscar_item(item): Busca un objeto de tipo Ficha en la biblioteca e imprime su información si se encuentra.
+#mostrar_lista(): Imprime la lista de DVDs, libros y revistas actualmente en la biblioteca.Crea instancias
+#de varios DVDs, libros y revistas, y agrégalas a la biblioteca utilizando el método anyadir_item().
+#Llama al método mostrar_lista() para mostrar todos los elementos de la biblioteca.
+#Elimina un elemento de la biblioteca utilizando el método eliminar_item() y luego muestra nuevamente la lista.
+#Utiliza el método buscar_item() para buscar un elemento específico en la biblioteca e imprimir su información.
+
 def ej4():
+
     class Biblioteca:
 
         def __init__(self):

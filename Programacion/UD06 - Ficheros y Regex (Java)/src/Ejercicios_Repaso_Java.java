@@ -12,7 +12,6 @@ public class Ejercicios_Repaso_Java {
 
             switch (ej) {
                 case 1 -> ej1();
-                case 2 -> ej2();
                 case 3 -> ej3();
                 case 4 -> ej4();
                 default -> System.out.println("Ejercicio no válido");
@@ -45,80 +44,6 @@ public class Ejercicios_Repaso_Java {
                 (elMayor == numero1 && elMayor == numero2)) {
             System.out.println("hay numeros mayor se repite varias veces");
         } else System.out.println("el numero mas grande " + elMayor);
-    }
-
-//----------------------------------------------------------------------------------------------------------------------
-
-    //Ejercicio 2:
-    //Crea una clase base Figura que tenga dos métodos: área y perímetro, ambos deben retornar 0
-    //por defecto. Esta clase debe tener un constructor que acepte un nombre para la figura.
-    //Luego, crea dos clases: Círculo y Rectángulo. Ambas deben heredar de Figura y sobrescribir los
-    //métodos área y perímetro para que retornen los valores correctos para cada figura.
-    //Para Círculo, el constructor debe aceptar el radio del círculo. Para Rectángulo, el constructor
-    //debe aceptar la longitud y el ancho. Finalmente, crea una función imprimir_info_figura que acepte
-    //una instancia de Figura, e imprima el nombre, el área y el perímetro de la figura. Esta
-    //función debe ser capaz de aceptar cualquier subclase de Figura. También debes implementar el método
-    //toString para todas las clases y los métodos get y set.
-
-    private static void ej2() {
-        class Figura {
-            String nombre;
-            public Figura(String nombre) {
-                this.nombre = nombre;
-            }
-            public double area() {
-                return 0;
-            }
-            public double perimetro() {
-                return 0;
-            }
-            public void mostrarInfo(){
-                System.out.print("el nombre de la figura es " + this.nombre);
-            }
-        }
-
-        class Circulo extends Figura{
-            double radio;
-            double PI = Math.PI;
-
-            public Circulo(String nombre, int radio) {
-                super(nombre);
-                this.radio = radio;
-            }
-            @Override
-            public double area() {
-                return this.PI*(radio*radio);
-            }
-            @Override
-            public double perimetro() {
-                return 2*PI*radio;
-            }
-
-            @Override
-            public void mostrarInfo() {
-                super.mostrarInfo();
-                System.out.print(" el perimetro del circulo es " + this.perimetro() + " y el area es " + this.area());
-            }
-        }
-
-        class Rectangulo extends Figura {
-            int base;
-            int altura;
-
-            public Rectangulo(String nombre, int base, int altura) {
-                super(nombre);
-                this.base = base;
-                this.altura = altura;
-            }
-            @Override
-            public double area() {
-                return this.base*this.altura;
-            }
-            @Override
-            public double perimetro() {
-                return (this.base*2)+(this.altura*2);
-            }
-        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------

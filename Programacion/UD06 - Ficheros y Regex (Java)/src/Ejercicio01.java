@@ -82,14 +82,16 @@ public class Ejercicio01 {
         File ruta = new File("data");
         StringBuilder stringBuilder = new StringBuilder();
 
-        System.out.println("la ruta que elegiste es " + ruta.getAbsolutePath());
-        comprobarSiExiste(ruta);
-        if (ruta.isDirectory()) {
-            File[] contenido = ruta.listFiles();
-            for (File i : contenido) {
-                stringBuilder.append(i.getName()).append(", ");
-            }
-            System.out.println("el contenido de la lista es \n" + stringBuilder);
+        System.out.println("la ruta de " + ruta.getName() + " es " + ruta.getAbsolutePath());
+        if (ruta.exists()) {
+            if (ruta.isDirectory()) {
+                System.out.println("es un directorio");
+                File[] contenido = ruta.listFiles();
+                for (File i : contenido) {
+                    stringBuilder.append("    + ").append(i.getName()).append("\n");
+                }
+                System.out.println("el contenido del directorio es:\n" + stringBuilder);
+            } else System.out.println("es un fichero");
         }
     }
 

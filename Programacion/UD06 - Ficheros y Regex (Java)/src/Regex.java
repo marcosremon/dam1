@@ -1,8 +1,5 @@
 import java.io.*;
-import java.time.LocalDate;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.SimpleTimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,25 +37,17 @@ public class Regex {
 
         BufferedReader bufferedReader = null;
         int contador = 0;
-        String linea;
         try {
             bufferedReader = new BufferedReader(new FileReader(archivo));
+            String linea;
             while ((linea = bufferedReader.readLine()) != null) {
-                String texto = linea.toString().toLowerCase();
-                String[] palabras = texto.split("\\s+");
-                contador += palabras.length;
-            }
-            System.out.println(contador);
+                String[] corte = linea.split("\\s+");
+                contador += corte.length;
+            } System.out.println("en el fichero " + archivo.getName() + " hay " + contador + " palabras");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                bufferedReader.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
@@ -89,21 +78,22 @@ public class Regex {
                 "Email: iesschteruel@educa.aragon.es\n" +
                 "Web: www.iesch.org";
 
-        String regexEmail = "[a-zA-Z0-9,.:_;]+@[a-zA-Z0-9_.:,;]+\\.\\w{2,}";
+        String regexEmail = "[\\w,;.:_0-9-]+@[\\w,;.:_0-9-]+\\.\\w{2,}";
         String regexCP = "[0-9]{5}";
         String regexTelefono = "[0-9]{3}[ ]?[0-9]{2}[ ]?[0-9]{2}[ ]?[0-9]{2}";
-        String regexWeb = "www\\.[a-zA-Z0-9,;.:_]+\\.[a-zA-Z-.]+";
+        String regexWeb = "www+\\.[\\w,;.:_0-9-]+\\.\\w{2,}";
 
-        Pattern patterEmail = Pattern.compile(regexEmail);
-        Pattern patterCP = Pattern.compile(regexCP);
+
+        Pattern patternEmail = Pattern.compile(regexEmail);
+        Pattern patternCP = Pattern.compile(regexCP);
         Pattern patternTelefono = Pattern.compile(regexTelefono);
         Pattern patternWeb = Pattern.compile(regexWeb);
-        
-        Matcher matcherEmail = patterEmail.matcher(texto);
+
+        Matcher matcherEmail = patternEmail.matcher(texto);
         while (matcherEmail.find()) {
             System.out.println("el correo electronico encontrado es: " + matcherEmail.group());
         }
-        Matcher matcherCP = patterCP.matcher(texto);
+        Matcher matcherCP = patternCP.matcher(texto);
         while (matcherCP.find()) {
             System.out.println("el codigo postal es: " + matcherCP.group());
         }
@@ -132,46 +122,51 @@ public class Regex {
         File archivo = new File("data/DATA.csv");
         Scanner scanner = new Scanner(System.in);
 
-        String regexEjA = "ES|PT";
-        String regexEjB = "@[a-zA-Z0-9,;.:_-]+\\.edu";
-        String regexEjC = "@yahoo";
-        String regexEjD = "(2015-05|201[5-6]-[0-9]{1,2}|2017-0[0-2])";
+        String regexEsp_port = "ES|PT";
+        String regexEdu = "@[\\w0-9,;.:_-]+\\.edu";
+        String regexYahoo = "yahoo+\\.\\w{2,}";
+        String regexLogin = "(2015-(0[5-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]))|(2016|2017)-(0[1-2]-(0[1-9]|1[0-9]|2[0-9]|3[0-1]))";
 
-        Pattern patternEjA = Pattern.compile(regexEjA);
-        Pattern patternEjB = Pattern.compile(regexEjB);
-        Pattern patternEjC = Pattern.compile(regexEjC);
-        Pattern patternEjD = Pattern.compile(regexEjD);
+        Pattern patternEsp_port = Pattern.compile(regexEsp_port);
+        Pattern patternEdu = Pattern.compile(regexEdu);
+        Pattern patternYahoo = Pattern.compile(regexYahoo);
+        Pattern patternLogin = Pattern.compile(regexLogin);
 
         BufferedReader bufferedReader = null;
-        String linea;
-        System.out.print("elije un ejercicio para ejecutar [a|b|c|d]: ");
+        System.out.print("elige un ejercicio para realizar:\n" +
+                "    + Los registros con país España o Portugal --> 'a'\n" +
+                "    + Los registros con email de dominios .edu --> 'b'\n" +
+                "    + Los registros con email de yahoo --> 'c'\n" +
+                "    + Los registros con el último login entre mayo de 2015 y febrero de 2017 --> 'd': ");
         String eleccion = scanner.next().toLowerCase();
         try {
             bufferedReader = new BufferedReader(new FileReader(archivo));
+            String linea;
             while ((linea = bufferedReader.readLine()) != null) {
-                Matcher matcherEjA = patternEjA.matcher(linea);
-                Matcher matcherEjB = patternEjB.matcher(linea);
-                Matcher matcherEjC = patternEjC.matcher(linea);
-                Matcher matcherEjD = patternEjD.matcher(linea);
+                Matcher matcherEsp_port = patternEsp_port.matcher(linea);
+                Matcher matcherEdu = patternEdu.matcher(linea);
+                Matcher matcherYahoo = patternYahoo.matcher(linea);
+                Matcher matcherLogin = patternLogin.matcher(linea);
 
                 if (eleccion.equals("a")) {
-                    while (matcherEjA.find()) {
+                    while (matcherEsp_port.find()) {
                         System.out.println(linea);
                     }
                 } else if (eleccion.equals("b")) {
-                    while (matcherEjB.find()) {
+                    while (matcherEdu.find()) {
                         System.out.println(linea);
                     }
                 } else if (eleccion.equals("c")) {
-                    while (matcherEjC.find()) {
+                    while (matcherYahoo.find()) {
                         System.out.println(linea);
                     }
                 } else if (eleccion.equals("d")) {
-                    while (matcherEjD.find()) {
+                    while (matcherLogin.find()) {
                         System.out.println(linea);
                     }
                 }
             }
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Ejercicios_UD03 {
 
@@ -55,7 +52,18 @@ public class Ejercicios_UD03 {
     //    Salida: 15
 
     private static void ej1() {
+        String cadena = "Supercalifragilisticoespialidoso";
+        String vocales = "aeiou";
+        int contador = 0;
 
+        for (char i : cadena.toCharArray()) {
+            for (char j : vocales.toCharArray()) {
+                if (i == j) {
+                    contador++;
+                }
+            }
+        }
+        System.out.println("hay " + contador + " vocales");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -74,7 +82,16 @@ public class Ejercicios_UD03 {
     //«cada término es la suma de los dos anteriores») 0,1,1,2,3,5,8,13,21...
 
     private static void ej3() {
+        int fibo1=1;
+        int fibo2=1;
 
+        System.out.print(fibo1 + " ");
+        for(int i = 2; i <= 100 ;i++){
+            System.out.print(fibo2 + " ");
+            fibo2 = fibo1 + fibo2;
+            fibo1 = fibo2 - fibo1;
+        }
+        System.out.println();
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -136,7 +153,11 @@ public class Ejercicios_UD03 {
     //Salida: 4
 
     private static void ej8() {
-
+        int num1 = 12;
+        int num2 = 44;
+        if (num2 % num1 == 0) {
+            System.out.println("el maximo comun divisor es " + num1);
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -154,6 +175,12 @@ public class Ejercicios_UD03 {
 
     private static void ej9() {
 
+        for (int i = 0; i < 7; i++) {
+            for (int j = i; j < 7; j++) {
+                System.out.print(i + "|" + j + " ");
+            }
+            System.out.println();
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -201,7 +228,12 @@ public class Ejercicios_UD03 {
     //Crea una función que calcule un número elevado a otro, usando multiplicaciones sucesivas.
 
     private static void ej13() {
-
+        int numero = 5;
+        int multiplicador = 1;
+        for (int i = 0; i < numero; i++) {
+            multiplicador *= numero;
+        }
+        System.out.println(multiplicador);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -227,13 +259,18 @@ public class Ejercicios_UD03 {
     //Q
 
     private static void ej15() {
-
+        for (int i = 0; i < 4; i++) {
+            for (int j = i; j < 4; j++) {
+                System.out.print("q");
+            }
+            System.out.println();
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 16:
-    //Crear una función que tenga como parámetros de entrada  números enteros y como
+    //Crear una función que tenga como parámetros de entrada números enteros y como
     //parámetro de salida un float con la media aritmética de ambos.
 
     private static void ej16() {
@@ -247,7 +284,23 @@ public class Ejercicios_UD03 {
     //Aprobado, Notable y Sobresaliente.
 
     private static void ej17() {
-
+        int nota = 6;
+        int valor = 0;
+        List<String> notas = new ArrayList<>(Arrays.asList("suspenso", "suficiente", "bien", "notable",
+                "sobresaliente"));
+        if (nota < 5) {
+            valor = 0;
+        } else if (nota >= 5 && nota < 6) {
+            valor = 1;
+        } else if (nota >= 6 && nota < 7) {
+            valor = 2;
+        } else if (nota >= 7 && nota < 9) {
+            valor = 3;
+        } else if (nota >= 9 && nota <= 10) {
+            valor = 4;
+        }
+        String calificacion = notas.get(valor);
+        System.out.println("la calificacion del alumno con nota de " + nota + " es: '" + calificacion + "'");
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -278,7 +331,11 @@ public class Ejercicios_UD03 {
     //!n = n*(n-1)*(n-2)* … *2*1+
 
     private static void ej20() {
-
+        int numero = 4;
+        for (int i = numero-1; i > 1; i--) {
+            numero *= i;
+        }
+        System.out.println(numero);
     }
 
 //----------------------------------------------------------------------------------------------------------------------
