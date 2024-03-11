@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84d1b67-37a9-4919-89c8-76daf04a0e9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../UD09 - Aspectos y usos avanzados de clases (Java)/src/Animales/Gato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UD09 - Aspectos y usos avanzados de clases (Java)/src/Animales/losGaysNoFollan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UD09 - Aspectos y usos avanzados de clases (Java)/src/Animales/main.java" afterDir="false" />
+    <list default="true" id="d8ed1d6e-edc8-487e-9d88-867ff43e0516" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trimestre 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Trimestre 2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trimestre 2/out/production/Trimestre 1/Ejercicio1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trimestre 2/out/production/Trimestre 1/Ejercicio3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trimestre 2/src/Ejercicio1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trimestre 2/src/Ejercicio2/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trimestre 2/src/Ejercicio2/Gato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trimestre 2/src/Ejercicio3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examen20240226-marcosremon" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../UD06 - Ficheros y Regex (Java)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UD06 - Ficheros y Regex (Java)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/out/production/a/Ciclismo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/out/production/a/Ciclismo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UD07 - Estructuras de datos (Java)/out/production/a/Ciclismoo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../UD08 - Excepciones (Java)/src/Ejercicios_Excepciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UD08 - Excepciones (Java)/src/Ejercicios_Excepciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UD09 - Aspectos y usos avanzados de clases (Java)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UD09 - Aspectos y usos avanzados de clases (Java)/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UD09 - Aspectos y usos avanzados de clases (Java)/out/production/a/Taller/Clientes.class" beforeDir="false" />
@@ -33,43 +40,33 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2csFYkfWuq2Mr02fnSIifCSqRmE" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2dXYGcjDTWhS1qFGFztha2Wapze" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Ciclismo.executor": "Run",
-    "Application.Ciclismoo.executor": "Run",
-    "Application.Ejercicios_básicos_estructuras_de_datos.executor": "Run",
+    "Application.Ejercicio3.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/Examenes"
+    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/UD08 - Excepciones (Java)"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
@@ -77,11 +74,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b84d1b67-37a9-4919-89c8-76daf04a0e9a" name="Changes" comment="" />
-      <created>1708892428148</created>
+      <changelist id="d8ed1d6e-edc8-487e-9d88-867ff43e0516" name="Changes" comment="" />
+      <created>1710155795881</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708892428148</updated>
+      <updated>1710155795881</updated>
     </task>
     <servers />
   </component>

@@ -33,7 +33,12 @@ public class Ejercicios_Excepciones {
         int numero1 = 10;
         int numero2 = 0;
 
-        dividir(numero1, numero2);
+        try {
+            int resultado = numero1/numero2;
+            System.out.println("el resutado es: " + resultado);
+        } catch (ArithmeticException e) {
+            System.out.println("ha habido un error");
+        }
     }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -49,11 +54,19 @@ public class Ejercicios_Excepciones {
         comprobarSiExiste(data);
         comprobarSiExiste(archivo);
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(archivo))) {
+        BufferedWriter bufferedWriter = null;
+        try {
+            bufferedWriter = new BufferedWriter(new FileWriter(archivo));
             bufferedWriter.write("haaaa\nhaaaa\nhaaaa\nhaaaa\n");
         } catch (IOException e) {
             System.out.println("no se ha podido escribir en el fichero");
             e.printStackTrace();
+        } finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -64,24 +77,14 @@ public class Ejercicios_Excepciones {
     //escribe un método que lance tus excepciones y otro método que las maneje.
 
     private static void ej3() {
-
-        try {
-            lanzarExcepciones();
-        } catch (MiExcepcionVerificada e) {
-            System.out.println("Capturamos la excepcion verificada:");
-            e.printStackTrace();
-        } catch (MiExcepcionNoVerificada e) {
-            System.out.println("Capturamos la excepcion no verificada:");
-            e.printStackTrace();
-            manejarExcepcion();
-        }
+        manejarExcepciones();
     }
 
 //----------------------------------------------------------------------------------------------------------------------
 
     //Ejercicio 4 Buenas prácticas:
-    //Revisa el código existente de ejercicios anteriores, busca ejemplos de mal
-    //manejo de excepciones, como: ignorar excepciones, usar catch (Exception e), usar excepciones
+    //Revisa el código existente de ejercicios anteriores, busca ejemplos de mal manejo de excepciones,
+    //como: ignorar excepciones, usar catch (Exception e), usar excepciones
     //para el control de flujo, y no cerrar recursos. Corrige el código para seguir las buenas prácticas.
 
     private static void ej4() {
@@ -107,36 +110,17 @@ public class Ejercicios_Excepciones {
             } else System.out.println("el fichero " + archivo.getName() + " ya existe");
         }
     }
-    private static void dividir(int dividendo, int divisor) {
+    public static void lanzarExcepciones() throws Exception {
+        throw new miExcepcionVerificada("Esta es una excepción verificada personalizada.");
+    }
+    public static void manejarExcepciones() {
         try {
-            int resultado = dividendo/divisor;
-            System.out.println("el resutado es: " + resultado);
-        } catch (ArithmeticException e) {
-            System.out.println("ha habido un error");
-            e.printStackTrace();
+            lanzarExcepciones();
+        } catch (miExcepcionVerificada e) {
+            System.out.println("excepcion verificada atrapaa " + e.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-    }
-    private static void manejarExcepcion() {
-        System.out.println("Excepción no verificada manejada.");
-    }
-    static class MiExcepcionVerificada extends Exception {
-        public MiExcepcionVerificada(String mensaje) {
-            super("Problema: " + mensaje);
-        }
-    }
-    static class MiExcepcionNoVerificada extends RuntimeException {
-        public MiExcepcionNoVerificada(String mensaje) {
-            super("Problema: " + mensaje);
-        }
-    }
-    private static void lanzarExcepciones() throws MiExcepcionVerificada, MiExcepcionNoVerificada {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce un número que no sea el 5 o el 6:");
-        int opcion = scanner.nextInt();
-        if (opcion == 5) {
-            throw new MiExcepcionVerificada("Esto es una excepción verificada");
-        } else if (opcion == 6) {
-            throw new MiExcepcionNoVerificada("Esto es una excepción no verificada");
-        }
+        throw new miExcepcionNoVerificada("Esta es una excepción no verificada personalizada.");
     }
 }
