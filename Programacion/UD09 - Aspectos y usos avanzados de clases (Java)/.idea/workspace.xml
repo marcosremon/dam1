@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c69a78e-1adb-4f72-8c7a-0a328eb44545" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Animales/Gato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Animales/losGaysNoFollan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Animales/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD06 - Ficheros y Regex (Java)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UD06 - Ficheros y Regex (Java)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD08 - Excepciones (Java)/src/Ejercicios_Excepciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UD08 - Excepciones (Java)/src/Ejercicios_Excepciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/Clientes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/Coches.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/Motos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/Persona.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/Propietario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/ServiTaller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/Vehiculos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Taller/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/clase/BiciMontanya.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/clase/BiciMontanya.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/clase/BiciPaseo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/clase/BiciPaseo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/clase/Tandem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/clase/Tandem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/clase_abstracta/Bicicleta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/interf/Pintar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/interf/Pintar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/a/Tienda_Bicicletas/lanzador/Principal.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +44,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/UD07 - Estructuras de datos (Java)"
+    "last_opened_file_path": "C:/Users/isard/Documents/dam1/Programacion/UD08 - Excepciones (Java)"
   }
 }]]></component>
   <component name="RecentsManager">
