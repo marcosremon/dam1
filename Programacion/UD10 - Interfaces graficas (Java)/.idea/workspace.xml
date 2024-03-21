@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="703bdb92-c6e8-4d60-80a5-0409e4409c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/isard/Documents/dam1/Programacion/UD10 - Interfaces graficas (Java)"
+    "last_opened_file_path": "C:/Users/isard/Documents/dam1/Programacion/Examenes"
   }
 }]]></component>
   <component name="SharedIndexes">
