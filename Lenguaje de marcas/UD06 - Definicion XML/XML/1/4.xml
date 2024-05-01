@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria>
+    <libro>
+        <titulo>kakatua</titulo>
+        <autor>torner</autor>
+        <publicacion>1990</publicacion>
+        <genero>Tecnología</genero>
+    </libro>
+    <libro>
+        <titulo>sueledindon</titulo>
+        <autor>yes</autor>
+        <publicacion>1998</publicacion>
+        <genero>Computer</genero>
+    </libro>
+    <libro>
+        <titulo>rain</titulo>
+        <autor>mamasita</autor>
+        <publicacion>1999</publicacion>
+        <genero>Fantasía</genero>
+    </libro>
+</libreria>

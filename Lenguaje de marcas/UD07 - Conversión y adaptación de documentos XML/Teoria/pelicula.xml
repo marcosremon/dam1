@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pelicula titulo="Match Point" estreno="2005" minutos="119">
+    <direccion>
+       <director nombre="Woody" apellidos="Allen"></director>
+    </direccion>
+    <produccion>
+      <productor nombre="Stephen" apellidos="Tenembaum"></productor>  
+      <productor nombre="Helen" apellidos="Robin"></productor>  
+    </produccion>
+    <guion>
+      <guionista nombre="Woody" apellidos="Allen"></guionista>
+    </guion>
+    <reparto>
+       <interprete nombre="Scarlet" apellidos="Johansson" papel="protagonista"></interprete>
+       <interprete nombre="Jonnathan Rhys" apellidos="Meyer" papel="protagonista"></interprete>
+       <interprete nombre="Emily" apellidos="Mortimer" papel="secundario"></interprete>
+       <interprete nombre="Matthew" apellidos="Goodie" papel="secundario"></interprete>
+    </reparto>
+    <criticas>
+       <critica>La pelicula cae del lado de sus obras maestras</critica>
+       <critica>Obliga a pararse ante el genio, la lucidez, la inteligencia y 
+       una nueva subida a la red de Woody Allen. Una obra maestra
+       </critica>
+       <!--Hacen falta mas criticas-->
+    </criticas>
+</pelicula>

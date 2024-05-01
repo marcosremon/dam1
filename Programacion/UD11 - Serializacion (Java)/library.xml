@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<library>
+    <Libro>
+        <anyoPublicacion>1585</anyoPublicacion>
+        <autor>Juan</autor>
+        <titulo>manuelMaricon</titulo>
+    </Libro>
+    <Libro>
+        <anyoPublicacion>2024</anyoPublicacion>
+        <autor>manuel</autor>
+        <titulo>anulenLaMatriculaDeSilvestre</titulo>
+    </Libro>
+</library>

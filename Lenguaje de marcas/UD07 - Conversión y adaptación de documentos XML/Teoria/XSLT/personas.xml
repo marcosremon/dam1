@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<personas>
+<persona>
+<nombre>Albert Einstein</nombre>
+<descripcion>Albert Einstein fue uno de los científicos más famosos del siglo XX, a
+él, entre otras cosas, le debemos la Teoría de la Relatividad
+</descripcion>
+</persona>
+<persona>
+<nombre>Marie Curie</nombre>
+<descripcion>Pionera en el campo de la radioactividad, fue la primera persona en
+recibir dos premios Nobel y la primera mujer en ser profesora en la Universidad
+de París
+</descripcion>
+</persona>
+<persona>
+<nombre>Nikola Tesla</nombre>
+<descripcion>Fue un inventor, ingeniero mecánico e ingeniero eléctrico y uno de
+los promotores más importantes del nacimiento de la electricidad comercial.
+</descripcion>
+</persona>
+</personas>
+

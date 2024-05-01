@@ -1,0 +1,183 @@
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* general */
+
+.enlace_principal {
+    color: red;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+.cursiva{
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* encabezado */
+
+#imagen_cabecera {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+header {
+    border-bottom: 6px solid transparent;
+    border-image: linear-gradient(to right, #306291, #afd8fb);
+    border-image-slice: 1;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* pie de pagina */
+
+footer {
+    text-align: center;
+    font-size: x-small;
+    height: 140px;
+    border-top: 6px solid transparent;
+    border-image: linear-gradient(to right, #afd8fb, #306291);
+    border-image-slice: 1;
+    padding-top: 20px;
+    color: #666666;
+    background-color: rgba(69, 141, 209, 0.2);    
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* index.html */
+
+#robot {
+    width: 100%;
+    background-image: url('../imgs/fonsrobot.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    box-sizing: border-box;
+    height: 43em;
+}
+
+#tarjeta {
+    position: static;
+    top: 19%;
+    left: 8.25%;
+    font-family: 'Roboto Slab', sans-serif;
+    border: 1.5px solid #306291;
+    background-color: white;
+    height: 330px;
+    text-align: left;
+    width: 330px;
+}
+
+#titulo_tarjeta {
+    color: #306291;
+    padding-bottom: 23.5px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* leyes.html */
+
+#leyes_main {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#titulo_leyes {
+    font-family: 'Roboto Slab', sans-serif;
+    color: #306291;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.subtitulo_leyes {
+    font-family: 'Roboto Slab', sans-serif;
+    color: #306291;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+#tabla {
+    border: 2px solid #306291;
+    background-color: rgba(69, 141, 209, 0.2);
+    margin: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 15px;
+    padding-right: 30px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* datos.html */
+
+#datos_main {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#tabla_datos {
+    text-align: center;
+    margin: 12.5%;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+#hueco_tabla_vacio {
+    width: 10%;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* soci.html */
+
+#soci_main {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#titulo_soci {
+    font-family: 'Roboto Slab', sans-serif;
+    color: #306291;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+#formularios {
+    margin-bottom: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: rgba(69, 141, 209, 0.2);
+}
+
+#texto_pequño_formulario {
+    font-size: 12px;
+}
+
+.titulo {
+    position: absolute;
+    top: -15.7px;
+    padding: 0 10px;
+    font-size: 1.4em;
+}
+
+.numeros{
+    color: #306291;
+    margin-right: 10px;
+}
+
+#boton {
+    margin: 40%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: red;
+    border: red;
+}
