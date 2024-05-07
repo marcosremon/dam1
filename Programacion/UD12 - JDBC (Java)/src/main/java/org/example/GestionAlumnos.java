@@ -1,5 +1,7 @@
 package org.example;
 
+import com.mysql.cj.protocol.a.CompressedInputStream;
+
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
@@ -325,5 +327,47 @@ public class GestionAlumnos {
             throw new RuntimeException(e);
         }
     }
+    public void listarCursoYSeleccionarUno() {
+        try (Connection connection = connect()) {
+            Statement statement = connection.createStatement();
 
+            String listarCursos = "select * from cursos";
+            String idCurso = "(select id from cursos where nombre = ?)";
+            String mostrarAlumnos = "select * from alumnos where id in (select id_alumno from matriculas where " +
+                    "id_curso = ?);";
+
+            ResultSet resultSet1 = statement.executeQuery(listarCursos);
+
+            while (resultSet1.next()) {
+                String nombre = resultSet1.getString("nombre");
+                String instructor = resultSet1.getString("instructor");
+                System.out.println("el nombre del curso es: " + nombre + " y su instrctor es: " + instructor);
+            }
+
+            String nombreCursoSeleccionado = JOptionPane.showInputDialog("Elige el nombre de un curso de los " +
+                    "existentes:");
+            PreparedStatement preparedStatement = connection.prepareStatement(idCurso);
+            preparedStatement.setString(1, nombreCursoSeleccionado);
+            ResultSet resultSet2 = preparedStatement.executeQuery();
+
+            if (resultSet2.next()) {
+                int cursoSeleccionado = resultSet2.getInt("id");
+                PreparedStatement preparedStatement3 = connection.prepareStatement(mostrarAlumnos);
+                preparedStatement3.setInt(1, cursoSeleccionado);
+                ResultSet resultSet3 = preparedStatement3.executeQuery();
+
+                System.out.println("\nlos datos de los que estan apuntados a: " + nombreCursoSeleccionado + " son:");
+                while (resultSet3.next()) {
+                    String nombre = resultSet3.getString("nombre");
+                    String apellido = resultSet3.getString("apellido");
+                    String direccion = resultSet3.getString("direccion");
+                    System.out.println("nombre: " + nombre + ", apellido: " + apellido + ", direccion: " + direccion);
+                }
+            } else {
+                System.out.println("El curso seleccionado no existe.");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -15,5 +15,6 @@ public class main {
         //gestionAlumnos.desmatircularAlumno();
         //gestionAlumnos.modificarMatricula();
         //gestionAlumnos.mostrarAsignaturas();
+        gestionAlumnos.listarCursoYSeleccionarUno();
     }
 }
