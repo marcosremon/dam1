@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<author>
+    <booksWritten>3</booksWritten>
+    <libros>
+        <anyoPublicacion>1585</anyoPublicacion>
+        <autor>Juan</autor>
+        <titulo>manuelMaricon</titulo>
+    </libros>
+    <libros>
+        <anyoPublicacion>2024</anyoPublicacion>
+        <autor>manuel</autor>
+        <titulo>anulenLaMatriculaDeSilvestre</titulo>
+    </libros>
+    <libros>
+        <anyoPublicacion>1999</anyoPublicacion>
+        <autor>manuel</autor>
+        <titulo>pieroRastafari</titulo>
+    </libros>
+    <name>manuel</name>
+</author>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca [
+    <!ELEMENT biblioteca (libro+)>
+    <!ELEMENT libro (titulo,autor,publicacion)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT autor (#PCDATA)>
+    <!ELEMENT publicacion (#PCDATA)>
+    
+]>
+
+<biblioteca>
+    <libro>
+        <titulo>PArque placentero</titulo>
+        <autor>Torner puton</autor>
+        <publicacion>2005</publicacion>
+    </libro>
+
+    <libro>
+        <titulo>n0 se un libro sin mas</titulo>
+        <autor>puton</autor>
+        <publicacion>1900</publicacion>
+    </libro>
+
+    <libro>
+        <titulo>Ibañez</titulo>
+        <autor>Torner puton</autor>
+        <publicacion>2005</publicacion>
+    </libro>
+
+    <libro>
+        <titulo>Kamasutra </titulo>
+        <autor>Jordi ENP</autor>
+        <publicacion>2005</publicacion>
+    </libro>
+</biblioteca> 

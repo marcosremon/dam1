@@ -1,0 +1,15 @@
+.contenedor {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto 100px;
+    gap: 1em;
+}
+
+.contenedor div {
+    background-color: azure;
+    padding: 1em;
+}
+
+.contenedor div:hover {
+    border: 1px solid blue;
+}
