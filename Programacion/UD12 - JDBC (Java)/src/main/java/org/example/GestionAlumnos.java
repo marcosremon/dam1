@@ -312,16 +312,30 @@ public class GestionAlumnos {
     public void mostrarAsignaturas() {
         try (Connection connection = connect()) {
             Statement statement = connection.createStatement();
+
             int idAlumno = Integer.parseInt(JOptionPane.showInputDialog("Introduce el id del alumno que quieres " +
                     "sacar sus cursos"));
+            String nombreAlumno = "select nombre from alumnos where id = ?";
 
-            String consultaSql = "select nombre from cursos where id in (select id_curso from matriculas where" +
-                    " id_alumno = '" + idAlumno + "')";
-            ResultSet resultSet = statement.executeQuery(consultaSql);
+            PreparedStatement preparedStatement = connection.prepareStatement(nombreAlumno);
+            preparedStatement.setInt(1, idAlumno);
+            ResultSet resultSet1 = preparedStatement.executeQuery();
 
-            System.out.println("Cursos del alumno " + idAlumno + ":");
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("nombre"));
+            if (resultSet1.next()) {
+                String nombreAlumnoObtenido = resultSet1.getString("nombre");
+
+                String consultaSql = "select nombre from cursos where id in (select id_curso from matriculas where" +
+                        " id_alumno = ?)";
+                preparedStatement = connection.prepareStatement(consultaSql);
+                preparedStatement.setInt(1, idAlumno);
+                ResultSet resultSet2 = preparedStatement.executeQuery();
+
+                System.out.println("Cursos del alumno " + nombreAlumnoObtenido + ":");
+                while (resultSet2.next()) {
+                    System.out.println(resultSet2.getString("nombre"));
+                }
+            } else {
+                System.out.println("No se encontró el alumno con el ID proporcionado.");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
