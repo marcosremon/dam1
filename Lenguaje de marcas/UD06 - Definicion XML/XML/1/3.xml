@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<estudiantes>
+    <estudiante>
+        <nombre>Juan Perez</nombre>
+        <edad>15</edad>
+        <curso>DAM1</curso>
+        <materias>
+            <materia>
+                <nombre>Programacion</nombre>
+                <calificacion>9.5</calificacion>
+            </materia>
+            <materia>
+                <nombre>Bases de datos</nombre>
+                <calificacion>8.7</calificacion>
+            </materia>
+        </materias>
+    </estudiante>
+    <estudiante>
+        <nombre>Maria Lopez</nombre>
+        <edad>14</edad>
+        <curso>DAM2</curso>
+        <materias>
+            <materia>
+                <nombre>Acceso a datos</nombre>
+                <calificacion>9.1</calificacion>
+            </materia>
+            <materia>
+                <nombre>Aplicaciones moviles</nombre>
+                <calificacion>8.8</calificacion>
+            </materia>
+        </materias>
+    </estudiante>
+</estudiantes>

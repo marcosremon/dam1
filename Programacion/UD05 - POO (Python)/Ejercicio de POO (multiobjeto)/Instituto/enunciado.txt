@@ -1,0 +1,35 @@
+Se desea simular mediante un programa el funcionamiento básico de un IES. Del instituto
+debemos guardar los siguientes datos:
+Dirección, teléfono, director, jefe de estudios.
+
+En el instituto tenemos las siguientes clases: DAM1, DAM2, SMR1, SMR2, en cada clase hay un
+máximo de 30 alumnos.
+
+De cada persona que va al instituto queremos guardar su nombre, apellidos, dni, dirección teléfono.
+
+De los alumnos, debemos guardar si han perdido la evaluación continua o no (booleano.)
+
+De los profesores queremos guardar una lista de strings con las asignaturas que imparte.
+También queremos guardar si su horario es matutino, vespertino o de mañana y tarde.
+
+Como el director no es más que un profesor especial, queremos guardar además de todo lo
+que tienen los profesores, su complemento económico por el cargo de director. El número de
+horas semanales que permanece en el centro, y los años que lleva como director.
+
+Lo mismo ocurre con el jefe de estudios, no es más que un profesor especial, queremos
+guardar además de todo lo que tienen los profesores, su complemento económico por el
+cargo, si está localizable las 24h del día (booleano)
+
+Ahora debes implementar los métodos que permitan matricular a los alumnos en las
+diferentes clases, debes de tener en cuenta el número de alumnos que existen matriculados
+hasta el momento. También debes de controlar que un alumno solo se puede matricular en
+una clase, es decir no se puede matricular a la vez en DAM1 y DAM2.
+
+Debes implementar un método que busque un alumno y nos diga en que clase está matriculado.
+Debes implementar un método que busque un alumno y le quite la evaluación continua.
+Debes implementar un método que permita dar de baja un alumno.
+Debes implementar un método en todas las clases que crees, que muestre la información de las mismas.
+
+Ahora crea un instituto, crea director, jefe de estudios, alumnos,
+Matricula a alumnos en clases. Busca un alumno, quítale la evaluación continua a un alumno. Y
+muestra la información del IES para ver que todo ha funcionado correctamente.

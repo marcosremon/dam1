@@ -1,0 +1,17 @@
+{
+  "name" : "manuel",
+  "booksWritten" : "3",
+  "libros" : [ {
+    "titulo" : "manuelMaricon",
+    "autor" : "Juan",
+    "anyoPublicacion" : "1585"
+  }, {
+    "titulo" : "anulenLaMatriculaDeSilvestre",
+    "autor" : "manuel",
+    "anyoPublicacion" : "2024"
+  }, {
+    "titulo" : "pieroRastafari",
+    "autor" : "manuel",
+    "anyoPublicacion" : "1999"
+  } ]
+}

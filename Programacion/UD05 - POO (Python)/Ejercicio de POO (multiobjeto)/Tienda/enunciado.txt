@@ -1,0 +1,22 @@
+Vamos a programar una “especie de tienda”, en dicha tienda se venderán los siguientes
+artículos:
+ Balones guardaremos los datos: identificador único de objeto, Marca, modelo, y tipo
+de deporte, precio
+ De un chándal guardaremos: identificador único de objeto, Marca, modelo, color y
+talla, precio
+ De las camisetas guardaremos: identificador único de objeto, Marca, modelo, color,
+talla, tipo (corta, larga, técnica, tirantes, térmica, natación), composición (algodón,
+poliéster, reciclada), precio
+ De los pantalones guardaremos: identificador único de objeto, Marca, modelo, talla,
+color, longitud (corto, largo), precio
+Todos los objetos deben tener un método que muestre toda la información asociada al mismo.
+La tienda debe guardar todos los objetos a la venta. Y debe tener un método que nos dé
+pasado un elemento el stock que tiene dicho elemento. También debe de guardar la
+recaudación del día. La tienda debe tener un método vender (piensa que un cliente puede
+comprar 1 o n productos). La tienda debe tener un método que muestre todos los objetos a la
+venta.
+De cada cliente que compra guardaremos su compra, es decir, compro un chándal y un balón…
+con todos sus datos asociados Y el coste que pagó por su compra
+Ahora construye un main, inicializa la tienda con varios objetos de cada tipo. Crea 3 o 4
+clientes que realicen compras y muestra los objetos que quedan a la venta y muestra la
+recaudación del día.

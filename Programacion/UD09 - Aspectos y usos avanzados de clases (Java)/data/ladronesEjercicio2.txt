@@ -1,0 +1,8 @@
+Diputado{provinciaQueRepresenta='valencia', partidoPolitico='psoe', nombre='abalos', dni='12345678A'}
+
+Diputado{provinciaQueRepresenta='madrid', partidoPolitico='potemos', nombre='tania sanchez', dni='65432178C'}
+
+Diputado{provinciaQueRepresenta='teruel', partidoPolitico='psoe', nombre='herminio sanchez', dni='18444555H'}
+
+Senador{provinciaQueRepresenta='madrid', partidoPolitico='pp', nombre='pedro manuel rollan ojeda', dni='87654321B'}
+

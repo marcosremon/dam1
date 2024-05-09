@@ -1,0 +1,6 @@
+create database jdbc;
+use jdbc;
+
+create table alumnos(id int primary key auto_increment, nombre varchar(255), apellido varchar(255), direccion varchar(255));
+create table cursos(id int primary key auto_increment, nombre varchar(255), instructor varchar(255));
+create table matriculas(id_alumno int, id_curso int, primary key(id_alumno, id_curso), foreign key(id_alumno) references alumnos(id), foreign key(id_curso) references cursos(id));

@@ -1,0 +1,24 @@
+Diputado:
+abalos
+12345678A
+psoeabalos
+valencia12345678A
+
+Diputado:
+tania sanchez
+65432178C
+potemostania sanchez
+madrid65432178C
+
+Diputado:
+herminio sanchez
+18444555H
+psoeherminio sanchez
+teruel18444555H
+
+Senador:
+pedro manuel rollan ojeda
+87654321B
+pppedro manuel rollan ojeda
+madrid87654321B
+

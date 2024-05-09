@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+
+        /* Apartado a: ¿Por qué razon se muestran los elementos en columna inicialmente?
+        //Tu respuesta aquí: Los elementos se muestran en columna porque no se ha definido explícitamente una cuadrícula usando display: grid; en el contenedor de la sección.*/
+        
+        #contenedor {
+            margin: 0 auto; /* Añadido para centrar el contenedor */
+            overflow: hidden; /* Añadido para contener elementos flotantes */
+        }
+
+        div {
+            margin: 10px;
+            float: left;
+        }
+
+        .item {
+            border: 1px solid black;
+            opacity: 0.7;
+            width: 100px;
+            height: 100px;
+            background: #09f;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div id="contenedor">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+        </div>
+    </section>
+</body>
+</html>

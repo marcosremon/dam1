@@ -1,0 +1,15 @@
+button {
+    width: 60px;
+    height: 40px;
+}
+
+td[colspan="3"] button {
+    width: 185px;
+}
+
+#resultado {
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: right;
+}
