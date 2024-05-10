@@ -25,16 +25,27 @@ import ButtonCounter from './components/ButtonCounter.vue';
         { titulo:'Post 05', id: 5, body:'descripcion 05' },
         { titulo:'Post 06', id: 6,  },
     ]);
+    const favorito = ref('');
+
+    //me creo una funcion para cambiar mi post favorito
+    const cambiarFavorito = ( post ) => {
+        favorito.value = post;
+    }
 </script>
 <template>
     <div class="container">
         <h1>Componentes</h1>
-        <ButtonCounter />
+        <h2>Mi post favorito: {{ favorito }}</h2>
         <!-- <BlogPost titulo="Post 01" :id="1" body="esto es mi descripcion 01" colorText="primary"/>
         <BlogPost titulo="Post 02" :id="2" body="esto es mi descripcion 02" colorText="warning"/>
         <BlogPost titulo="Post 03" :id="3" body="esto es mi descripcion 03" colorText="danger"/>
         <BlogPost titulo="Post 04" :id="4" /> -->
-        <BlogPost v-for="post in posts" :key="post.id" :titulo="post.titulo" :id="post.id" :body="post.body"/>
+        <BlogPost v-for="post in posts" 
+            :key="post.id" 
+            :titulo="post.titulo" 
+            :id="post.id" 
+            :body="post.body"
+            @cambiarNombreFavorito="cambiarFavorito"/>
     </div>    
     <!-- <button @click="incrementar">{{ contador }}</button> -->
 </template>
