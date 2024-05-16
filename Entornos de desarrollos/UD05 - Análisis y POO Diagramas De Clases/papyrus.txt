@@ -1,0 +1,21 @@
+probar a hacer solamente esto, en mi portátil ha funcionado:
+
+install new software, pegar esta dirección:
+
+https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12
+Darle a add
+seleccionar todo menos los ejemplos e instalar (cuesta un rato)
+
+LUEGO DESDE EL MARKETPLACE instalar el 3.0.0
+
+
+si aún así no va, quitar Eclipse:
+
+BORRAR CARPETA ECLIPSE EN C
+VACIAR PAPELERA
+INSTALAR ECLIPSE QUE OS PASO EN CLASSROOM
+ECLIPSE IDE FOR JAVA DEVELOPERS
+
+https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2023-12
+
+LUEGO DESDE EL MARKETPLACE instalar el 3.0.0

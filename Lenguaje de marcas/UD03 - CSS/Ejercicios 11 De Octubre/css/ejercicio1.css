@@ -1,0 +1,46 @@
+body {
+    color: #00f;
+    background-color: #cfc;
+    font-family: georgia;
+    font-size: 16px;
+}
+
+#h1principal {
+    color: red;
+    font-family: verdana, 'calibri', 'sans-serif';
+    text-align: center;
+    font-size:  32px;
+}
+
+ul {
+    list-style: square;
+}
+
+span {
+    color: yellow;
+}
+
+h2 {
+    color: #a56d5d;
+    font-family: verdana, 'calibri', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+p {
+    color: #00f;
+}
+
+i {
+    color: white;
+    background-color: black;
+}
+
+b {
+    font-size: 20px;
+}
+
+#a{
+    color: black;
+}
+

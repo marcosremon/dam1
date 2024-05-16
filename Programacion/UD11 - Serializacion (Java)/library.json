@@ -1,0 +1,11 @@
+{
+  "listaLibros" : [ {
+    "titulo" : "La Galatea",
+    "autor" : "cervantes",
+    "anyoPublicacion" : "1585"
+  }, {
+    "titulo" : "La Galatea",
+    "autor" : "cervantes",
+    "anyoPublicacion" : "1585"
+  } ]
+}

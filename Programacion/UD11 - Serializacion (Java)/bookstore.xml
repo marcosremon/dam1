@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bookstore>
+    <autor>
+        <booksWritten>1</booksWritten>
+        <libros>
+            <anyoPublicacion>1585</anyoPublicacion>
+            <autor>Redo</autor>
+            <titulo>juanHomo</titulo>
+        </libros>
+        <libros>
+            <anyoPublicacion>1212</anyoPublicacion>
+            <autor>mario</autor>
+            <titulo>theAlex</titulo>
+        </libros>
+        <name>pepe</name>
+    </autor>
+    <libro>
+        <anyoPublicacion>1585</anyoPublicacion>
+        <autor>Redo</autor>
+        <titulo>juanHomo</titulo>
+    </libro>
+    <libro>
+        <anyoPublicacion>1212</anyoPublicacion>
+        <autor>mario</autor>
+        <titulo>theAlex</titulo>
+    </libro>
+</bookstore>

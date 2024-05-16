@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedidos>
+    <pedido>
+        <numero>001</numero>
+        <fecha>2023-12-20</fecha>
+        <cliente>
+            <nombre>Juan Perez</nombre>
+            <direccion>Calle A, Ciudad B</direccion>
+        </cliente>
+        <productos>
+            <producto>
+                <nombre>Camiseta</nombre>
+                <cantidad>2</cantidad>
+                <precio>25.00</precio>
+            </producto>
+            <producto>
+                <nombre>Pantalón</nombre>
+                <cantidad>1</cantidad>
+                <precio>40.00</precio>
+            </producto>
+        </productos>
+    </pedido>
+</pedidos>

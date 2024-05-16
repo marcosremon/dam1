@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedido [
+    <!ELEMENT pedido (tractor+)>
+    <!ELEMENT tractor (componente+)>
+    <!ELEMENT componente (fechaentrega?, (fragil | nofragil), peso, numserie, kmmaximos? )>
+    <!ATTLIST componente nombrefabricante CDATA #REQUIRED>
+    <!ELEMENT fechaentrega (dia?,mes,anio)>
+    <!ELEMENT dia (#PCDATA)>
+    <!ELEMENT mes (#PCDATA)>
+    <!ELEMENT anio (#PCDATA)>
+    <!ELEMENT fragil EMPTY>
+    <!ELEMENT nofragil EMPTY>
+    <!ELEMENT peso (#PCDATA)>
+    <!ATTLIST peso unidad CDATA #REQUIRED>
+    <!ELEMENT numserie (#PCDATA)>
+    <!ELEMENT kmmaximos (#PCDATA)>
+
+
+
+
+]>

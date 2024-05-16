@@ -1,0 +1,24 @@
+{
+  "libros" : [ {
+    "titulo" : "juanHomo",
+    "autor" : "Redo",
+    "anyoPublicacion" : "1585"
+  }, {
+    "titulo" : "theAlex",
+    "autor" : "mario",
+    "anyoPublicacion" : "1212"
+  } ],
+  "autroes" : [ {
+    "name" : "pepe",
+    "booksWritten" : "1",
+    "libros" : [ {
+      "titulo" : "juanHomo",
+      "autor" : "Redo",
+      "anyoPublicacion" : "1585"
+    }, {
+      "titulo" : "theAlex",
+      "autor" : "mario",
+      "anyoPublicacion" : "1212"
+    } ]
+  } ]
+}

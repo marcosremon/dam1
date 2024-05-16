@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>hazte socio</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/estilos.css" type="text/css">
+        <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.rtl.min.css">
+        <script href="./bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="container">
+                    <img src="./imgs/logoAsimovFans.png" id="imagen_cabecera">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="./index.html">INICIO</a></li>
+                        <li class="list-inline-item"><a href="./leyes.html">LEYES</a></li>
+                        <li class="list-inline-item"><a href="./datos.html">DATOS</a></li>
+                        <li class="list-inline-item"><a href="./soci.html" class="enlace_principal">ASOCIATE</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="container">
+            <div id="soci_main">
+                <h1 id="titulo_soci">Formulario para hacerte socio</h1>
+                <p class="mb-5">Para hacerte socio de nuestro club de fans, por favor rellena los siguientes datos y nos pondremos en contacto contigo lo antes posible para 
+                terminar el proceso de inscripción.</p>
+
+                <div class="card" id="formularios">
+
+                <!--primer formulario-->
+
+                    <div class="card-body">
+                        <h2 class="titulo negrita"><span class=" numeros">1</span>Datos Personales</h2>
+                        <form>
+                            <p id="texto_pequño_formulario" class="cursiva">todos los campos con * son obligatorios</p>
+                            <div class="form-group row mb-2">
+                                <label for="nombre" class="col-sm-3 col-form-label">Nombre*</label>
+                                <div class="col-sm-8">
+                                    <input type="text"class="form-control" id="nombre" required>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="primerapellido" class="col-sm-3 col-form-label">Primer Apellido*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="primerapellido" required>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="segundoapellido" class="col-sm-3 col-form-label">Segundo Apellido</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="segundoapellido">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="dniopasaporte" class="col-sm-3 col-form-label">DNI O Pasaporte</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="dniopasaporte" placeholder="DNI o Pasaporte">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="fechanacimiento" class="col-sm-3 col-form-label">Fecha nacimiento</label>
+                                <div class="col-sm-8">
+                                    <input type="date" class="form-control" id="fechanacimiento">
+                                </div>
+                            </div>                    
+                        </form>
+                    </div> 
+                </div>
+
+                <!--segundo formulario-->
+
+                <div class="card" id="formularios">
+                    <div class="card-body">
+                        <h2 class="titulo negrita"><span class="numeros">2</span>Datos de contacto</h2>
+                        <form>                                              
+                            <div class="form-group row mb-2 mt-4">
+                                <label for="correoelectronico" class="col-sm-3 col-form-label">correo electronico*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="correoelectronico" placeholder="Correor electronico" required>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="codigopostal" class="col-sm-3 col-form-label">codigo postal*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="codigopostal" required>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="direccionpostal" class="col-sm-3 col-form-label">direccion postal*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="direccionpostal" required>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="poblacion" class="col-sm-3 col-form-label">poblacion*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="poblacion" required>
+                                </div>
+                            </div>                                                       
+                        </form>
+                    </div>
+                </div>
+
+                <!--tercer formulario-->
+
+                <div class="card" id="formularios">
+                    <div class="card-body">
+                        <h2 class="titulo negrita"><span class=" numeros">3</span>Datos de inscripcion</h2>
+                        <form>                                              
+                            <div class="form-group row mb-2 mt-4">
+                                <label for="tipo" class="col-sm-3 col-form-label">tipo*</label>
+                                <div class="col-sm-8">
+                                    <select id="tipo" class="form-control" required>
+                                        <option value="junior">junior</option>
+                                        <option value="semisenior">semi semi senior</option>
+                                        <option value="senior" selected>senior</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="cuota" class="col-sm-3 col-form-label">cuota*</label>
+                                <div class="col-sm-8">
+                                    <select id="cuota" class="form-control" required>
+                                        <option value="general" selected>General - 5€/mes</option>
+                                        <option value="jubilados">Jubilados - 3€/mes</option>
+                                        <option value="familiar">Familiar - 11€/mes</option>
+                                        <option value="otros">Otros</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <fieldset class="border p-2 custom-fieldset" id="fieldset_checkbox">
+                                    <legend  class="float-none w-auto p-2 text-black">periodicidad</legend>
+                                    <div class="mb-3">
+                                        <input type="radio" name="Trimestral" checked value="Trimestral">Trimestral
+                                        <input type="radio" name="Semestral" value="semastral">Semestral
+                                        <input type="radio" name="Anual" value="anual">Anual
+                                    </div>                                    
+                                </fieldset>                                                         
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="iban" class="col-sm-3 col-form-label">IBAN</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="iban" placeholder="(si no lo sabes, dejalo vacio)">
+                                </div>
+                                <div class="mb-3" >
+                                    <button type="submit" class="btn btn-primary" id="boton">Enviar</button>
+                                </div> 
+                            </div>                                                       
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Actividad realizada por Marcos Remón Blesa</p>
+            <p>Fotografia de la portada de <a href="https://unsplash.com/es/s/fotos/Adam-Muise">Adam Muise</a> en <a href="https://unsplash.com/es/s/fotos/robots?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es"><img src="./imgs/creative-commons.png"></a>
+        </footer>
+        <script src="./JavaScript/JavaScript.js"></script>
+    </body>
+</html>
