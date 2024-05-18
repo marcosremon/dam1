@@ -16,7 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class InterfazInicioSesion extends JFrame {
+public class IniciarSesion extends JFrame {
     private Font titulosInicioSesion = new Font("Arial", Font.BOLD, 35);
     private Font textoDefault = new Font("Arial", 0, 13);
     private Font textoSecundario = new Font("Arial", Font.BOLD, 13);
@@ -24,20 +24,18 @@ public class InterfazInicioSesion extends JFrame {
     private JTextField usuarioField;
     private JPasswordField passwordField;
     private Border fieldBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-
     private JPanel crearPanelNegro() {
         JPanel panel = new JPanel();
         panel.setBackground(Color.black);
         return panel;
     }
-    public InterfazInicioSesion() {
+    public IniciarSesion() {
         getContentPane().setBackground(Color.black);
         this.setTitle("Inicio De Sesión");
         this.setLayout(new GridLayout(9, 1));
 
-        //panel vacio para salto de liniea
-        JPanel panelVacio1 = crearPanelNegro();
-        this.add(panelVacio1);
+        JPanel panelSaltoLinea1 = crearPanelNegro();
+        this.add(panelSaltoLinea1);
 
         JPanel panelIniciarSesion = crearPanelNegro();
         JLabel labelIniciarSesion = new JLabel("Iniciar Sesión");
@@ -56,16 +54,15 @@ public class InterfazInicioSesion extends JFrame {
         labelRegistrarse.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                InterfazRegistro interfazRegistro = new InterfazRegistro();
-                InterfazInicioSesion.this.setVisible(false);
-                interfazRegistro.setVisible(true);
+                Registrarse registrarse = new Registrarse();
+                IniciarSesion.this.setVisible(false);
+                registrarse.setVisible(true);
             }
         });
         this.add(panelRegistrarse);
 
-        //panel vacio para salto de liniea
-        JPanel panelVacio2 = crearPanelNegro();
-        this.add(panelVacio2);
+        JPanel panelSaltoLinea2 = crearPanelNegro();
+        this.add(panelSaltoLinea2);
 
         JPanel panelTextoUsuario = crearPanelNegro();
         JLabel labelUsuario = new JLabel("Usuario*");
@@ -89,9 +86,8 @@ public class InterfazInicioSesion extends JFrame {
         panelTextoPassword.add(passwordField);
         this.add(panelTextoPassword);
 
-        //panel vacio para salto de liniea
-        JPanel panelVacio3 = crearPanelNegro();
-        this.add(panelVacio3);
+        JPanel panelSaltoLinea3 = crearPanelNegro();
+        this.add(panelSaltoLinea3);
 
         JPanel panelBoton = crearPanelNegro();
         JButton botonIniciarSesion = new JButton("Iniciar Sesión");
@@ -124,14 +120,32 @@ public class InterfazInicioSesion extends JFrame {
         } else {
             String passwdEncriptada = EncriptarPassword.getHash(passwordUsuario);
             try (Connection connection = conexionDatabase.connect()) {
-                String busquedaUsuario = "SELECT id FROM usuarios WHERE nombre = ? AND contrasenya = ?";
-                PreparedStatement preparedStatement = connection.prepareStatement(busquedaUsuario);
-                preparedStatement.setString(1, nombreUsuario);
-                preparedStatement.setString(2, passwdEncriptada);
-                ResultSet resultSet = preparedStatement.executeQuery();
+                String busquedaUsuario = "select id from usuarios where nombre = ? and contrasenya = ?";
+                PreparedStatement buscarIdUsuarioPs = connection.prepareStatement(busquedaUsuario);
+                buscarIdUsuarioPs.setString(1, nombreUsuario);
+                buscarIdUsuarioPs.setString(2, passwdEncriptada);
+                ResultSet buscarIdUsuarioRs = buscarIdUsuarioPs.executeQuery();
 
-                if (resultSet.next()) {
-                    JOptionPane.showMessageDialog(null, "Hola, bienvenido");
+                if (buscarIdUsuarioRs.next()) {
+                    int idUsuario = buscarIdUsuarioRs.getInt("id");
+                    String comprobarCuentas = "select count(*) as conteo from cuentas where id_usuario = ? " +
+                            "group by id having conteo >= 1";
+                    PreparedStatement comprobarCuentasPs = connection.prepareStatement(comprobarCuentas);
+                    comprobarCuentasPs.setInt(1, idUsuario);
+                    ResultSet comprobarCuentasRs = comprobarCuentasPs.executeQuery();
+
+                    if (comprobarCuentasRs.next()) {
+                        VisualizarCuentas visualizarCuentas = new VisualizarCuentas(idUsuario);
+                        JOptionPane.showMessageDialog(null, "Hola " + usuarioField.getText() +
+                                ", bienvenido");
+                        visualizarCuentas.setVisible(true);
+                        this.setVisible(false);
+                    } else {
+                        AnyadirCuentas anyadirCuentas = new AnyadirCuentas(idUsuario);
+                        JOptionPane.showMessageDialog(null, "no tienes cuentas create una");
+                        anyadirCuentas.setVisible(true);
+                        this.setVisible(false);
+                    }
                 } else JOptionPane.showMessageDialog(null, "El usuario introducido no está " +
                             "registrado");
             } catch (SQLException ex) {

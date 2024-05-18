@@ -1,8 +1,8 @@
-import InterfacesGraficas.InterfazInicioSesion;
+import InterfacesGraficas.IniciarSesion;
 
 public class main {
     public static void main(String[] args) {
-        InterfazInicioSesion interfazInicioSesion = new InterfazInicioSesion();
-        interfazInicioSesion.setVisible(true);
+        IniciarSesion iniciarSesion = new IniciarSesion();
+        iniciarSesion.setVisible(true);
     }
 }

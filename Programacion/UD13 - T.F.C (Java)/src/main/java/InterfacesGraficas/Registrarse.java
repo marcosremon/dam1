@@ -1,6 +1,5 @@
 package InterfacesGraficas;
 
-import InterfacesGraficas.InterfazInicioSesion;
 import Metodos.ConexionDatabase;
 import Metodos.EncriptarPassword;
 
@@ -15,9 +14,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 
-public class InterfazRegistro extends JFrame {
+public class Registrarse extends JFrame {
     private Font titulosRegistros = new Font("Arial", Font.BOLD, 25);
     private Font textoDefault = new Font("Arial", 0, 13);
     private Font textoSecundario = new Font("Arial", Font.BOLD, 15);
@@ -37,14 +35,13 @@ public class InterfazRegistro extends JFrame {
         panel.setBackground(Color.black);
         return panel;
     }
-    public InterfazRegistro() {
+    public Registrarse() {
         getContentPane().setBackground(Color.black);
         this.setTitle("Registro De Usuarios");
         this.setLayout(new GridLayout(16,1));
 
-        //panel vacio para salto de liniea
-        JPanel panelVacio1 = crearPanelNegro();
-        this.add(panelVacio1);
+        JPanel panelSaltoDeLinea1 = crearPanelNegro();
+        this.add(panelSaltoDeLinea1);
 
         JPanel panelregistro = crearPanelNegro();
         JLabel labelRegistro = new JLabel("Registro De Usuarios");
@@ -63,16 +60,15 @@ public class InterfazRegistro extends JFrame {
         labelVolverAIniciarSesion.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                InterfazInicioSesion interfazInicioSesion = new InterfazInicioSesion();
-                InterfazRegistro.this.setVisible(false);
-                interfazInicioSesion.setVisible(true);
+                IniciarSesion iniciarSesion = new IniciarSesion();
+                Registrarse.this.setVisible(false);
+                iniciarSesion.setVisible(true);
             }
         });
         this.add(panelVolverAIniciarSesion);
 
-        //panel vacio para salto de liniea
-        JPanel panelVacio2 = crearPanelNegro();
-        this.add(panelVacio2);
+        JPanel panelSaltoDeLinea2 = crearPanelNegro();
+        this.add(panelSaltoDeLinea2);
 
         JPanel panelDni = crearPanelNegro();
         JLabel labelDni = new JLabel("Dni*");
@@ -173,9 +169,8 @@ public class InterfazRegistro extends JFrame {
         panelPasswordConfirm.add(fieldPasswdConfirm);
         this.add(panelPasswordConfirm);
 
-        //panel vacio para salto de liniea
-        JPanel panelVacio3 = crearPanelNegro();
-        this.add(panelVacio3);
+        JPanel panelSaltoDeLinea3 = crearPanelNegro();
+        this.add(panelSaltoDeLinea3);
 
         JPanel panelBoton = crearPanelNegro();
         JButton botonRegistro = new JButton("Registrarse");
@@ -199,7 +194,7 @@ public class InterfazRegistro extends JFrame {
     }
     private void registro(ActionEvent e) {
         ConexionDatabase conexionDatabase = new ConexionDatabase();
-        InterfazInicioSesion interfazInicioSesion = new InterfazInicioSesion();
+        IniciarSesion iniciarSesion = new IniciarSesion();
 
         String dniNuevoUsuario = fieldDni.getText();
         String nombreNuevoUsuario = fieldNombre.getText();
@@ -222,23 +217,23 @@ public class InterfazRegistro extends JFrame {
             String buscarDni = "select id from usuarios where dni = ?";
             String buscarEmail = "select id from usuarios where email = ?";
             String buscarTelefono = "select id from usuarios where telefono = ?";
-            PreparedStatement preparedStatementBuscarDni = connection.prepareStatement(buscarDni);
-            PreparedStatement preparedStatementBuscarEmail = connection.prepareStatement(buscarEmail);
-            PreparedStatement preparedStatementBuscarTelefono = connection.prepareStatement(buscarTelefono);
-            preparedStatementBuscarDni.setString(1, dniNuevoUsuario);
-            preparedStatementBuscarEmail.setString(1, emailNuevoUsuario);
-            preparedStatementBuscarTelefono.setString(1, telefonoNuevoUsuario);
-            ResultSet resultSetDni = preparedStatementBuscarDni.executeQuery();
-            ResultSet resultSetEmail = preparedStatementBuscarEmail.executeQuery();
-            ResultSet resultSetTelefono = preparedStatementBuscarTelefono.executeQuery();
+            PreparedStatement buscarDniPs = connection.prepareStatement(buscarDni);
+            PreparedStatement buscarEmailPs = connection.prepareStatement(buscarEmail);
+            PreparedStatement buscarTelefonoPs = connection.prepareStatement(buscarTelefono);
+            buscarDniPs.setString(1, dniNuevoUsuario);
+            buscarEmailPs.setString(1, emailNuevoUsuario);
+            buscarTelefonoPs.setString(1, telefonoNuevoUsuario);
+            ResultSet buscarDniRs = buscarDniPs.executeQuery();
+            ResultSet buscarEmailRs = buscarEmailPs.executeQuery();
+            ResultSet buscarTelefonoRs = buscarTelefonoPs.executeQuery();
 
-            if (resultSetDni.next()) {
+            if (buscarDniRs.next()) {
                 JOptionPane.showMessageDialog(null, "Error, el dni introducido ya está en" +
                         " la base de datos");
-            } else if (resultSetEmail.next()) {
+            } else if (buscarEmailRs.next()) {
                 JOptionPane.showMessageDialog(null, "Error, el email introducido ya está en" +
                         " la base de datos");
-            } else if (resultSetTelefono.next()) {
+            } else if (buscarTelefonoRs.next()) {
                 JOptionPane.showMessageDialog(null, "Error, el teléfono introducido ya " +
                         "está en la base de datos");
             } else {
@@ -255,8 +250,8 @@ public class InterfazRegistro extends JFrame {
                 preparedStatementInsert.setString(8, telefonoNuevoUsuario);
                 preparedStatementInsert.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Usuario registrado con éxito");
-                interfazInicioSesion.setVisible(true);
                 this.setVisible(false);
+                iniciarSesion.setVisible(true);
             }
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
