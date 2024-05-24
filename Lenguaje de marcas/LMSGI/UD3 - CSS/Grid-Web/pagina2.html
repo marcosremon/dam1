@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS- Grid</title>
+    <link rel="stylesheet" href="./css/grid.css">
+    <style>
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(4 , 1fr);
+            gap: 1em;     
+            grid-template-rows: minmax(20px, auto);   
+        }
+        .nested-contenedor{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-auto-rows: 100px;
+            gap: 1em;
+        }
+        .nested-contenedor > div {
+            border: 1px solid black;
+            background-color: #F1C40F;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div>
+            Hola DAM1
+        </div>
+        <div class="nested-contenedor">
+            <div>Hola DAM 1</div>
+            <div>Hola DAM 1</div>
+            <div>Hola DAM 1</div>
+            <div>Hola DAM 1</div>
+            <div>Hola DAM 1</div>
+            <div>Hola DAM 1</div>
+        </div>
+        <div>Quae natus dolorum at eligendi repellat repudiandae expedita voluptatum harum et quis, laborum tempora temporibus accusantium voluptatem incidunt neque ea?</div>
+        <div>Temporibus, repudiandae odit quod libero reprehenderit non sapiente, quis quia deserunt nemo sequi voluptas odio distinctio totam nam, dolor quisquam!</div>
+        <div>Consectetur pariatur, quae accusamus doloribus asperiores dolores esse non laudantium animi unde at, nulla nam a dolore quam cumque quas.</div>
+        <div>Ducimus harum, est animi doloribus possimus corporis minima, adipisci repellat veniam impedit nobis debitis rem tenetur ad aliquam blanditiis quod!</div>
+        <div>Quis magnam totam pariatur rerum tempore expedita eum amet, accusantium non recusandae perspiciatis necessitatibus corporis, molestiae, esse sequi? Incidunt, quam.</div>
+        <div>Natus maxime voluptas vitae corrupti laborum consequuntur ipsam corporis fugiat commodi, blanditiis assumenda sed ipsa, ex dolores dicta, incidunt necessitatibus?</div>
+
+    </div>   
+</body>
+</html>

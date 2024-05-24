@@ -1,0 +1,9 @@
+
+.contenedor div {
+    background-color: rgb(48, 249, 249);
+    padding: 1em;
+}
+
+.contenedor div:hover{
+    border: 1px solid blue;
+}
