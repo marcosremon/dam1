@@ -1,6 +1,5 @@
 package InterfacesGraficas;
 
-
 import Metodos.ConexionDatabase;
 
 import javax.swing.*;
@@ -20,13 +19,15 @@ public class AnyadirCuentas extends JFrame {
     private Font textoSecundario = new Font("Arial", Font.BOLD, 13);
     private Font textoBotones = new Font("Arial", Font.BOLD, 20);
     private JTextField nombreBancoField;
-    private JTextField tipoCuentaField;
+    private JComboBox<String> menuTipoCuenta;
     private Border fieldBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
+
     private JPanel crearPanelNegro() {
         JPanel panel = new JPanel();
         panel.setBackground(Color.black);
         return panel;
     }
+
     public AnyadirCuentas(int idUsuario) {
         this.idUsuario = idUsuario;
         getContentPane().setBackground(Color.black);
@@ -58,14 +59,18 @@ public class AnyadirCuentas extends JFrame {
         this.add(panelNombreBanco);
 
         JPanel panelTipoCuenta = crearPanelNegro();
-        JLabel labelTipoCuenta = new JLabel("Tipo De cuenta (cuenta corrirente/ahorro)*");
+        JLabel labelTipoCuenta = new JLabel("Tipo De cuenta (cuenta corriente/ahorro)*");
         labelTipoCuenta.setFont(textoSecundario);
+        labelTipoCuenta.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 40));
         labelTipoCuenta.setForeground(Color.white);
-        labelTipoCuenta.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 37));
         panelTipoCuenta.add(labelTipoCuenta);
-        tipoCuentaField = new JTextField(20);
-        tipoCuentaField.setBorder(fieldBorder);
-        panelTipoCuenta.add(tipoCuentaField);
+
+        menuTipoCuenta = new JComboBox<>(new String[]{"Cuenta Corriente", "Cuenta de Ahorros"});
+        menuTipoCuenta.setFont(textoSecundario);
+        menuTipoCuenta.setPreferredSize(nombreBancoField.getPreferredSize());
+        menuTipoCuenta.setSelectedIndex(-1);
+        panelTipoCuenta.add(menuTipoCuenta);
+
         this.add(panelTipoCuenta);
 
         JPanel panelSaltoLinea3 = crearPanelNegro();
@@ -91,47 +96,44 @@ public class AnyadirCuentas extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
     private void anyadirCuenta(ActionEvent e) {
         ConexionDatabase conexionDatabase = new ConexionDatabase();
-        VisualizarCuentas visualizarCuentas = new VisualizarCuentas(idUsuario);
 
         String nombreBanco = nombreBancoField.getText().toLowerCase().trim();
-        String tipoCuenta = tipoCuentaField.getText().toLowerCase().trim();
+        String tipoCuenta = String.valueOf(menuTipoCuenta.getSelectedItem());
 
         try (Connection connection = conexionDatabase.connect()) {
-            if (tipoCuenta.equals("cuenta corriente") || tipoCuenta.equals("cuenta de ahorros")) {
-                String anyadirCuenta = "insert into cuentas (id_usuario, nombreBanco, tipoCuenta) values (?, ?, ?)";
-                PreparedStatement anyadirCuentaPs = connection.prepareStatement(
-                        anyadirCuenta, PreparedStatement.RETURN_GENERATED_KEYS);
-                anyadirCuentaPs.setInt(1, idUsuario);
-                anyadirCuentaPs.setString(2, nombreBanco);
-                anyadirCuentaPs.setString(3, tipoCuenta);
-                anyadirCuentaPs.executeUpdate();
-                ResultSet obtenerIdCuentasRs = anyadirCuentaPs.getGeneratedKeys();
-                if (obtenerIdCuentasRs.next()) {
-                    int idCuenta = obtenerIdCuentasRs.getInt(1);
-                    if (tipoCuenta.equals("cuenta corriente")) {
-                        String anyadirCuentaCorriente = "insert into cuentaCorriente " +
+            String anyadirCuenta = "insert into cuentas (id_usuario, nombreBanco, tipoCuenta) values (?, ?, ?)";
+            PreparedStatement anyadirCuentaPs = connection.prepareStatement(
+                    anyadirCuenta, PreparedStatement.RETURN_GENERATED_KEYS);
+            anyadirCuentaPs.setInt(1, idUsuario);
+            anyadirCuentaPs.setString(2, nombreBanco);
+            anyadirCuentaPs.setString(3, tipoCuenta);
+            anyadirCuentaPs.executeUpdate();
+            ResultSet obtenerIdCuentasRs = anyadirCuentaPs.getGeneratedKeys();
+            if (obtenerIdCuentasRs.next()) {
+                int idCuenta = obtenerIdCuentasRs.getInt(1);
+                String insertCuetnas = null;
+                switch (tipoCuenta.toLowerCase()) {
+                    case "cuenta corriente":
+                        insertCuetnas = "insert into cuentaCorriente " +
                                 "(id_cuenta, saldo, fechaApertura) values (?, ?, curdate())";
-                        PreparedStatement insertCuentaCorrinetePs = connection.prepareStatement(anyadirCuentaCorriente);
-                        insertCuentaCorrinetePs.setInt(1, idCuenta);
-                        insertCuentaCorrinetePs.setInt(2, 0);
-                        insertCuentaCorrinetePs.executeUpdate();
-                        visualizarCuentas.setVisible(true);
-                        this.setVisible(false);
-                    } else if (tipoCuenta.equals("cuenta de ahorros")) {
-                        String anyadirCuentaAhorros = "insert into cuentaAhorro (id_cuenta, saldo, fechaApertura) " +
+                        break;
+                    case "cuenta de ahorros":
+                        insertCuetnas = "insert into cuentaAhorro (id_cuenta, saldo, fechaApertura) " +
                                 "values (?, ?, curdate())";
-                        PreparedStatement insertCuentaAhorros = connection.prepareStatement(anyadirCuentaAhorros);
-                        insertCuentaAhorros.setInt(1, idCuenta);
-                        insertCuentaAhorros.setInt(2, 0);
-                        insertCuentaAhorros.executeUpdate();
-                        visualizarCuentas.setVisible(true);
-                        this.setVisible(false);
-                    }
-                } JOptionPane.showMessageDialog(null, "Valores introducidos");
-            } else JOptionPane.showMessageDialog(null, "Error, introduzca correctamente " +
-                    "los valores");
+                        break;
+                }
+                PreparedStatement insertCuentaCorrientePs = connection.prepareStatement(insertCuetnas);
+                insertCuentaCorrientePs.setInt(1, idCuenta);
+                insertCuentaCorrientePs.setInt(2, 0);
+                insertCuentaCorrientePs.executeUpdate();
+                AdministrarCuentas administrarCuentas = new AdministrarCuentas(idUsuario);
+                administrarCuentas.setVisible(true);
+                this.setVisible(false);
+            }
+            JOptionPane.showMessageDialog(null, "Valores introducidos");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al añadir la cuenta: "
                     + ex.getMessage());

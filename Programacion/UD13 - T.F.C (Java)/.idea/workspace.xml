@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="265e4ae3-0313-454d-81d4-d1f53ff75ea0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/Examenes.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Animales/Gato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Animales/losGaysNoFollan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Animales/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Ejercicio1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Ejercicio3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio5/CorreoInvalido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio5/correo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Animales.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Carnivoro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Conejo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Herbivoro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Leon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/app.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Animales/Gato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Animales/losGaysNoFollan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Animales/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Ejercicio1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Ejercicio1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Ejercicio3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio2/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio2/Gato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/salida_Ej2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/AnyadirCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/AnyadirCuentas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/IniciarSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/IniciarSesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/Registrarse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/Registrarse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/VisualizarCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/AdministrarCuentas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Metodos/ConexionDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Metodos/ConexionDatabase.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2gIAyWyIR4qaaiGPQgwP6zC7Fiv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AnyadirCuentas.executor": "Run",
+    "Application.InterfazGrafica.executor": "Run",
+    "Application.InterfazInicioSesion.executor": "Run",
+    "Application.InterfazRegistro.executor": "Run",
+    "Application.VisualizarCuentas.executor": "Run",
+    "Application.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/UD13 - T.F.C (Java)"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="265e4ae3-0313-454d-81d4-d1f53ff75ea0" name="Changes" comment="" />
+      <created>1715374973815</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715374973815</updated>
+    </task>
+    <servers />
+  </component>
+</project>

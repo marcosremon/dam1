@@ -6,10 +6,7 @@ import Metodos.EncriptarPassword;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,6 +32,7 @@ public class Registrarse extends JFrame {
         panel.setBackground(Color.black);
         return panel;
     }
+
     public Registrarse() {
         getContentPane().setBackground(Color.black);
         this.setTitle("Registro De Usuarios");
@@ -74,10 +72,21 @@ public class Registrarse extends JFrame {
         JLabel labelDni = new JLabel("Dni*");
         labelDni.setForeground(Color.white);
         labelDni.setFont(textoSecundario);
-        labelDni.setBorder(BorderFactory.createEmptyBorder(5,5,5,185));
+        labelDni.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 185));
         panelDni.add(labelDni);
         fieldDni = new JTextField(20);
         fieldDni.setBorder(fieldBorder);
+        fieldDni.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                String dni = fieldDni.getText().trim();
+                if (!dni.matches("\\d{8}[a-zA-Z]")) {
+                    JOptionPane.showMessageDialog(null, "El formato del DNI no es válido. " +
+                            "Debe ser 8 números seguidos de una letra.");
+                    fieldDni.requestFocus();
+                }
+            }
+        });
         panelDni.add(fieldDni);
         this.add(panelDni);
 
@@ -89,6 +98,17 @@ public class Registrarse extends JFrame {
         panelEmail.add(labelEmail);
         fieldEmail = new JTextField(20);
         fieldEmail.setBorder(fieldBorder);
+        fieldEmail.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                String email = fieldEmail.getText().trim();
+                if (!email.matches("^[\\w.-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,}$")) {
+                    JOptionPane.showMessageDialog(null, "El formato de la direccion email " +
+                            "no es válida.");
+                    fieldDni.requestFocus();
+                }
+            }
+        });
         panelEmail.add(fieldEmail);
         this.add(panelEmail);
 
@@ -111,6 +131,17 @@ public class Registrarse extends JFrame {
         panelTelefono.add(labelTelefono);
         fieldTelefono = new JTextField(20);
         fieldTelefono.setBorder(fieldBorder);
+        fieldTelefono.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                String telefono = fieldTelefono.getText().trim();
+                if (!telefono.matches("^\\d{9}$")) {
+                    JOptionPane.showMessageDialog(null, "El formato de la direccion email " +
+                            "no es válida.");
+                    fieldDni.requestFocus();
+                }
+            }
+        });
         panelTelefono.add(fieldTelefono);
         this.add(panelTelefono);
 
@@ -192,16 +223,13 @@ public class Registrarse extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
     private void registro(ActionEvent e) {
         ConexionDatabase conexionDatabase = new ConexionDatabase();
         IniciarSesion iniciarSesion = new IniciarSesion();
 
         String dniNuevoUsuario = fieldDni.getText();
-        String nombreNuevoUsuario = fieldNombre.getText();
-        String primerApellidoNuevoUsuario = fieldPrimerApellido.getText();
-        String segundoApellidoNuevoUsuario = fieldSegundoApellido.getText();
         String emailNuevoUsuario = fieldEmail.getText();
-        String direccionNuevoUsuario = fieldDireccion.getText();
         String telefonoNuevoUsuario = fieldTelefono.getText();
         String passwdNuevoUsuario = new String(fieldPasswd.getPassword());
         String passwdNuevoUsuarioConfirm = new String(fieldPasswdConfirm.getPassword());
@@ -214,9 +242,9 @@ public class Registrarse extends JFrame {
         String passwdNuevoUsuarioEncriptada = EncriptarPassword.getHash(passwdNuevoUsuario);
 
         try (Connection connection = conexionDatabase.connect()) {
-            String buscarDni = "select id from usuarios where dni = ?";
-            String buscarEmail = "select id from usuarios where email = ?";
-            String buscarTelefono = "select id from usuarios where telefono = ?";
+            String buscarDni = "SELECT id FROM usuarios WHERE dni = ?";
+            String buscarEmail = "SELECT id FROM usuarios WHERE email = ?";
+            String buscarTelefono = "SELECT id FROM usuarios WHERE telefono = ?";
             PreparedStatement buscarDniPs = connection.prepareStatement(buscarDni);
             PreparedStatement buscarEmailPs = connection.prepareStatement(buscarEmail);
             PreparedStatement buscarTelefonoPs = connection.prepareStatement(buscarTelefono);
@@ -228,25 +256,25 @@ public class Registrarse extends JFrame {
             ResultSet buscarTelefonoRs = buscarTelefonoPs.executeQuery();
 
             if (buscarDniRs.next()) {
-                JOptionPane.showMessageDialog(null, "Error, el dni introducido ya está en" +
-                        " la base de datos");
+                JOptionPane.showMessageDialog(null, "Error, el DNI introducido ya está en " +
+                        "la base de datos");
             } else if (buscarEmailRs.next()) {
-                JOptionPane.showMessageDialog(null, "Error, el email introducido ya está en" +
-                        " la base de datos");
+                JOptionPane.showMessageDialog(null, "Error, el email introducido ya está en " +
+                        "la base de datos");
             } else if (buscarTelefonoRs.next()) {
-                JOptionPane.showMessageDialog(null, "Error, el teléfono introducido ya " +
-                        "está en la base de datos");
+                JOptionPane.showMessageDialog(null, "Error, el teléfono introducido ya está " +
+                        "en la base de datos");
             } else {
-                String introducirUsuario = "insert into usuarios (dni, nombre, primerapellido, segundoapellido, " +
-                        "contrasenya, email, direccion, telefono) values (?, ?, ?, ?, ?, ?, ?, ?)";
+                String introducirUsuario = "INSERT INTO usuarios (dni, nombre, primerapellido, segundoapellido, " +
+                        "contrasenya, email, direccion, telefono) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement preparedStatementInsert = connection.prepareStatement(introducirUsuario);
                 preparedStatementInsert.setString(1, dniNuevoUsuario);
-                preparedStatementInsert.setString(2, nombreNuevoUsuario);
-                preparedStatementInsert.setString(3, primerApellidoNuevoUsuario);
-                preparedStatementInsert.setString(4, segundoApellidoNuevoUsuario);
+                preparedStatementInsert.setString(2, fieldNombre.getText());
+                preparedStatementInsert.setString(3, fieldPrimerApellido.getText());
+                preparedStatementInsert.setString(4, fieldSegundoApellido.getText());
                 preparedStatementInsert.setString(5, passwdNuevoUsuarioEncriptada);
                 preparedStatementInsert.setString(6, emailNuevoUsuario);
-                preparedStatementInsert.setString(7, direccionNuevoUsuario);
+                preparedStatementInsert.setString(7, fieldDireccion.getText());
                 preparedStatementInsert.setString(8, telefonoNuevoUsuario);
                 preparedStatementInsert.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Usuario registrado con éxito");

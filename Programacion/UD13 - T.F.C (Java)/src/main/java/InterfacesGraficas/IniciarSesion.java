@@ -29,6 +29,7 @@ public class IniciarSesion extends JFrame {
         panel.setBackground(Color.black);
         return panel;
     }
+
     public IniciarSesion() {
         getContentPane().setBackground(Color.black);
         this.setTitle("Inicio De Sesión");
@@ -109,6 +110,7 @@ public class IniciarSesion extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
     private void iniciarSesionDataBase(ActionEvent e) {
         ConexionDatabase conexionDatabase = new ConexionDatabase();
 
@@ -117,40 +119,42 @@ public class IniciarSesion extends JFrame {
 
         if (nombreUsuario.isBlank() || passwordUsuario.isBlank()) {
             JOptionPane.showMessageDialog(null, "Introduce el usuario y la contraseña");
-        } else {
-            String passwdEncriptada = EncriptarPassword.getHash(passwordUsuario);
-            try (Connection connection = conexionDatabase.connect()) {
-                String busquedaUsuario = "select id from usuarios where nombre = ? and contrasenya = ?";
-                PreparedStatement buscarIdUsuarioPs = connection.prepareStatement(busquedaUsuario);
-                buscarIdUsuarioPs.setString(1, nombreUsuario);
-                buscarIdUsuarioPs.setString(2, passwdEncriptada);
-                ResultSet buscarIdUsuarioRs = buscarIdUsuarioPs.executeQuery();
+            return;
+        }
 
-                if (buscarIdUsuarioRs.next()) {
-                    int idUsuario = buscarIdUsuarioRs.getInt("id");
-                    String comprobarCuentas = "select count(*) as conteo from cuentas where id_usuario = ? " +
-                            "group by id having conteo >= 1";
-                    PreparedStatement comprobarCuentasPs = connection.prepareStatement(comprobarCuentas);
-                    comprobarCuentasPs.setInt(1, idUsuario);
-                    ResultSet comprobarCuentasRs = comprobarCuentasPs.executeQuery();
+        String passwdEncriptada = EncriptarPassword.getHash(passwordUsuario);
+        try (Connection connection = conexionDatabase.connect()) {
+            String busquedaUsuario = "SELECT id FROM usuarios WHERE nombre = ? AND contrasenya = ?";
+            PreparedStatement buscarIdUsuarioPs = connection.prepareStatement(busquedaUsuario);
+            buscarIdUsuarioPs.setString(1, nombreUsuario);
+            buscarIdUsuarioPs.setString(2, passwdEncriptada);
+            ResultSet buscarIdUsuarioRs = buscarIdUsuarioPs.executeQuery();
 
-                    if (comprobarCuentasRs.next()) {
-                        VisualizarCuentas visualizarCuentas = new VisualizarCuentas(idUsuario);
-                        JOptionPane.showMessageDialog(null, "Hola " + usuarioField.getText() +
-                                ", bienvenido");
-                        visualizarCuentas.setVisible(true);
-                        this.setVisible(false);
-                    } else {
-                        AnyadirCuentas anyadirCuentas = new AnyadirCuentas(idUsuario);
-                        JOptionPane.showMessageDialog(null, "no tienes cuentas create una");
-                        anyadirCuentas.setVisible(true);
-                        this.setVisible(false);
-                    }
-                } else JOptionPane.showMessageDialog(null, "El usuario introducido no está " +
-                            "registrado");
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
+            if (buscarIdUsuarioRs.next()) {
+                int idUsuario = buscarIdUsuarioRs.getInt("id");
+                String comprobarCuentas = "SELECT COUNT(*) AS conteo FROM cuentas WHERE id_usuario = ?";
+                PreparedStatement comprobarCuentasPs = connection.prepareStatement(comprobarCuentas);
+                comprobarCuentasPs.setInt(1, idUsuario);
+                ResultSet comprobarCuentasRs = comprobarCuentasPs.executeQuery();
+
+                if (comprobarCuentasRs.next() && comprobarCuentasRs.getInt("conteo") >= 1) {
+                    AdministrarCuentas administrarCuentas = new AdministrarCuentas(idUsuario);
+                    JOptionPane.showMessageDialog(null, "Hola " + usuarioField.getText() +
+                            ", bienvenido");
+                    administrarCuentas.setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    AnyadirCuentas anyadirCuentas = new AnyadirCuentas(idUsuario);
+                    JOptionPane.showMessageDialog(null, "No tienes cuentas, crea una");
+                    anyadirCuentas.setVisible(true);
+                    this.setVisible(false);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "El usuario introducido no está " +
+                        "registrado");
             }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
         }
     }
 }

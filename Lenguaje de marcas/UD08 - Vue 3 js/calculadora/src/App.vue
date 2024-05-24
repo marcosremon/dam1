@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+    import { computed, ref } from 'vue';
 
     let contador = ref(0);
     let agregarNumeros = ref(0);
@@ -75,40 +75,43 @@ import { computed, ref } from 'vue';
         }
     };
 </script>
+
 <template>
-    <table border="1">
-        <tr>
-            <td id="resultado" :class="resultado">{{ contador }}</td>
-        </tr>
-        <table>
+    <div class="container mt-3">
+        <table class="table table-bordered">
             <tr>
-                <td><button @click="borrarTodo">CE</button></td>
-                <td><button @click="borrarTodo">C</button></td>
-                <td><button @click="borrar"><--</button></td>
-                <td><button @click="dividir">/</button></td>
-            </tr>
-            <tr>
-                <td><button @click="agregarNumero(7)">7</button></td>
-                <td><button @click="agregarNumero(8)">8</button></td>
-                <td><button @click="agregarNumero(9)">9</button></td>
-                <td><button @click="multiplicar">X</button></td>
-            </tr>
-            <tr>
-              <td><button @click="agregarNumero(4)">4</button></td>
-              <td><button @click="agregarNumero(5)">5</button></td>
-              <td><button @click="agregarNumero(6)">6</button></td>
-              <td><button @click="restar">-</button></td>
-            </tr>
-            <tr>
-              <td><button @click="agregarNumero(1)">1</button></td>
-              <td><button @click="agregarNumero(2)">2</button></td>
-              <td><button @click="agregarNumero(3)">3</button></td>
-              <td><button @click="sumar">+</button></td>
-            </tr>
-            <tr>
-                <td><button @click="agregarNumero(0)">0</button></td>
-                <td colspan="3" @click="operar"><button>=</button></td>
+                <td id="resultado" :class="resultado">{{ contador }}</td>
             </tr>
         </table>
-    </table>
+        <table class="table">
+            <tr>
+                <td><button class="btn btn-danger" @click="borrarTodo">CE</button></td>
+                <td><button class="btn btn-warning" @click="borrarTodo">C</button></td>
+                <td><button class="btn btn-secondary" @click="borrar">←</button></td>
+                <td><button class="btn btn-primary" @click="dividir">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-light" @click="agregarNumero(7)">7</button></td>
+                <td><button class="btn btn-light" @click="agregarNumero(8)">8</button></td>
+                <td><button class="btn btn-light" @click="agregarNumero(9)">9</button></td>
+                <td><button class="btn btn-primary" @click="multiplicar">X</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-light" @click="agregarNumero(4)">4</button></td>
+                <td><button class="btn btn-light" @click="agregarNumero(5)">5</button></td>
+                <td><button class="btn btn-light" @click="agregarNumero(6)">6</button></td>
+                <td><button class="btn btn-primary" @click="restar">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-light" @click="agregarNumero(1)">1</button></td>
+                <td><button class="btn btn-light" @click="agregarNumero(2)">2</button></td>
+                <td><button class="btn btn-light" @click="agregarNumero(3)">3</button></td>
+                <td><button class="btn btn-primary" @click="sumar">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-light" @click="agregarNumero(0)">0</button></td>
+                <td colspan="3"><button class="btn btn-success w-100" @click="operar">=</button></td>
+            </tr>
+        </table>
+    </div>
 </template>
