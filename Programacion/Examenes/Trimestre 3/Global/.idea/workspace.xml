@@ -5,11 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="265e4ae3-0313-454d-81d4-d1f53ff75ea0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/AnyadirCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/AnyadirCuentas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/IniciarSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/IniciarSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/Registrarse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/Registrarse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/VisualizarCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/InterfacesGraficas/AdministrarCuentas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/Metodos/ConexionDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/src/main/java/Metodos/ConexionDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo1.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo10.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo11.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo2.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo3.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo4.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo5.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo6.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo7.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo8.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo9.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UD13 - T.F.C (Java)/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,21 +54,27 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AnyadirCuentas.executor": "Run",
+    "Application.Des.executor": "Run",
     "Application.InterfazGrafica.executor": "Run",
     "Application.InterfazInicioSesion.executor": "Run",
     "Application.InterfazRegistro.executor": "Run",
+    "Application.Principal.executor": "Debug",
     "Application.VisualizarCuentas.executor": "Run",
     "Application.main.executor": "Run",
+    "Application.serializar.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/UD13 - T.F.C (Java)"
+    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/Examenes/Trimestre 3/Global",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\marco\Documentos\Documentos\Instituto\Dam1 y Dam2 (2023-2025)\Programacion\Examenes\Trimestre 3\Global" />
+      <recent name="C:\Users\marco\Documentos\Documentos\Instituto\Dam1 y Dam2 (2023-2025)\Programacion\Examenes\Trimestre 3\Global\src" />
       <recent name="C:\Users\marco\Documentos\Documentos\Instituto\Dam1 y Dam2 (2023-2025)\Programacion\Examenes\Trimestre 3\Global\src\main\java\Ejercicio2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -62,13 +84,6 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Metodos" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

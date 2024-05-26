@@ -1,5 +1,8 @@
 package Ejercicio2;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Estudios {
 
         private String localidad;
@@ -19,10 +22,7 @@ public class Estudios {
         public Estudios() {
         }
 
-        public Estudios(String localidad, float tasa_graduacion, float media_cursos_matriculados, String tipo_estudio,
-                        String estudio, String sexo, float tasa_abandono_inicial, int alumnos_graduados,
-                        int curso_academico, int alumnos_graduados_en_tiempo, float tasa_abandono,
-                        int alumnos_interrumpen_estudios, int alumnos_interrumpen_est_ano1) {
+        public Estudios(String localidad, float tasa_graduacion, float media_cursos_matriculados, String tipo_estudio, String estudio, String sexo, float tasa_abandono_inicial, int alumnos_graduados, int curso_academico, int alumnos_graduados_en_tiempo, float tasa_abandono, int alumnos_interrumpen_estudios, int alumnos_interrumpen_est_ano1) {
                 this.localidad = localidad;
                 this.tasa_graduacion = tasa_graduacion;
                 this.media_cursos_matriculados = media_cursos_matriculados;

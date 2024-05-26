@@ -1,4 +1,4 @@
-package Ejercicio3;
+package org.iesch;
 import java.util.Scanner;
 
 /**

@@ -1,4 +1,11 @@
 package Ejercicio3;
+import Metodos.ConexionDataBaseEjercicio3;
+
+import java.security.PublicKey;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /*
@@ -12,6 +19,14 @@ public class ListaProductos {
 
     private ArrayList<Producto> lista;
 
+    public ArrayList<Producto> getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList<Producto> lista) {
+        this.lista = lista;
+    }
+
     public ListaProductos() {
         lista = new ArrayList();
     }
@@ -21,12 +36,27 @@ public class ListaProductos {
     }
 
     public void mostrarProductos() {
-        int i = 0;
-        for (Producto p : lista) {
-            System.out.println("" + i + " - " + p);
-            i++;
-        }
+        ConexionDataBaseEjercicio3 conexionDataBaseEjercicio3 = new ConexionDataBaseEjercicio3();
+        Producto producto = new Producto();
 
+        try (Connection connection = conexionDataBaseEjercicio3.connect()) {
+            String listarProductos = "select * from productos";
+            PreparedStatement listarProductosPs = connection.prepareStatement(listarProductos);
+            ResultSet listarProductosRs = listarProductosPs.executeQuery();
+
+            while (listarProductosRs.next()) {
+                String codigo = listarProductosRs.getString(1);
+                String nombre = listarProductosRs.getString(2);
+                String descripcion = listarProductosRs.getString(3);
+                String marca = listarProductosRs.getString(4);
+                double precio = listarProductosRs.getDouble(5);
+
+                lista.add(producto = new Producto(codigo, nombre, descripcion, marca, precio));
+                System.out.println(producto);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int numeroProductos() {
@@ -67,5 +97,4 @@ public class ListaProductos {
         }
         return resultado;
     }
-
 }

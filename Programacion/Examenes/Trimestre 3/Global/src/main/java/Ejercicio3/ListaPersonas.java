@@ -1,4 +1,10 @@
 package Ejercicio3;
+import Metodos.ConexionDataBaseEjercicio3;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /*
@@ -21,10 +27,24 @@ public class ListaPersonas {
     }
 
     public void mostrarPersonas() {
-        int i = 0;
-        for (Persona p : lista) {
-            System.out.println(i + "-" + p);
-            i++;
+        ConexionDataBaseEjercicio3 conexionDataBaseEjercicio3 = new ConexionDataBaseEjercicio3();
+        Persona cliente = new Persona();
+
+        try (Connection connection = conexionDataBaseEjercicio3.connect()) {
+            String listarClientes = "select * from clientes";
+            PreparedStatement listarClientesPs = connection.prepareStatement(listarClientes);
+            ResultSet listarClientesRs = listarClientesPs.executeQuery();
+
+            while (listarClientesRs.next()) {
+                String dni = listarClientesRs.getString(1);
+                String nombre = listarClientesRs.getString(2);
+                String apellidos = listarClientesRs.getString(3);
+
+                lista.add(cliente = new Persona(dni, nombre, apellidos));
+                System.out.println(cliente);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -53,5 +73,6 @@ public class ListaPersonas {
         }
         return resultado;
     }
+
 
 }

@@ -5,44 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="265e4ae3-0313-454d-81d4-d1f53ff75ea0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/Examenes.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Animales/Gato.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Animales/losGaysNoFollan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Animales/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Ejercicio1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 2/src/parcial1/Ejercicio3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio5/CorreoInvalido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio5/correo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Animales.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Carnivoro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Conejo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Herbivoro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/Leon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/global/ejercicio6/app.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Animales/Gato.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Animales/losGaysNoFollan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Animales/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Ejercicio1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Ejercicio1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/Trimestre 2/parcial1/Ejercicio3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio2/Animal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio2/Gato.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/out/production/examen20240226-marcosremon/Ejercicio3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examenes/salida_Ej2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/AnyadirCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/AnyadirCuentas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/IniciarSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/IniciarSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/Registrarse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/Registrarse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/VisualizarCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesGraficas/AdministrarCuentas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Metodos/ConexionDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Metodos/ConexionDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo1.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo10.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo11.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo2.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo3.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo4.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo5.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo6.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo7.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo8.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lenguaje de marcas/UD06 - Definicion XML/XSD/ejemplo9.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/Enunciado Examen.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/openData.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio1/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio1/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio2/Estudios.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio2/Estudios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Carro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Carro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/ListaCarros.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/ListaCarros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/ListaPersonas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/ListaPersonas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/ListaProductos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/ListaProductos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/src/main/java/Ejercicio3/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/supermercado.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/AdministrarCuentas$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/AdministrarCuentas$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/AdministrarCuentas$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/AdministrarCuentas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/AnyadirCuentas$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/AnyadirCuentas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/CuentaAhorros.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/CuentaCorriente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/IniciarSesion$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/IniciarSesion$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/IniciarSesion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/Registrarse$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/Registrarse$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/Registrarse$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/Registrarse$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/Registrarse$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/InterfacesGraficas/Registrarse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/Metodos/ConexionDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/Metodos/EncriptarPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Trimestre 3/Global/target/classes/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,22 +84,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AnyadirCuentas.executor": "Run",
-    "Application.InterfazGrafica.executor": "Run",
-    "Application.InterfazInicioSesion.executor": "Run",
-    "Application.InterfazRegistro.executor": "Run",
-    "Application.VisualizarCuentas.executor": "Run",
-    "Application.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/UD13 - T.F.C (Java)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AnyadirCuentas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InterfazGrafica.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InterfazInicioSesion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InterfazRegistro.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VisualizarCuentas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marco/Documentos/Documentos/Instituto/Dam1 y Dam2 (2023-2025)/Programacion/Examenes/Trimestre 3/Global&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
