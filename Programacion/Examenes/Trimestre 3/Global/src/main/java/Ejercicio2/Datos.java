@@ -1,13 +1,13 @@
 package Ejercicio2;
 
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
-@XmlRootElement
+
 public class Datos {
-    private List<Estudios> datos = new ArrayList<>();
+    private List<Estudios> datos;
 
     public Datos() {
+        this.datos = new ArrayList<>();
     }
 
     public Datos(List<Estudios> datos) {
@@ -18,8 +18,8 @@ public class Datos {
         return datos;
     }
 
-    public void setDatos(Estudios estudios) {
-        datos.add(estudios);
+    public void addEstudio(Estudios estudio) {
+        this.datos.add(estudio);
     }
 
     @Override

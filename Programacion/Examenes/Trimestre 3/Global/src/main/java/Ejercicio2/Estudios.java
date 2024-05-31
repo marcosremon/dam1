@@ -1,13 +1,11 @@
 package Ejercicio2;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@XmlRootElement
 public class Estudios {
-
         private String localidad;
         private float tasa_graduacion;
-        private  float media_cursos_matriculados;
+        private float media_cursos_matriculados;
         private String tipo_estudio;
         private String estudio;
         private String sexo;

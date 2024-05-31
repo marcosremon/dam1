@@ -27,6 +27,7 @@ public class main {
                 String anyadirDatabase = "create database supernivel";
                 PreparedStatement anyadirDatabasePs = connection.prepareStatement(anyadirDatabase);
                 anyadirDatabasePs.executeUpdate();
+                System.out.println("database creada correctamente");
             } else {
                 System.out.println("la database supernivel ya existe en la sgbd");
             }

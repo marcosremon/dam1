@@ -15,9 +15,11 @@ public class main {
         ObjectMapper objectMapper = new ObjectMapper();
         File jsonFile = new File("Uz.json");
 
-        try (Connection connection = conexionDataBaseEjercicio2.connect()) {
+        try  (Connection connection = conexionDataBaseEjercicio2.connect()){
             Datos listaDatos = objectMapper.readValue(jsonFile, Datos.class);
+            System.out.println(listaDatos);
             for (Estudios i : listaDatos.getDatos()) {
+                System.out.println(i);
                 String insertar = "insert into datos values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement preparedStatement = connection.prepareStatement(insertar);
                 preparedStatement.setString(1, i.getLocalidad());

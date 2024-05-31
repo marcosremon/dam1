@@ -127,7 +127,7 @@ public class AnyadirCuentas extends JFrame {
                 }
                 PreparedStatement insertCuentaCorrientePs = connection.prepareStatement(insertCuetnas);
                 insertCuentaCorrientePs.setInt(1, idCuenta);
-                insertCuentaCorrientePs.setInt(2, 0);
+                insertCuentaCorrientePs.setInt(2, 0); 
                 insertCuentaCorrientePs.executeUpdate();
                 AdministrarCuentas administrarCuentas = new AdministrarCuentas(idUsuario);
                 administrarCuentas.setVisible(true);
